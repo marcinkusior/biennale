@@ -20,11 +20,11 @@ class RegisterMail < ApplicationMailer
 	def backup_mail(registration)
 		@registration = registration
 
-	
-			mail.attachments["obrazek1"] = File.read( @registration.images[0].src.path )
-			mail.attachments["obrazek2"] = File.read( @registration.images[1].src.path )
-			mail.attachments["obrazek3"] = File.read( @registration.images[2].src.path )
-		
+		i= 1
+		@registration.images.each do |image|
+			mail.attachments["obrazek_#{i}"] = File.read( image.src.path )
+			i = i+1
+		end
 
 		mail(
 			to: 'inawbiennale@gmail.com',
