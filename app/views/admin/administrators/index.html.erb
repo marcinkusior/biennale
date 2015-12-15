@@ -1,0 +1,27 @@
+<h1>Administratorzy</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @administrators.each do |administrator| %>
+      <tr>
+        <td><%= administrator.email %></td>
+        <td><%= link_to 'Show', [:admin, administrator] %></td>
+        <td><%= link_to 'Edit', edit_admin_administrator_path(administrator) %></td>
+        <td><%= link_to 'Destroy', [:admin, administrator], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nowy Admin', new_admin_administrator_path %>

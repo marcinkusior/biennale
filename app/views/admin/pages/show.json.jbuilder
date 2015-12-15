@@ -1,0 +1,1 @@
+json.extract! @page, :title, :order, :created_at, :updated_at

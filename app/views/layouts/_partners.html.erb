@@ -1,0 +1,30 @@
+<hr>
+<div class="container">
+	
+
+<div class="row">
+	<div class="col-md-20 col-md-offset-2 partners">
+		<h3 class="blue"> <%= I18n.locale == :en ? 'PARTNERS' : 'PARTNERZY' %> </h3>
+		<div class="partners-parent">
+			<% Partner.all.each do |partner| %>
+				 <div class="partner"> <%= image_tag partner.image_url(:thumb) %> </div>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+</div> <!-- end container -->
+
+<script>
+	
+	function evenOut(){
+		$('.partners-parent').children().each( function(idx, partner){
+			$(partner).css('width', '25%' );
+			if( idx != 0 && idx % 6 == 0 ){ $(partner).css('margin-right', '0.1px') }
+
+		} )
+	}	
+
+	evenOut();
+
+</script>

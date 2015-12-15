@@ -1,0 +1,113 @@
+<%= form_for([:admin, @general]) do |f| %>
+  <% if @general.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@general.errors.count, "error") %> prohibited this general from being saved:</h2>
+
+      <ul>
+      <% @general.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+
+  <div class="col-sm-6">
+
+    <div class="field">
+      <%= f.label :block_site, 'Zablokuj stronę:' %>
+    <%= f.check_box :block_site %>
+    </div>
+
+  <div class="field">
+      <%= f.label :registration_conference, 'Rejestracja-konferencja' %>
+    <%= f.check_box :registration_conference %>
+    </div>
+  <div class="field">
+      <%= f.label :registration_contest, 'Rejestracja konkurs' %>
+    <%= f.check_box :registration_contest %>
+    </div>
+
+    <div class="field">
+      <%= f.label :program_on, 'Program' %>
+    <%= f.check_box :program_on %>
+    </div>
+
+    <div class="field">
+      <%= f.label :partners_on, 'Partnerzy' %>
+      <%= f.check_box :partners_on %>
+    </div>
+
+    <div class="field">
+      <%= f.label :archive_on, 'Archiwum konferencja' %>
+      <%= f.check_box :archive_on %>
+    </div>
+
+    <div class="field">
+      <%= f.label :contest_archive_on, 'Archiwim konkurs' %>
+      <%= f.check_box :contest_archive_on %>
+    </div>
+
+  </div> <!-- end col -->
+
+  <div class="col-sm-6">
+      <div class="field">
+        <%= f.label :voting_contest, 'Galeria' %>
+        <%= f.check_box :voting_contest %>
+    </div>
+
+    <div class="field">
+        <%= f.label :contest_archive_id, 'Archiwum' %>
+        <%= f.select :contest_archive_id, ContestArchive.all.map{|archive| [archive.title, archive.id] },:include_blank => true %>
+    </div>
+
+      <div class="field">
+        <%= f.label :voting_on, 'Głosowanie' %>
+        <%= f.check_box :voting_on %>
+    </div>
+
+    <div class="field">
+        <%= f.label :results_on, 'Wyniki' %>
+        <%= f.check_box :results_on %>
+    </div>
+
+  </div>
+
+  <div class="col-sm-6">
+    <div class="field">
+      <%= f.label :marker_id, 'Centrum Mapy' %>
+      <%= f.select :marker_id, Marker.all.map{|marker| [marker.desc, marker.id] },:include_blank => true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :map_zoom, 'Zblizenie (0-21)' %>
+      <%= f.number_field :map_zoom %>
+    </div>
+
+  </div>
+  
+  <div class="col-sm-6">  
+    <div class="field">
+        <%= f.label :edition_no, 'Numer Edycji' %>
+        <%= f.number_field :edition_no %>
+    </div>
+
+    <h2></h2>
+
+    <div class="field">
+      <%= f.label :primary_color, 'Kolor podstawowy' %>
+      <%= f.text_field :primary_color %>
+    </div>
+
+    <div class="field">
+      <%= f.label :secondary_color, 'Kolor dodatkowy' %>
+      <%= f.text_field :secondary_color %>
+    </div>
+  </div>
+
+</div> <!-- end row -->
+  <div class="actions">
+    <%= f.submit 'Wprowadź zmiany' %>
+  </div>
+<% end %>

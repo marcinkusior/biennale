@@ -1,0 +1,1 @@
+json.extract! @public_image, :contest_record_id, :src, :created_at, :updated_at

@@ -1,0 +1,1 @@
+json.extract! @contest_record, :title, :titlePL, :body, :bodyPL, :created_at, :updated_at

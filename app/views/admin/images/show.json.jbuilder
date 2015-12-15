@@ -1,0 +1,1 @@
+json.extract! @image, :src, :registration_id, :created_at, :updated_at

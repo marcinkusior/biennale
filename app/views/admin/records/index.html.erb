@@ -1,0 +1,29 @@
+<h1>Listing records</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Body</th>
+      <th>Archive</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @records.each do |record| %>
+      <tr>
+        <td><%= record.body %></td>
+        <td><%= record.archive %></td>
+        <td><%= link_to 'Show', [:admin, record] %></td>
+        <td><%= link_to 'Edit', edit_admin_record_path(record) %></td>
+        <td><%= link_to 'Destroy', [:admin, record], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Record', new_admin_record_path %>

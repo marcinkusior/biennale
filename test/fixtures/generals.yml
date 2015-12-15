@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  registration_conference: false
+  registration_contest: false
+  voting: 
+
+two:
+  registration_conference: false
+  registration_contest: false
+  voting: 

@@ -1,0 +1,1 @@
+json.extract! @record, :body, :archive_id, :created_at, :updated_at

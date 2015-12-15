@@ -1,0 +1,60 @@
+<%= form_for([:admin, @record]) do |f| %>
+  <% if @record.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@record.errors.count, "error") %> prohibited this record from being saved:</h2>
+
+      <ul>
+      <% @record.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+  <div class="col-xs-6">
+
+      <div class="field">
+        <%= f.label :title, 'Tytuł' %><br>
+      <%= f.text_field :title %>
+      </div>
+
+        <div class="field">
+        <%= f.label :titlePL, 'Tytuł PL'%><br>
+      <%= f.text_field :titlePL %>
+      </div>
+
+
+
+      <div class="field">
+        <%= f.label :archive_id, 'Archiwum' %><br>
+        <% if params[:archive_id].present? %>
+          <%= f.select :archive_id, Archive.all.map{|archive| [archive.title, archive.id] }, :selected => params[:archive_id] %>
+        <% else %>
+          <%= f.select :archive_id, Archive.all.map{|archive| [archive.title, archive.id] } %>
+        <% end %>
+        </div>
+
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+
+      <%= link_to 'Back', @record.archive_id ? "/admin/archives/#{@record.archive_id}/edit" : request.referer %>
+
+    </div> <!-- end small column -->
+    
+    <div class="col-xs-16">
+      <div class="field">
+      <%= f.label :body, 'Treść' %><br>
+      <%= f.bootsy_area :body, class: 'form-control', rows: 12 %>
+      </div>
+
+      <div class="field">
+        <%= f.label :bodyPL, 'Treść PL' %><br>
+      <%= f.bootsy_area :bodyPL, class: 'form-control', rows: 12 %>
+      </div>
+    </div> <!-- end big column -->
+  </div> <!-- end row -->
+
+
+<% end %>

@@ -1,0 +1,29 @@
+<h1>Listing paragraphs</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Body</th>
+      <th>Page</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @paragraphs.each do |paragraph| %>
+      <tr>
+        <td class="paragraph-body"><%= raw(paragraph.body) %></td>
+        <td><%= paragraph.page.title %></td>
+        <td><%= link_to 'Show', [:admin, paragraph] %></td>
+        <td><%= link_to 'Edit', edit_admin_paragraph_path(paragraph) %></td>
+        <td><%= link_to 'Destroy', [:admin, paragraph], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Paragraph', new_admin_paragraph_path %>

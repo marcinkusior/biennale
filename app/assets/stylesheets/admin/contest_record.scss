@@ -1,0 +1,88 @@
+// Place all the styles related to the Admin::ContestRecord controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url(asset_path('glyphicons-halflings-regular.eot'));
+  src: url(asset_path('glyphicons-halflings-regular.eot?#iefix')) format('embedded-opentype'), url(asset_path('glyphicons-halflings-regular.woff')) format('woff'), url(asset_path('glyphicons-halflings-regular.ttf')) format('truetype'), url(asset_path('glyphicons-halflings-regular.svg#glyphicons_halflingsregular')) format('svg');
+}
+
+@import url(https://fonts.googleapis.com/css?family=PT+Serif:400,400italic);
+@import url(https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700);
+
+
+.contest_records{
+	.img-wrapper{text-align: center; margin: 0 auto; padding: 10px 20px 10px 10px; display: block; position: relative;}
+
+	img{margin: 10px auto 15px;}
+	.img-delete{
+		position: absolute;
+		right: 45%;
+		bottom: 0;
+		padding: 1px 3px;
+		&:hover{text-decoration: underline}
+		
+	}
+}
+
+.bootstrap-wysihtml5-insert-link-modal{
+	.close{font-size: 45px; font-weight: 600;}
+}
+
+.wysihtml5-toolbar{
+	.dropdown-menu{li{overflow: hidden;}}
+	a[data-wysihtml5-command-value='p']{
+		margin-top: -20px;
+		&::after{ 
+
+			content: "Normalny Tekst";
+			display: block;
+		}
+	}
+
+	a[data-wysihtml5-command-value='h1']{
+		display: none;
+	}
+
+	a[data-wysihtml5-command-value='h2']{
+				margin-top: -20px;
+		&::after{ 
+
+			content: "Tytuł";
+			display: block;
+		}
+
+	}
+
+	a[data-wysihtml5-command-value='h3']{
+				margin-top: -20px;
+		&::after{ 
+
+			content: "Nagłówek";
+			display: block;
+		}
+
+	}
+
+	a[data-wysihtml5-command-value='h4']{
+		display: none;
+	}
+
+	a[data-wysihtml5-command-value='h5']{
+		display: none;
+	}
+	a[data-wysihtml5-command-value='h6']{
+				margin-top: -20px;
+		&::after{ 
+
+			content: "Autor";
+			display: block;
+		}
+
+	}
+
+	a[data-wysihtml5-command-value="blockquote"]{display: none}
+	a[data-wysihtml5-command="italic"]{display: none}
+	a[data-wysihtml5-command="underline"]{display: none}
+}

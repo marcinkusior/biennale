@@ -1,0 +1,98 @@
+<%= form_for([:admin, @contest_record]) do |f| %>
+  <% if @contest_record.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contest_record.errors.count, "error") %> prohibited this contest_record from being saved:</h2>
+
+      <ul>
+      <% @contest_record.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+
+  <div class="col-xs-6">
+
+    <div class="field">
+      <%= f.label :title, 'Tytuł' %><br>
+      <%= f.text_field :title %>
+      </div>
+
+      <div class="field">
+        <%= f.label :titlePL, 'Tytuł PL' %><br>
+        <%= f.text_field :titlePL %>
+      </div>
+
+      <div class="field">
+        <%= f.label :serial, 'Numer identyfikacyjny' %> <br> <span>(istotne dla głosowania)</span> <br>
+        <%= f.text_field :serial %>
+      </div>
+
+      <div class="field">
+        <%= f.label :contest_archive_id, 'Archiwum' %><br>
+      <% if params[:contest_archive_id].present? %>
+        <%= f.select :contest_archive_id, ContestArchive.all.map{|archive| [archive.title, archive.id] }, :selected => params[:contest_archive_id] %>
+      <% else %>
+        <%= f.select :contest_archive_id, ContestArchive.all.map{|archive| [archive.title, archive.id] } %>
+      <% end %>
+      </div>
+
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+    <% if action_name == 'new' %>
+      <%= link_to 'Back', request.referer %>
+    <% else %>
+      <%= link_to 'Back', "/admin/contest_archives/#{@contest_record.contest_archive_id}/edit" %>
+    <% end %>
+
+  </div> <!-- end col -6 -->
+
+  <div class="col-xs-9">
+
+    <div class="field">
+        <%= f.label :body, 'Treść' %><br>
+      <%= f.bootsy_area :body, class: 'form-control', rows: 6 %>
+      </div>
+    <div class="field">
+        <%= f.label :bodyPL, 'Treść PL' %><br>
+      <%= f.bootsy_area :bodyPL, class: 'form-control', rows: 6 %>
+      </div>
+    </div> <!-- end col -->
+
+
+    <div class="col-xs-5 col-xs-offset-1">
+
+    <% if  action_name == 'new' %>
+
+      <%=  f.fields_for( :public_images) do |ff|  %>
+        <%= ff.file_field :src %>
+      <% end %>
+
+      <% else %>
+
+        <% @contest_record.public_images.each do |image| %>
+          <div class="img-wrapper">
+          <%= image_tag image.src.url(:thumb) %>
+          <%= link_to 'Usuń', "/admin/public_images/#{image.id}", method: :delete, :class => "img-delete" %>
+        </div>
+        <hr>
+      <% end %>
+        <br>
+        <%= link_to '+ Dodaj obraz', "/admin/public_images/new?contest_record_id=#{@contest_record.id}" %>
+      
+    <% end %> <!-- end if -->
+
+
+      <hr>
+      <br>
+    </div>
+
+
+
+  </div> <!-- end row -->
+
+<% end %>

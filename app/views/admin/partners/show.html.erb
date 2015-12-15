@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @partner.image_url(:thumb) %>
+</p>
+
+<%= link_to 'Edit', edit_admin_partner_path(@partner) %> |
+<%= link_to 'Back', admin_partners_path %>

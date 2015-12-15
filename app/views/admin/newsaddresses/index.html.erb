@@ -1,0 +1,21 @@
+<h1>Subskrybenci</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @newsaddresses.each do |newsaddress| %>
+      <tr>
+        <td><%= newsaddress.email %></td>
+        <td><%= link_to 'Destroy', [:admin, newsaddress], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

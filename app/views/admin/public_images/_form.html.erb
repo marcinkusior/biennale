@@ -1,0 +1,32 @@
+<%= form_for([:admin, @public_image]) do |f| %>
+  <% if @public_image.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@public_image.errors.count, "error") %> prohibited this public_image from being saved:</h2>
+
+      <ul>
+      <% @public_image.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+
+    <%= f.label :contest_record_id %><br>
+    <% if params[:contest_record_id].present? %>
+      <%= f.select :contest_record_id, ContestRecord.all.map{|archive| [archive.title, archive.id] }, :selected => params[:contest_record_id] %>
+    <% else %>
+      <%= f.select :contest_record_id, ContestRecord.all.map{|archive| [archive.title, archive.id] } %>
+    <% end %>
+    </div>
+  <div class="field">
+      <%= f.label :src %><br>
+    <%= f.file_field :src %>
+    </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+  <%= link_to 'Back', request.referer %>
+<% end %>

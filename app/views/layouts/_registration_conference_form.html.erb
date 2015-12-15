@@ -1,0 +1,81 @@
+<h3 class="blue"><%= t('register') %></h3>
+
+<p class="ghost"> <%= t( "fillform" ) %> </p>
+<% @registration = RegistrationConference.new %>
+<%= form_for( @registration, :html => { :multipart => true }) do |f| %>
+<div class=" modal-content">
+ 
+  <%= f.hidden_field :serial, :value => create_serial %>
+
+  <div class="field half">
+      <%= f.label :first_name, t( "name" ) %>
+    <%= f.text_field :first_name, :class => 'validate validate_present' %>
+    </div>
+  <div class="field half">
+      <%= f.label :last_name, t( 'lastname' ) %>
+    <%= f.text_field :last_name, :class => 'validate validate_present' %>
+    </div>
+  <div class="field half">
+      <%= f.label :telephone, t( "telephone" ) %>
+    <%= f.text_field :telephone, :class => 'validate validate_numbers' %>
+    </div>
+  <div class="field half">
+      <%= f.label :email, t( 'email' ) %>
+    <%= f.text_field :email, :class => "validate validate_email" %>
+    </div>
+  <div class="field full">
+      <%= f.label :street, t( "street" ) %>
+    <%= f.text_field :street, :class => "validate validate_present" %>
+    </div>
+  <div class="field quarter">
+      <%= f.label :city, t( "city" ) %>
+    <%= f.text_field :city, :class => "validate validate_present" %>
+    </div>
+  <div class="field quarter">
+      <%= f.label :zip_code, t( "zipcode" ) %>
+    <%= f.text_field :zip_code, :class => "validate validate_present" %>
+    </div>
+  <div class="field half">
+      <%= f.label :country, t( "country" ) %>
+    <%= f.text_field :country, :class => "validate validate_present" %>
+    </div>
+  <div class="field full">
+      <%= f.label :university, t( 'university' ) %>
+    <%= f.text_field :university, :class => "validate validate_present" %>
+    </div>
+ <div class="field full">
+      <%= f.label :subject, t( "subject" ) %>
+    <%= f.text_field :subject, :class => "validate validate_present" %>
+    </div>
+
+    
+  <div class="field full terms_of_service">
+      <span class = "validate validate_checkbox tick-container">
+        <span class="tick"> <%= inline_svg('tick.svg') %></span>
+         <span class="box"> <%= f.check_box :terms_of_service, :class => 'validate_present' %> </span>
+          <p> <%= t( "agreeto" )  %>  <%= link_to t( "terms_of_use" ), "/#{I18n.locale}/Terms_Conference", :target => "_blank" %>
+          </p>
+      </span>
+    </div>
+
+  <div class="field full">
+    <p class="ghost"> <%= t( "text_file" ) %> </p>
+  </div>
+
+  <div class="field full">
+      <div class="upload-desc">
+      <label class = "upload-status" > <span class = "validate validate_checkbox"> <%= t( "choosefile" ) %> </span> </label>
+      <%= f.file_field :attachment %>
+      </div>
+  </div>
+
+</div>
+
+  <div class="actions">
+    <%= f.submit :value => t( "send" ), data: {disable_with: "..."}, :class => "pink-button full disabled  submit", disabled: true %>
+  </div>
+<% end %>
+
+<script>
+  registration_logic();
+</script>

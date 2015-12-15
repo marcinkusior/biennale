@@ -1,0 +1,36 @@
+<h1>Edytuj Archiwum</h1>
+
+
+<div class="row">
+	<div class="col-xs-6">
+		<%= render 'form' %>
+		<br>
+		<%= link_to 'Back', admin_archives_path %>
+	</div>
+	<div class="col-xs-18">
+	
+		<table class="table">
+		  <thead>
+		    <tr>
+		      <th>Rekordy:</th>
+		      <th></th>
+		      <th></th>
+		    </tr>
+		  </thead>
+
+		  <tbody>
+		    <% @archive.records.order(:id).each do |record| %>
+		      <tr>
+		        <td><%= record.title %></td>
+		        <td><%= link_to 'Edit', edit_admin_record_path(record) %></td>
+		        <td><%= link_to 'Destroy', [:admin, record], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		      </tr>
+		    <% end %>
+		  </tbody>
+		</table>
+		
+		<%= link_to '+ Nowy Rekord', "/admin/records/new?archive_id=#{@archive.id}" %>
+	</div>
+</div>
+
+

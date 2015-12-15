@@ -1,0 +1,25 @@
+<h1>Archiwa Konkurs</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Tytuł</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contest_archives.each do |contest_archive| %>
+      <tr>
+        <td><%= contest_archive.title %></td>
+        <td><%= link_to 'Edit', edit_admin_contest_archive_path(contest_archive) %></td>
+        <td><%= link_to 'Destroy', [:admin, contest_archive], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nowe Archiwum', new_admin_contest_archive_path %>

@@ -1,0 +1,31 @@
+<h1>Listing generals</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Registration conference</th>
+      <th>Registration</th>
+      <th>Voting</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @generals.each do |general| %>
+      <tr>
+        <td><%= general.registration_conference %></td>
+        <td><%= general.registration_contest %></td>
+        <td><%= general.voting_contest %></td>
+        <td><%= link_to 'Show', [:admin, general] %></td>
+        <td><%= link_to 'Edit', edit_admin_general_path(general) %></td>
+        <td><%= link_to 'Destroy', [:admin, general], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New General', new_admin_general_path %>

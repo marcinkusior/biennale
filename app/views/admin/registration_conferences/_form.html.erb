@@ -1,0 +1,59 @@
+<%= form_for([:admin, @registration_conference]) do |f| %>
+  <% if @registration_conference.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@registration_conference.errors.count, "error") %> prohibited this registration_conference from being saved:</h2>
+
+      <ul>
+      <% @registration_conference.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+      <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+    </div>
+  <div class="field">
+      <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+    </div>
+  <div class="field">
+      <%= f.label :telephone %><br>
+    <%= f.text_field :telephone %>
+    </div>
+
+  <div class="field">
+      <%= f.label :street %><br>
+    <%= f.text_field :street %>
+    </div>
+  <div class="field">
+      <%= f.label :city %><br>
+    <%= f.text_field :city %>
+    </div>
+  <div class="field">
+      <%= f.label :zip_code %><br>
+    <%= f.text_field :zip_code %>
+    </div>
+  <div class="field">
+      <%= f.label :country %><br>
+    <%= f.text_field :country %>
+    </div>
+  <div class="field">
+      <%= f.label :university %><br>
+    <%= f.text_field :university %>
+    </div>
+
+  <div class="field">
+      <%= f.label :email %><br>
+    <%= f.text_field :email %>
+    </div>
+  <div class="field">
+      <%= f.label :terms_of_service %><br>
+    <%= f.text_field :terms_of_service %>
+    </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

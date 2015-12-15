@@ -1,0 +1,22 @@
+// Place all the styles related to the Admin::Page controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// @import "bootstrap-sprockets";
+// @import "bootstrap";
+
+.field{
+	margin: 0 0 20px;
+}
+
+.Admin{
+	header{
+		border-bottom: 1px solid lightgrey;
+	}
+
+	a{
+		color: #808080;
+		&:hover{color: black}
+	}
+	
+}

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Lat:</strong>
+  <%= @marker.lat %>
+</p>
+
+<p>
+  <strong>Lng:</strong>
+  <%= @marker.lng %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @marker.desc %>
+</p>
+
+<%= link_to 'Edit', edit_admin_marker_path(@marker) %> |
+<%= link_to 'Back', admin_markers_path %>

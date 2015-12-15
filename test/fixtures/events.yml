@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  timedate: MyText
+  description: MyText
+  order: 1
+
+two:
+  timedate: MyText
+  description: MyText
+  order: 1

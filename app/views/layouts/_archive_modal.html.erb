@@ -1,0 +1,14 @@
+ <div class="archive">
+
+	<h3 class="blue"><%= t( "archive" ) %></h3>
+
+  <% title = I18n.locale == :en ? 'title' : 'titlePL' %>
+  <%= select_tag( :archive_select, options_from_collection_for_select(@archives, "id", title), :class=>"archive_select", :prompt=> t( "edition" )  )  %>
+
+  <%= select_tag( :record_select, "", :class=>"record_select"  ) %>
+  <%= button_tag( t( "show" ), :class => "openArchive" ) %>
+
+	<div class="modal-content ">
+		<div class="recordBody" id="recordBody"></div>
+	</div>
+</div>

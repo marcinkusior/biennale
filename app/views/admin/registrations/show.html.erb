@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @registration.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @registration.last_name %>
+</p>
+
+<p>
+  <strong>Telephone:</strong>
+  <%= @registration.telephone %>
+</p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @registration.street %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @registration.city %>
+</p>
+
+<p>
+  <strong>Zip code:</strong>
+  <%= @registration.zip_code %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @registration.country %>
+</p>
+
+<p>
+  <strong>University:</strong>
+  <%= @registration.university %>
+</p>
+
+<p>
+  <strong>Supervisor proffesor:</strong>
+  <%= @registration.supervising_professor %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @registration.email %>
+</p>
+
+<p>
+  <strong>Terms of servie:</strong>
+  <%= @registration.terms_of_service %>
+</p>
+
+<p>
+  <% @registration.images.each do |image| %>
+    <small> <%= image.src %> </small> <br>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_admin_registration_path(@registration) %> |
+<%= link_to 'Back', admin_registrations_path %>

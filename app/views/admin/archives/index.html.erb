@@ -1,0 +1,25 @@
+<h1>Archiwa Konferencja</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Tytuł</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @archives.each do |archive| %>
+      <tr>
+        <td><%= archive.title %></td>
+        <td><%= link_to 'Edit', edit_admin_archive_path(archive) %></td>
+        <td><%= link_to 'Destroy', [:admin, archive], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nowe Archiwum', new_admin_archive_path %>

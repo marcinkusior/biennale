@@ -1,0 +1,6 @@
+	<% title = I18n.locale == :en ? 'title' : 'titlePL' %>
+	<%= select_tag( :archive_select, options_from_collection_for_select(@archives, "id", title), :class=>"archive_select", :prompt=> t( "biennial" )  )  %>
+
+	<%= select_tag( :record_select, "", :class=>"record_select"  ) %>
+	<%= button_tag( t( "show" ), data: {toggle: "modal", target: "#archiveModal"}, :class => "openArchive" ) %>
+

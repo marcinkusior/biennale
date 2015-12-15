@@ -1,0 +1,572 @@
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-15 15:18:19 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (23.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#Biennial as HTML
+  [1m[35mPage Load (75.6ms)[0m  SELECT  "pages".* FROM "pages" WHERE "pages"."slug" = $1 LIMIT 1  [["slug", "Biennial"]]
+  [1m[36mGeneral Load (59.7ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  [1m[36mEvent Load (26.2ms)[0m  [1mSELECT "events".* FROM "events"  ORDER BY "events"."order" ASC[0m
+  Rendered layouts/_program.html.erb (75.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  [1m[36mPartner Load (28.6ms)[0m  [1mSELECT "partners".* FROM "partners"[0m
+  Rendered layouts/_partners.html.erb (96.0ms)
+  Rendered pages/Biennial.html.erb within layouts/application (507.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  Rendered layouts/_logout.html.erb (0.6ms)
+  [1m[35mPage Load (1.5ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."order" IS NOT NULL)  ORDER BY "pages"."order" ASC
+  Rendered layouts/_main_nav.html.erb (89.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."order" IS NOT NULL)  ORDER BY "pages"."order" ASC[0m
+  Rendered layouts/_footer.html.erb (3.3ms)
+Completed 200 OK in 3613ms (Views: 2961.2ms | ActiveRecord: 437.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-15 15:18:24 +0100
+Processing by PagesController#Biennial as HTML
+  [1m[35mPage Load (0.6ms)[0m  SELECT  "pages".* FROM "pages" WHERE "pages"."slug" = $1 LIMIT 1  [["slug", "Biennial"]]
+  [1m[36mGeneral Load (0.8ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  [1m[36mEvent Load (0.7ms)[0m  [1mSELECT "events".* FROM "events"  ORDER BY "events"."order" ASC[0m
+  Rendered layouts/_program.html.erb (1.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  [1m[36mPartner Load (0.7ms)[0m  [1mSELECT "partners".* FROM "partners"[0m
+  Rendered layouts/_partners.html.erb (5.0ms)
+  Rendered pages/Biennial.html.erb within layouts/application (14.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  Rendered layouts/_logout.html.erb (0.1ms)
+  [1m[35mPage Load (1.1ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."order" IS NOT NULL)  ORDER BY "pages"."order" ASC
+  Rendered layouts/_main_nav.html.erb (5.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."order" IS NOT NULL)  ORDER BY "pages"."order" ASC[0m
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 563ms (Views: 556.1ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/en/Contest" for 127.0.0.1 at 2015-12-15 15:19:01 +0100
+Processing by PagesController#Contest as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[35mPage Load (0.8ms)[0m  SELECT  "pages".* FROM "pages" WHERE "pages"."slug" = $1 LIMIT 1  [["slug", "Contest"]]
+  [1m[36mGeneral Load (1.0ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  [1m[36mContestArchive Load (48.9ms)[0m  [1mSELECT  "contest_archives".* FROM "contest_archives" WHERE "contest_archives"."id" = $1 LIMIT 1[0m  [["id", 54]]
+Completed 404 Not Found in 80ms (ActiveRecord: 52.7ms)
+
+ActiveRecord::RecordNotFound (Couldn't find ContestArchive with 'id'=54):
+  app/controllers/pages_controller.rb:16:in `Contest'
+
+
+  Rendered /home/marcin/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.7ms)
+  Rendered /home/marcin/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /home/marcin/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/marcin/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.3ms)
+  Rendered /home/marcin/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /home/marcin/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/marcin/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/marcin/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/marcin/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (28.0ms)
+  Rendered /home/marcin/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/marcin/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/marcin/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (61.4ms)
+
+
+Started GET "/en/Contest" for 127.0.0.1 at 2015-12-15 15:19:01 +0100
+Processing by PagesController#Contest as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[35mPage Load (0.4ms)[0m  SELECT  "pages".* FROM "pages" WHERE "pages"."slug" = $1 LIMIT 1  [["slug", "Contest"]]
+  [1m[36mGeneral Load (0.5ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  [1m[36mContestArchive Load (0.3ms)[0m  [1mSELECT  "contest_archives".* FROM "contest_archives" WHERE "contest_archives"."id" = $1 LIMIT 1[0m  [["id", 54]]
+Completed 404 Not Found in 5ms (ActiveRecord: 1.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find ContestArchive with 'id'=54):
+  app/controllers/pages_controller.rb:16:in `Contest'
+
+
+  Rendered /home/marcin/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.5ms)
+  Rendered /home/marcin/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /home/marcin/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/marcin/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.3ms)
+  Rendered /home/marcin/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/marcin/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/marcin/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/marcin/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/marcin/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (22.1ms)
+  Rendered /home/marcin/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/marcin/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/marcin/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (45.2ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2015-12-15 15:19:07 +0100
+Processing by Admin::GeneralsController#settings as HTML
+  [1m[35mAdministrator Load (37.6ms)[0m  SELECT  "administrators".* FROM "administrators" WHERE "administrators"."id" = $1 LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/admin/generals/1/edit
+Completed 302 Found in 64ms (ActiveRecord: 41.0ms)
+
+
+Started GET "/admin/generals/1/edit" for 127.0.0.1 at 2015-12-15 15:19:07 +0100
+Processing by Admin::GeneralsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGeneral Load (0.8ms)[0m  [1mSELECT  "generals".* FROM "generals" WHERE "generals"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdministrator Load (0.6ms)[0m  SELECT  "administrators".* FROM "administrators" WHERE "administrators"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mContestArchive Load (0.6ms)[0m  [1mSELECT "contest_archives".* FROM "contest_archives"[0m
+  [1m[35mMarker Load (73.0ms)[0m  SELECT "markers".* FROM "markers"
+  Rendered admin/generals/_form.html.erb (402.7ms)
+  Rendered admin/generals/edit.html.erb within layouts/application (414.6ms)
+  [1m[36mGeneral Load (1.2ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  Rendered layouts/_logout.html.erb (0.1ms)
+  Rendered layouts/_admin_nav.html.erb (2.0ms)
+Completed 200 OK in 1009ms (Views: 928.5ms | ActiveRecord: 78.2ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2015-12-15 15:19:08 +0100
+Processing by Admin::GeneralsController#settings as HTML
+  [1m[36mAdministrator Load (0.4ms)[0m  [1mSELECT  "administrators".* FROM "administrators" WHERE "administrators"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/admin/generals/1/edit
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/generals/1/edit" for 127.0.0.1 at 2015-12-15 15:19:08 +0100
+Processing by Admin::GeneralsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mGeneral Load (0.9ms)[0m  SELECT  "generals".* FROM "generals" WHERE "generals"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mAdministrator Load (0.4ms)[0m  [1mSELECT  "administrators".* FROM "administrators" WHERE "administrators"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mContestArchive Load (0.6ms)[0m  SELECT "contest_archives".* FROM "contest_archives"
+  [1m[36mMarker Load (0.7ms)[0m  [1mSELECT "markers".* FROM "markers"[0m
+  Rendered admin/generals/_form.html.erb (8.3ms)
+  Rendered admin/generals/edit.html.erb within layouts/application (9.5ms)
+  [1m[35mGeneral Load (1.0ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  Rendered layouts/_logout.html.erb (0.1ms)
+  Rendered layouts/_admin_nav.html.erb (0.8ms)
+Completed 200 OK in 573ms (Views: 566.9ms | ActiveRecord: 3.7ms)
+
+
+Started PATCH "/admin/generals/1" for 127.0.0.1 at 2015-12-15 15:19:11 +0100
+Processing by Admin::GeneralsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cVI2ry0raMJGFEmWQftF+jefRY30PU67A8A7nbfxp9Lx60DbswuFy3pbNozCBwOkNvCEulpckdF38/IsaVeI8g==", "general"=>{"block_site"=>"0", "registration_conference"=>"1", "registration_contest"=>"1", "program_on"=>"1", "partners_on"=>"1", "archive_on"=>"1", "contest_archive_on"=>"1", "voting_contest"=>"1", "contest_archive_id"=>"", "voting_on"=>"1", "results_on"=>"1", "marker_id"=>"4", "map_zoom"=>"15", "edition_no"=>"4", "primary_color"=>"#34ABDD", "secondary_color"=>"#F4E500"}, "commit"=>"Wprowadź zmiany", "id"=>"1"}
+  [1m[35mGeneral Load (0.5ms)[0m  SELECT  "generals".* FROM "generals" WHERE "generals"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mAdministrator Load (0.3ms)[0m  [1mSELECT  "administrators".* FROM "administrators" WHERE "administrators"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "generals" SET "contest_archive_id" = $1, "updated_at" = $2 WHERE "generals"."id" = $3[0m  [["contest_archive_id", nil], ["updated_at", "2015-12-15 14:19:11.904154"], ["id", 1]]
+  [1m[35m (12.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/admin/generals/1/edit
+Completed 302 Found in 25ms (ActiveRecord: 14.1ms)
+
+
+Started GET "/admin/generals/1/edit" for 127.0.0.1 at 2015-12-15 15:19:11 +0100
+Processing by Admin::GeneralsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGeneral Load (0.4ms)[0m  [1mSELECT  "generals".* FROM "generals" WHERE "generals"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdministrator Load (0.2ms)[0m  SELECT  "administrators".* FROM "administrators" WHERE "administrators"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mContestArchive Load (0.3ms)[0m  [1mSELECT "contest_archives".* FROM "contest_archives"[0m
+  [1m[35mMarker Load (0.3ms)[0m  SELECT "markers".* FROM "markers"
+  Rendered admin/generals/_form.html.erb (6.8ms)
+  Rendered admin/generals/edit.html.erb within layouts/application (7.5ms)
+  [1m[36mGeneral Load (1.1ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  Rendered layouts/_logout.html.erb (0.1ms)
+  Rendered layouts/_admin_nav.html.erb (0.7ms)
+Completed 200 OK in 576ms (Views: 571.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-15 15:19:15 +0100
+Processing by PagesController#Biennial as HTML
+  [1m[36mPage Load (0.7ms)[0m  [1mSELECT  "pages".* FROM "pages" WHERE "pages"."slug" = $1 LIMIT 1[0m  [["slug", "Biennial"]]
+  [1m[35mGeneral Load (0.5ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  [1m[35mEvent Load (0.5ms)[0m  SELECT "events".* FROM "events"  ORDER BY "events"."order" ASC
+  Rendered layouts/_program.html.erb (1.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  [1m[35mPartner Load (0.4ms)[0m  SELECT "partners".* FROM "partners"
+  Rendered layouts/_partners.html.erb (4.9ms)
+  Rendered pages/Biennial.html.erb within layouts/application (24.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  Rendered layouts/_logout.html.erb (0.1ms)
+  [1m[36mPage Load (1.1ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."order" IS NOT NULL)  ORDER BY "pages"."order" ASC[0m
+  Rendered layouts/_main_nav.html.erb (6.0ms)
+  [1m[35mCACHE (0.1ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."order" IS NOT NULL)  ORDER BY "pages"."order" ASC
+  Rendered layouts/_footer.html.erb (2.2ms)
+Completed 200 OK in 603ms (Views: 596.9ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/en/Contest" for 127.0.0.1 at 2015-12-15 15:19:19 +0100
+Processing by PagesController#Contest as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mPage Load (0.7ms)[0m  [1mSELECT  "pages".* FROM "pages" WHERE "pages"."slug" = $1 LIMIT 1[0m  [["slug", "Contest"]]
+  [1m[35mGeneral Load (0.7ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  [1m[35mVote Load (52.5ms)[0m  SELECT "votes".* FROM "votes"
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  [1m[35mRegistration Load (66.4ms)[0m  SELECT "registrations".* FROM "registrations"
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  Rendered layouts/_registration_form.html.erb (277.6ms)
+  Rendered layouts/_registration.html.erb (280.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  [1m[36mContestArchive Load (0.7ms)[0m  [1mSELECT "contest_archives".* FROM "contest_archives" WHERE ("contest_archives"."id" IS NOT NULL)[0m
+  Rendered layouts/_contest_archive_panel.html.erb (3.4ms)
+  Rendered layouts/_contest_archive_modal.html.erb (2.0ms)
+  Rendered layouts/_contest_archive.html.erb (9.5ms)
+  Rendered pages/Contest.html.erb within layouts/application (316.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  Rendered layouts/_logout.html.erb (0.5ms)
+  [1m[35mPage Load (1.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."order" IS NOT NULL)  ORDER BY "pages"."order" ASC
+  Rendered layouts/_main_nav.html.erb (5.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."order" IS NOT NULL)  ORDER BY "pages"."order" ASC[0m
+  Rendered layouts/_footer.html.erb (2.7ms)
+Completed 200 OK in 1022ms (Views: 852.0ms | ActiveRecord: 129.0ms)
+
+
+Started GET "/en/Contact" for 127.0.0.1 at 2015-12-15 15:19:34 +0100
+Processing by PagesController#Contact as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[35mPage Load (0.6ms)[0m  SELECT  "pages".* FROM "pages" WHERE "pages"."slug" = $1 LIMIT 1  [["slug", "Contact"]]
+  [1m[36mGeneral Load (1.0ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  [1m[36mMarker Load (0.8ms)[0m  [1mSELECT  "markers".* FROM "markers" WHERE "markers"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  Rendered newsaddresses/_form.html.erb (2.6ms)
+  Rendered pages/Contact.html.erb within layouts/application (18.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  Rendered layouts/_logout.html.erb (0.1ms)
+  [1m[36mPage Load (1.1ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."order" IS NOT NULL)  ORDER BY "pages"."order" ASC[0m
+  Rendered layouts/_main_nav.html.erb (4.3ms)
+  [1m[35mMarker Load (0.9ms)[0m  SELECT "markers".* FROM "markers"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."order" IS NOT NULL)  ORDER BY "pages"."order" ASC[0m
+  Rendered layouts/_footer.html.erb (2.7ms)
+Completed 200 OK in 643ms (Views: 609.9ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/en/Contest" for 127.0.0.1 at 2015-12-15 15:19:36 +0100
+Processing by PagesController#Contest as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[35mPage Load (0.3ms)[0m  SELECT  "pages".* FROM "pages" WHERE "pages"."slug" = $1 LIMIT 1  [["slug", "Contest"]]
+  [1m[36mGeneral Load (0.6ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  [1m[36mVote Load (0.3ms)[0m  [1mSELECT "votes".* FROM "votes"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  [1m[36mRegistration Load (0.4ms)[0m  [1mSELECT "registrations".* FROM "registrations"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  Rendered layouts/_registration_form.html.erb (11.8ms)
+  Rendered layouts/_registration.html.erb (13.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  [1m[35mContestArchive Load (0.3ms)[0m  SELECT "contest_archives".* FROM "contest_archives" WHERE ("contest_archives"."id" IS NOT NULL)
+  Rendered layouts/_contest_archive_panel.html.erb (2.5ms)
+  Rendered layouts/_contest_archive_modal.html.erb (1.4ms)
+  Rendered layouts/_contest_archive.html.erb (6.1ms)
+  Rendered pages/Contest.html.erb within layouts/application (23.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  Rendered layouts/_logout.html.erb (0.1ms)
+  [1m[36mPage Load (1.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."order" IS NOT NULL)  ORDER BY "pages"."order" ASC[0m
+  Rendered layouts/_main_nav.html.erb (4.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."order" IS NOT NULL)  ORDER BY "pages"."order" ASC
+  Rendered layouts/_footer.html.erb (1.5ms)
+Completed 200 OK in 726ms (Views: 715.6ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/en/Contact" for 127.0.0.1 at 2015-12-15 15:19:37 +0100
+Processing by PagesController#Contact as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT  "pages".* FROM "pages" WHERE "pages"."slug" = $1 LIMIT 1[0m  [["slug", "Contact"]]
+  [1m[35mGeneral Load (0.4ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  [1m[35mMarker Load (0.4ms)[0m  SELECT  "markers".* FROM "markers" WHERE "markers"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  Rendered newsaddresses/_form.html.erb (1.8ms)
+  Rendered pages/Contact.html.erb within layouts/application (3.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  Rendered layouts/_logout.html.erb (0.1ms)
+  [1m[35mPage Load (1.1ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."order" IS NOT NULL)  ORDER BY "pages"."order" ASC
+  Rendered layouts/_main_nav.html.erb (4.0ms)
+  [1m[36mMarker Load (0.8ms)[0m  [1mSELECT "markers".* FROM "markers"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."order" IS NOT NULL)  ORDER BY "pages"."order" ASC
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 594ms (Views: 584.6ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/en/Contest" for 127.0.0.1 at 2015-12-15 15:19:59 +0100
+Processing by PagesController#Contest as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT  "pages".* FROM "pages" WHERE "pages"."slug" = $1 LIMIT 1[0m  [["slug", "Contest"]]
+  [1m[35mGeneral Load (0.6ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  [1m[35mVote Load (1.2ms)[0m  SELECT "votes".* FROM "votes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  [1m[35mRegistration Load (0.5ms)[0m  SELECT "registrations".* FROM "registrations"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  Rendered layouts/_registration_form.html.erb (10.7ms)
+  Rendered layouts/_registration.html.erb (12.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  [1m[36mContestArchive Load (0.6ms)[0m  [1mSELECT "contest_archives".* FROM "contest_archives" WHERE ("contest_archives"."id" IS NOT NULL)[0m
+  Rendered layouts/_contest_archive_panel.html.erb (2.4ms)
+  Rendered layouts/_contest_archive_modal.html.erb (1.3ms)
+  Rendered layouts/_contest_archive.html.erb (5.7ms)
+  Rendered pages/Contest.html.erb within layouts/application (21.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  Rendered layouts/_logout.html.erb (0.1ms)
+  [1m[35mPage Load (1.1ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."order" IS NOT NULL)  ORDER BY "pages"."order" ASC
+  Rendered layouts/_main_nav.html.erb (5.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."order" IS NOT NULL)  ORDER BY "pages"."order" ASC[0m
+  Rendered layouts/_footer.html.erb (1.2ms)
+Completed 200 OK in 621ms (Views: 610.4ms | ActiveRecord: 4.5ms)
+
+
+Started POST "/en/registrations" for 127.0.0.1 at 2015-12-15 15:20:12 +0100
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"deg2cITl+UFMNvKE1+GhU+CsvqbMFY+6KhvmyLfjmU31UUAEGsUUSHB5jZ5UHecN4cN/kWJ0UNBeKC95aUW2bQ==", "registration"=>{"serial"=>"459LP", "first_name"=>"marcin", "last_name"=>"kusior", "telephone"=>"656747656", "group_name"=>"", "street"=>"Kozietulskiego 1/21", "city"=>"Krakow", "zip_code"=>"30-809", "country"=>"Poland", "university"=>"asp", "supervising_professor"=>"", "email"=>"kuqsior.qmarzzscin@gmail.com", "terms_of_service"=>"1", "images_attributes"=>{"0"=>{"src"=>#<ActionDispatch::Http::UploadedFile:0xb16969f8 @tempfile=#<Tempfile:/tmp/RackMultipart20151215-3853-bm93pl.png>, @original_filename="08.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"registration[images_attributes][0][src]\"; filename=\"08.png\"\r\nContent-Type: image/png\r\n">}}}, "commit"=>"save setting and ... good luck :)", "locale"=>"en"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (92.6ms)[0m  [1mINSERT INTO "registrations" ("first_name", "last_name", "telephone", "street", "city", "zip_code", "country", "university", "supervising_professor", "email", "terms_of_service", "serial", "group_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["first_name", "marcin"], ["last_name", "kusior"], ["telephone", "656747656"], ["street", "Kozietulskiego 1/21"], ["city", "Krakow"], ["zip_code", "30-809"], ["country", "Poland"], ["university", "asp"], ["supervising_professor", ""], ["email", "kuqsior.qmarzzscin@gmail.com"], ["terms_of_service", "t"], ["serial", "459LP"], ["group_name", ""], ["created_at", "2015-12-15 14:20:12.704399"], ["updated_at", "2015-12-15 14:20:12.704399"]]
+  [1m[35mSQL (208.2ms)[0m  INSERT INTO "images" ("src", "registration_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["src", "08.png"], ["registration_id", 844], ["created_at", "2015-12-15 14:20:12.801333"], ["updated_at", "2015-12-15 14:20:12.801333"]]
+  [1m[36mRegistration Load (0.3ms)[0m  [1mSELECT  "registrations".* FROM "registrations" WHERE "registrations"."id" = $1 LIMIT 1[0m  [["id", 844]]
+  [1m[35m (40.8ms)[0m  COMMIT
+  Rendered register_mail/register_success_mail.en.html.erb within layouts/mailer (0.7ms)
+
+RegisterMail#register_success_mail: processed outbound mail in 1290.9ms
+Completed 500 Internal Server Error in 1892ms (ActiveRecord: 342.1ms)
+
+RuntimeError (Bad wkhtmltopdf's path: /usr/local/rvm/gems/ruby-2.2.1/bin/wkhtmltopdf):
+  app/mailers/register_mail.rb:10:in `new'
+  app/mailers/register_mail.rb:10:in `register_success_mail'
+  app/controllers/registrations_controller.rb:15:in `block in create'
+  app/controllers/registrations_controller.rb:10:in `create'
+
+
+  Rendered /home/marcin/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.1ms)
+  Rendered /home/marcin/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /home/marcin/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/marcin/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.8ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x8d88878 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x8d88710 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x8d7eb34 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started GET "/admin" for 127.0.0.1 at 2015-12-15 15:20:18 +0100
+Processing by Admin::GeneralsController#settings as HTML
+  [1m[36mAdministrator Load (0.4ms)[0m  [1mSELECT  "administrators".* FROM "administrators" WHERE "administrators"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/admin/generals/1/edit
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/generals/1/edit" for 127.0.0.1 at 2015-12-15 15:20:18 +0100
+Processing by Admin::GeneralsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mGeneral Load (0.5ms)[0m  SELECT  "generals".* FROM "generals" WHERE "generals"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mAdministrator Load (0.2ms)[0m  [1mSELECT  "administrators".* FROM "administrators" WHERE "administrators"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mContestArchive Load (0.6ms)[0m  SELECT "contest_archives".* FROM "contest_archives"
+  [1m[36mMarker Load (0.6ms)[0m  [1mSELECT "markers".* FROM "markers"[0m
+  Rendered admin/generals/_form.html.erb (7.6ms)
+  Rendered admin/generals/edit.html.erb within layouts/application (8.5ms)
+  [1m[35mGeneral Load (1.1ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  Rendered layouts/_logout.html.erb (0.1ms)
+  Rendered layouts/_admin_nav.html.erb (0.8ms)
+Completed 200 OK in 598ms (Views: 591.3ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2015-12-15 15:20:19 +0100
+Processing by Admin::GeneralsController#settings as HTML
+  [1m[35mAdministrator Load (0.2ms)[0m  SELECT  "administrators".* FROM "administrators" WHERE "administrators"."id" = $1 LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/admin/generals/1/edit
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/generals/1/edit" for 127.0.0.1 at 2015-12-15 15:20:19 +0100
+Processing by Admin::GeneralsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGeneral Load (0.6ms)[0m  [1mSELECT  "generals".* FROM "generals" WHERE "generals"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mAdministrator Load (0.3ms)[0m  SELECT  "administrators".* FROM "administrators" WHERE "administrators"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mContestArchive Load (0.6ms)[0m  [1mSELECT "contest_archives".* FROM "contest_archives"[0m
+  [1m[35mMarker Load (0.5ms)[0m  SELECT "markers".* FROM "markers"
+  Rendered admin/generals/_form.html.erb (7.9ms)
+  Rendered admin/generals/edit.html.erb within layouts/application (8.8ms)
+  [1m[36mGeneral Load (0.9ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  Rendered layouts/_logout.html.erb (0.1ms)
+  Rendered layouts/_admin_nav.html.erb (1.0ms)
+Completed 200 OK in 636ms (Views: 630.9ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/admin/registrations" for 127.0.0.1 at 2015-12-15 15:20:22 +0100
+Processing by Admin::RegistrationsController#index as HTML
+  [1m[36mAdministrator Load (0.3ms)[0m  [1mSELECT  "administrators".* FROM "administrators" WHERE "administrators"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mContestArchive Load (0.6ms)[0m  SELECT "contest_archives".* FROM "contest_archives"
+  [1m[36mRegistration Load (0.4ms)[0m  [1mSELECT "registrations".* FROM "registrations"[0m
+  Rendered admin/registrations/index.html.erb within layouts/application (7.4ms)
+  [1m[35mGeneral Load (1.2ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  Rendered layouts/_logout.html.erb (0.3ms)
+  Rendered layouts/_admin_nav.html.erb (3.2ms)
+Completed 200 OK in 707ms (Views: 702.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/admin/contest_archives" for 127.0.0.1 at 2015-12-15 15:20:27 +0100
+Processing by Admin::ContestArchivesController#index as HTML
+  [1m[35mAdministrator Load (0.5ms)[0m  SELECT  "administrators".* FROM "administrators" WHERE "administrators"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mContestArchive Load (0.3ms)[0m  [1mSELECT "contest_archives".* FROM "contest_archives"[0m
+  Rendered admin/contest_archives/index.html.erb within layouts/application (3.2ms)
+  [1m[35mGeneral Load (1.2ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  Rendered layouts/_logout.html.erb (0.2ms)
+  Rendered layouts/_admin_nav.html.erb (2.3ms)
+Completed 200 OK in 599ms (Views: 594.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/admin/contest_archives/new" for 127.0.0.1 at 2015-12-15 15:20:29 +0100
+Processing by Admin::ContestArchivesController#new as HTML
+  [1m[35mAdministrator Load (0.6ms)[0m  SELECT  "administrators".* FROM "administrators" WHERE "administrators"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered admin/contest_archives/_form.html.erb (4.9ms)
+  Rendered admin/contest_archives/new.html.erb within layouts/application (13.4ms)
+  [1m[36mGeneral Load (1.2ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  Rendered layouts/_logout.html.erb (0.1ms)
+  Rendered layouts/_admin_nav.html.erb (0.7ms)
+Completed 200 OK in 606ms (Views: 599.5ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/admin/contest_archives" for 127.0.0.1 at 2015-12-15 15:20:36 +0100
+Processing by Admin::ContestArchivesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ru3/XAMipzl90rlSj4/tqmquti9DJNdlhTJcsUgKM08uVIkonQJKMEGdxkgMc6v0a8F3GO1FCA/xAZUAlqwcbw==", "contest_archive"=>{"title"=>"Archiwum", "titlePL"=>"Archiwum"}, "commit"=>"Create Contest archive"}
+  [1m[36mAdministrator Load (0.3ms)[0m  [1mSELECT  "administrators".* FROM "administrators" WHERE "administrators"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (85.5ms)[0m  [1mINSERT INTO "contest_archives" ("title", "titlePL", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Archiwum"], ["titlePL", "Archiwum"], ["created_at", "2015-12-15 14:20:36.340153"], ["updated_at", "2015-12-15 14:20:36.340153"]]
+  [1m[35m (64.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/admin/contest_archives
+Completed 302 Found in 158ms (ActiveRecord: 150.2ms)
+
+
+Started GET "/admin/contest_archives" for 127.0.0.1 at 2015-12-15 15:20:36 +0100
+Processing by Admin::ContestArchivesController#index as HTML
+  [1m[36mAdministrator Load (0.3ms)[0m  [1mSELECT  "administrators".* FROM "administrators" WHERE "administrators"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mContestArchive Load (0.3ms)[0m  SELECT "contest_archives".* FROM "contest_archives"
+  Rendered admin/contest_archives/index.html.erb within layouts/application (2.3ms)
+  [1m[36mGeneral Load (1.1ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  Rendered layouts/_logout.html.erb (0.1ms)
+  Rendered layouts/_admin_nav.html.erb (0.8ms)
+Completed 200 OK in 566ms (Views: 563.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/admin/registrations" for 127.0.0.1 at 2015-12-15 15:20:38 +0100
+Processing by Admin::RegistrationsController#index as HTML
+  [1m[36mAdministrator Load (0.3ms)[0m  [1mSELECT  "administrators".* FROM "administrators" WHERE "administrators"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mContestArchive Load (0.3ms)[0m  SELECT "contest_archives".* FROM "contest_archives"
+  [1m[36mRegistration Load (0.3ms)[0m  [1mSELECT "registrations".* FROM "registrations"[0m
+  Rendered admin/registrations/index.html.erb within layouts/application (4.6ms)
+  [1m[35mGeneral Load (1.1ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  Rendered layouts/_logout.html.erb (0.1ms)
+  Rendered layouts/_admin_nav.html.erb (0.7ms)
+Completed 200 OK in 616ms (Views: 612.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/admin/registrations/archive?utf8=%E2%9C%93&commit=Archiwizuj+Zaznaczone&archive_id=55&selectAll=selectAll&record_ids%5B%5D=844" for 127.0.0.1 at 2015-12-15 15:20:43 +0100
+Processing by Admin::RegistrationsController#archive as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Archiwizuj Zaznaczone", "archive_id"=>"55", "selectAll"=>"selectAll", "record_ids"=>["844"]}
+  [1m[35mAdministrator Load (0.3ms)[0m  SELECT  "administrators".* FROM "administrators" WHERE "administrators"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mContestArchive Load (0.4ms)[0m  [1mSELECT  "contest_archives".* FROM "contest_archives" WHERE "contest_archives"."id" = $1 LIMIT 1[0m  [["id", 55]]
+  [1m[35mRegistration Load (0.5ms)[0m  SELECT  "registrations".* FROM "registrations" WHERE "registrations"."id" = $1 LIMIT 1  [["id", 844]]
+  [1m[36mImage Load (12.8ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."registration_id" = $1[0m  [["registration_id", 844]]
+  [1m[35mRegistration Load (0.7ms)[0m  SELECT  "registrations".* FROM "registrations" WHERE "registrations"."id" = $1 LIMIT 1  [["id", 844]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (94.2ms)[0m  INSERT INTO "contest_records" ("contest_archive_id", "title", "serial", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["contest_archive_id", 55], ["title", "marcin kusior"], ["serial", "459LP"], ["created_at", "2015-12-15 14:20:43.736292"], ["updated_at", "2015-12-15 14:20:43.736292"]]
+  [1m[36mSQL (77.0ms)[0m  [1mINSERT INTO "public_images" ("src", "contest_record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["src", "08.png"], ["contest_record_id", 2024], ["created_at", "2015-12-15 14:20:43.834198"], ["updated_at", "2015-12-15 14:20:43.834198"]]
+  [1m[35m (19.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/admin/contest_archives
+Completed 302 Found in 681ms (ActiveRecord: 211.9ms)
+
+
+Started GET "/admin/contest_archives" for 127.0.0.1 at 2015-12-15 15:20:43 +0100
+Processing by Admin::ContestArchivesController#index as HTML
+  [1m[36mAdministrator Load (0.4ms)[0m  [1mSELECT  "administrators".* FROM "administrators" WHERE "administrators"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mContestArchive Load (0.8ms)[0m  SELECT "contest_archives".* FROM "contest_archives"
+  Rendered admin/contest_archives/index.html.erb within layouts/application (1.9ms)
+  [1m[36mGeneral Load (1.1ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  Rendered layouts/_logout.html.erb (0.2ms)
+  Rendered layouts/_admin_nav.html.erb (1.8ms)
+Completed 200 OK in 564ms (Views: 559.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/admin/contest_archives" for 127.0.0.1 at 2015-12-15 15:20:46 +0100
+Processing by Admin::ContestArchivesController#index as HTML
+  [1m[36mAdministrator Load (0.3ms)[0m  [1mSELECT  "administrators".* FROM "administrators" WHERE "administrators"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mContestArchive Load (0.3ms)[0m  SELECT "contest_archives".* FROM "contest_archives"
+  Rendered admin/contest_archives/index.html.erb within layouts/application (1.4ms)
+  [1m[36mGeneral Load (1.1ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  Rendered layouts/_logout.html.erb (0.1ms)
+  Rendered layouts/_admin_nav.html.erb (1.0ms)
+Completed 200 OK in 596ms (Views: 592.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/admin/contest_archives/55/edit" for 127.0.0.1 at 2015-12-15 15:20:49 +0100
+Processing by Admin::ContestArchivesController#edit as HTML
+  Parameters: {"id"=>"55"}
+  [1m[36mContestArchive Load (0.4ms)[0m  [1mSELECT  "contest_archives".* FROM "contest_archives" WHERE "contest_archives"."id" = $1 LIMIT 1[0m  [["id", 55]]
+  [1m[35mAdministrator Load (0.2ms)[0m  SELECT  "administrators".* FROM "administrators" WHERE "administrators"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered admin/contest_archives/_form.html.erb (9.3ms)
+  [1m[36mContestRecord Load (0.9ms)[0m  [1mSELECT "contest_records".* FROM "contest_records" WHERE "contest_records"."contest_archive_id" = $1  ORDER BY "contest_records"."id" ASC[0m  [["contest_archive_id", 55]]
+  [1m[35mPublicImage Load (0.5ms)[0m  SELECT  "public_images".* FROM "public_images" WHERE "public_images"."contest_record_id" = $1  ORDER BY "public_images"."id" ASC LIMIT 1  [["contest_record_id", 2024]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "public_images".* FROM "public_images" WHERE "public_images"."contest_record_id" = $1  ORDER BY "public_images"."id" ASC LIMIT 1[0m  [["contest_record_id", 2024]]
+  Rendered admin/contest_archives/edit.html.erb within layouts/application (20.2ms)
+  [1m[35mGeneral Load (1.2ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  Rendered layouts/_logout.html.erb (0.1ms)
+  Rendered layouts/_admin_nav.html.erb (0.8ms)
+Completed 200 OK in 594ms (Views: 587.9ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/admin/contest_records/2024/edit" for 127.0.0.1 at 2015-12-15 15:20:51 +0100
+Processing by Admin::ContestRecordsController#edit as HTML
+  Parameters: {"id"=>"2024"}
+  [1m[35mContestRecord Load (0.5ms)[0m  SELECT  "contest_records".* FROM "contest_records" WHERE "contest_records"."id" = $1 LIMIT 1  [["id", 2024]]
+  [1m[36mAdministrator Load (0.3ms)[0m  [1mSELECT  "administrators".* FROM "administrators" WHERE "administrators"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mContestArchive Load (0.4ms)[0m  SELECT "contest_archives".* FROM "contest_archives"
+  [1m[36mPublicImage Load (0.6ms)[0m  [1mSELECT "public_images".* FROM "public_images" WHERE "public_images"."contest_record_id" = $1[0m  [["contest_record_id", 2024]]
+  Rendered admin/contest_records/_form.html.erb (28.2ms)
+  Rendered admin/contest_records/edit.html.erb within layouts/application (36.4ms)
+  [1m[35mGeneral Load (1.1ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  Rendered layouts/_logout.html.erb (0.1ms)
+  Rendered layouts/_admin_nav.html.erb (0.8ms)
+Completed 200 OK in 604ms (Views: 597.1ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/admin/contest_archives/55/edit" for 127.0.0.1 at 2015-12-15 15:20:54 +0100
+Processing by Admin::ContestArchivesController#edit as HTML
+  Parameters: {"id"=>"55"}
+  [1m[35mContestArchive Load (0.4ms)[0m  SELECT  "contest_archives".* FROM "contest_archives" WHERE "contest_archives"."id" = $1 LIMIT 1  [["id", 55]]
+  [1m[36mAdministrator Load (0.3ms)[0m  [1mSELECT  "administrators".* FROM "administrators" WHERE "administrators"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered admin/contest_archives/_form.html.erb (2.3ms)
+  [1m[35mContestRecord Load (0.4ms)[0m  SELECT "contest_records".* FROM "contest_records" WHERE "contest_records"."contest_archive_id" = $1  ORDER BY "contest_records"."id" ASC  [["contest_archive_id", 55]]
+  [1m[36mPublicImage Load (0.4ms)[0m  [1mSELECT  "public_images".* FROM "public_images" WHERE "public_images"."contest_record_id" = $1  ORDER BY "public_images"."id" ASC LIMIT 1[0m  [["contest_record_id", 2024]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "public_images".* FROM "public_images" WHERE "public_images"."contest_record_id" = $1  ORDER BY "public_images"."id" ASC LIMIT 1  [["contest_record_id", 2024]]
+  Rendered admin/contest_archives/edit.html.erb within layouts/application (9.5ms)
+  [1m[36mGeneral Load (1.2ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  Rendered layouts/_logout.html.erb (0.2ms)
+  Rendered layouts/_admin_nav.html.erb (2.0ms)
+Completed 200 OK in 603ms (Views: 597.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/admin/contest_archives" for 127.0.0.1 at 2015-12-15 15:20:59 +0100
+Processing by Admin::ContestArchivesController#index as HTML
+  [1m[36mAdministrator Load (0.5ms)[0m  [1mSELECT  "administrators".* FROM "administrators" WHERE "administrators"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mContestArchive Load (0.6ms)[0m  SELECT "contest_archives".* FROM "contest_archives"
+  Rendered admin/contest_archives/index.html.erb within layouts/application (2.1ms)
+  [1m[36mGeneral Load (0.9ms)[0m  [1mSELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "generals".* FROM "generals"  ORDER BY "generals"."id" ASC LIMIT 1
+  Rendered layouts/_logout.html.erb (0.1ms)
+  Rendered layouts/_admin_nav.html.erb (2.7ms)
+Completed 200 OK in 595ms (Views: 590.9ms | ActiveRecord: 2.0ms)

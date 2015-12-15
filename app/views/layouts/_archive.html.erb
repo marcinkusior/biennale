@@ -1,0 +1,64 @@
+<hr>
+
+<div class="archive" id="archive_select">
+
+<h3 class="blue"><%= t( "archive" ) %></h3>
+
+	<%= render 'layouts/archive_panel'  %>
+
+</div>
+
+<div id="archiveModal" class="modal fade" data-backdrop="false">
+<div class="modal-dialog">
+		<div class="registration row ">
+		<button type="button" class="close" data-dismiss="modal"> <span class = 'xs-gone'> <%=  t( "close" )  %> </span> <span> <%= inline_svg('X.svg') %></span> </button>
+		  <%= render 'layouts/archive_modal' %>
+		</div>
+	</div>
+</div>
+
+<div class="backdrop"></div>
+
+
+
+<script>
+	alldata = [];
+	text = [];
+	var locale = $('body').data('locale');
+
+	$('.archive button').click(function(){
+		var val = $(this).prev().val();
+		 alldata.forEach( function(data){ if(data.id.toString() === val){ text = locale === 'en' ?  data.body : data.bodyPL }});
+		$('#recordBody').children().fadeOut(900, function(){ $(this).remove() });
+		var newElem = $('#recordBody').append(" <div class='absoluteRecord' > "+ text +" </div> " )
+		$('#recordBody').css('height', text.length/2 - 100 +"px")
+	})
+
+	$('.record_select').change(function(){
+		var val = $(this).val();
+		$('.record_select').val(val);
+	})
+
+	$('.archive_select').change(function(){ 
+		var val = $(this).val();
+		$('.archive_select').val(val);
+		var record_select = $('.record_select')
+		$(record_select).empty()
+			return 	$.ajax( {
+		  type: "GET",
+		  url: "/archives/fetch_records",
+		  dataType: "JSON",
+		  data: { 'archive_id': val },
+		  success: function(data) {	
+		  	data.forEach( function(data){
+		  		var title = locale === 'en' ? data.title : data.	titlePL;
+		  		record_select.append("<option value="+ data.id +" >"+ title+" </option>")
+		  	} )
+		    alldata = data;
+	    } // end success:
+		  }
+		);
+	})
+
+	backdrop( $('.openArchive') );
+</script>

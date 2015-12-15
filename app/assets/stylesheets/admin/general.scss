@@ -1,0 +1,41 @@
+// Place all the styles related to the Admin::General controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.Admin{
+	padding-bottom: 100px;
+	.logout{ display: none;}
+	.nav-logout{margin-left: 50px}
+	.field{text-align: left;}
+	.actions{ text-align: left}
+	#notice{margin: 2px;}
+	.row{text-align: left;}
+}
+
+.actions + a, .row + a{position: relative; top: 10px;}
+
+
+.generals{
+	.field{
+		label{ margin-right: 20px }
+		input[type='checkbox']{position: absolute; right: 6px}
+		position: relative;
+		text-align: left;
+		float: left;
+		margin: 15px 20px;
+		border-bottom: 1px solid lightgrey;
+		width: 180px;
+		height: 20px
+	}
+}
+
+
+.admin-nav{
+	a{font-weight: 600}
+	.logo{
+		line-height: 20px;
+		padding: 15px 0;
+		font-weight: 900;
+	}
+}
+

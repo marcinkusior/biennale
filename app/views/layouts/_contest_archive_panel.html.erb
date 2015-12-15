@@ -1,0 +1,17 @@
+<div class="row">
+	<% title = I18n.locale == :en ? 'title' : 'titlePL' %>
+	<%= select_tag( :archive_select, options_from_collection_for_select(@archives, "id", title), :class=>"archive_select loadArchive", :prompt=> t( "biennial" )  )  %>
+
+		<%= button_tag( t( "show" ), :class => "openArchive" ) %>
+
+		
+	 <div class="recordBody flexbox">
+	 	<img class="blank" style="order: 2">
+	 	<img class="blank" style="order: 2">
+	 	<img class="blank" style="order: 2">
+	 	<img class="blank" style="order: 2">
+	 </div>
+
+	 <button id="more-images"> <%= t( "more" ) %> </button>
+
+</div>

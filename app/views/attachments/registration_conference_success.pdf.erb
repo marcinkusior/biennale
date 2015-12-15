@@ -1,0 +1,211 @@
+ <!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>title</title>
+  
+  <style>
+    .header{color: #35abdd; font-weight: bold; font-size: 16px; font-family:Arial }
+    .up{ font-size: 12px; vertical-align: top }
+    #id_2_1{    float: left;
+    border: none;
+    margin: 0px 0px 0px 0px;
+    padding: 0px;
+    border: none;
+    width: 213px;
+    overflow: hidden;
+    color: #35abdd;
+    font: 12px 'Arial';
+    color: #0096ff;
+    line-height: 15px;
+    letter-spacing: 0;
+  }
+
+  .form-container{
+        float: left;
+    border: none;
+    margin: 4px 0px 0px 0px;
+    padding: 0px;
+    border: none;
+    width: 535px;
+    overflow: visible;
+    position: relative;
+    left: 33%;
+    bottom: 50px;
+  }
+
+  table{
+    width: 100%;
+    position: relative;
+    font: 11px 'Arial';
+    color: #89847f;
+    border-spacing: 0px;
+    display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: grey;
+
+
+  }
+
+    td{
+      padding: 0px;
+      margin: 0px;
+      width: 50%;
+      vertical-align: middle;
+
+      padding: 4px;
+    }
+
+    .input{
+      font: 14px 'Arial';
+      color: black;
+      border-collapse: separate;
+      border: 1px solid lightgrey;
+      height: 21px;
+      padding-left: 8px
+    }
+
+    .headrow{padding: 9px 0 6px 5px; font-size: 12px}
+
+    .text{    
+      font: 10x 'Arial';
+      color: #89847f;
+      line-height: 20px;
+      padding-left: 3px;
+      margin-top: 30px;
+      margin-bottom: 0px;
+      text-align: left;
+    
+    }
+
+    p.text{font-size: 13px;}
+    .kreska{
+      margin-top: 80px;
+      width: 300px;
+      height: 1px;
+      background: grey;
+    }
+
+    .signature{
+          /*text-align: right;*/
+    /*padding-right: 528px;*/
+    padding-top: 0;
+    position: relative;
+    margin-bottom: 0px;
+        font: 12px 'Arial';
+    color: #89847f;
+    line-height: 14px;
+        display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    }
+  </style>
+
+ </head>
+ <body>
+    
+  <div class="container">
+    
+    <div class="row">
+
+      <div class="header">
+          <p>4<span class = "up" >th</span> International Biennial <br>
+        of Interior Design INAW 2016 <br>
+        7-13.3.2016 Cracow
+      </p>
+    
+    </div>
+
+    </div> <!-- end row -->
+    <div class="row">
+
+    <div id="id_2_1">
+      <p class="p0 ft2">The Jan Matejko Academy <br>
+      of Fine Arts in Cracow <br>
+      Faculty of Interior Design</p> <br>
+    </div>
+
+  <div class="form-container">
+    <table>
+      <tbody>
+        <tr>
+          <td class="headrow">FIRST NAME</td>
+          <td class="headrow">LAST NAME</td>
+        </tr>
+        <tr >
+            <td class="input"> <%= @registration.first_name %> </td>
+            <td class="input"> <%= @registration.last_name %></td>
+        </tr>
+
+        <tr>
+          <td class="headrow">TELEPHONE</td>
+          <td class="headrow">E-MAIL</td>
+        </tr>
+
+        <tr >
+            <td class="input"> <%= @registration.telephone %> </td>
+            <td class="input"> <%= @registration.email %></td>
+        </tr>
+        <tr>
+          <td class="headrow" colspan="2">STREET ADDRESS</td>
+        </tr>
+
+          <tr >
+            <td class="input" colspan="2"> <%= @registration.street %> </td>
+        </tr>
+
+        <tr>
+          <td class="headrow">CITY + ZIP CODE</td>
+          <td class="headrow">COUNTRY</td>
+        </tr>
+
+        <tr >
+            <td class="input"> <%= @registration.city %> <%= @registration.zip_code %> </td>
+            <td class="input"> <%= @registration.country %></td>
+        </tr>
+
+        <tr>
+          <td class="headrow" colspan="2">UNIVERSITY</td>
+        </tr>
+
+        <tr >
+            <td class="input" colspan="2"> <%= @registration.university %></td>
+        </tr>
+
+        <tr>
+          <td class="headrow" colspan="2">SUBJECT OF LECTURE OR PRESENTATION</td>
+        </tr>
+
+        <tr >
+            <td class="input" colspan="2"> <%= @registration.subject %> </td>
+        </tr>
+
+
+      </tbody>
+    </table>
+    
+    <p class="text">
+      In reply to the Self/ie - Design it Conference announcement I submit Application Letter. <br> I declare that I read and understand the conditions of Conference and its attachments. <br> I accept them. <br>
+      I also declare that I agree to allow Organiser to use my work in conference publications, especially: <br>
+
+       - in conference publication, <br>
+       - presenting paper in the official website of the Conference, <br>
+       - in after Conference publication <br>
+    </p>
+
+    <div class="kreska"></div>
+
+    <p class="signature">SIGNATURE</p>
+
+  </div>
+
+  </div> <!-- end container -->
+</div>
+
+ </body>
+</html>
+
+

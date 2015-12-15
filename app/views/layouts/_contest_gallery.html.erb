@@ -1,0 +1,117 @@
+<div class="container">
+<div class="row contest_gallery">
+	<h3><%= t( "gallery" ) %></h3>
+
+	<div class="gallery-wrapper" data-ids="<%= @gallery_archive_ids.shuffle %>">
+		<div class="gallery-item blank"></div>
+		<div class="gallery-item blank"></div>
+			</div>
+	<button id="more-gallery-images"> <%= t( "more" ) %> </button>
+</div>
+
+<div id="galleryModal" class="modal fade" data-backdrop="false">
+	<div class="modal-dialog">
+		<div class="registration row ">
+						<button type="button" class="close" data-dismiss="modal"> <span> <%= t( "close" ) %> </span><span> <%= inline_svg('X.svg') %></span>
+						</button>
+						<div class="vote">
+							<% if unique_ip(request.remote_ip) && check_settings('voting_on') %>
+							<button type="button" > <div class="plus"> <span> +</span> </div> <span> <%= t( "vote!" ) %> </span>
+							</button>
+							<% end %>
+							<div class="vote-number">
+								<%= '210' %>
+							</div>
+						</div>
+			<div class="modal-content">
+		  <div class="single_gallery" data-ip="<%= request.remote_ip %>">
+  		</div>
+	  </div>
+  </div>
+</div>
+</div>
+
+</div> <!-- end container -->
+<%= render 'layouts/gallery_results' if check_settings('results_on') %>
+
+
+<script>
+	contest_gallery();
+
+	$('.vote button').click(function(){
+		var gallery = $('.single_gallery');
+		var id = gallery.attr('data-current-id');
+		var button = $(this);
+		var counter = button.next();
+
+		var ip = gallery.data('ip')
+		$.ajax( {
+		  type: "POST",
+		  url: "/votes/create",
+		  dataType: "JSON",
+		  data: { 'contest_record_id': id, 'ip_address': ip },
+		  success: function(data) {	
+		  	console.log(data);
+		  	button.css('top', '-40px');
+		  	counter.css('top', '-40px');
+		  	var votes = parseInt(button.next().html()) + 1;
+		  	counter.html( votes.toString() )
+	    } // end success:
+	  })
+	})
+
+
+
+	$('#more-gallery-images').click(function(){
+		var moreImages = $(this);
+		var gallery = $('.gallery-wrapper');
+		var data = gallery.data('ids');
+		var n = gallery.children().length - 2 == 0 ? 9 : 3;
+		data = data.slice( gallery.children().length - 2, gallery.children().length - 2 + n );
+
+		$.ajax( {
+			  type: "GET",
+			  url: "/galleries/fetch_records",
+			  dataType: "JSON",
+			  data: { 'ids': data },
+			  success: function(data) {	
+			  	console.log(data);
+			  	data.forEach(function(object){
+			  		gallery.append("<div class='gallery-item'> <div class='serial' data-votes='"+ object[2] +"' data-toggle='modal' data-target='#galleryModal'> <p> "+ object[1] +" </p> </div> <img class='gallery-image' style='background-image: url("+ object[0].src.gallery.url +")' data-id='"+ object[0].contest_record_id +"' ></div>")
+			  	})
+			  	galleryImageEvents();
+			  	if(gallery.children().length -2 == gallery.data('ids').length){ moreImages.css('display', 'none') }
+		    } // end success:
+		  })
+	})
+
+	$('#more-gallery-images').trigger('click');
+
+	function galleryImageEvents(){
+
+		$('.serial').click(function(){
+			var val = $(this).next().data('id');
+			var votes = $(this).data('votes')
+			var gallery = $('.single_gallery');
+			gallery.attr('data-current-id',val );
+				$.ajax( {
+				  type: "GET",
+				  url: "/galleries/fetch_record",
+				  dataType: "JSON",
+				  data: { 'record_id': val, 'locale': $('body').data('locale') },
+				  success: function(data) {	
+				  	gallery.empty();
+				  	$('.vote-number').html( votes);
+				  	data[1].forEach( function(object){
+				  		gallery.append("<img class='one-image' src= '"+ object.src.big.url +"'>");
+				  	})
+			    } // end success:
+			  }
+			);
+		})
+
+			backdrop( $('.serial') );
+	}
+
+
+</script>

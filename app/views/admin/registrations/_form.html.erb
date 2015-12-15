@@ -1,0 +1,72 @@
+
+<%= form_for([:admin, @registration]) do |f| %>
+
+  <div class="field">
+  <%= f.label :serial, 'Serial:' %>
+   <%= @registration.serial %>
+  </div>
+
+  <div class="field half">
+      <%= f.label :first_name %> <br>
+    <%= f.text_field :first_name %>
+    </div>
+  <div class="field half">
+      <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+    </div>
+  <div class="field half">
+      <%= f.label :telephone %><br>
+    <%= f.text_field :telephone %>
+    </div>
+    <div class="field half">
+      <%= f.label :group_name %><br>
+    <%= f.text_field :group_name %>
+    </div>
+  <div class="field">
+      <%= f.label :street %><br>
+    <%= f.text_field :street %>
+    </div>
+  <div class="field quarter">
+      <%= f.label :city %><br>
+    <%= f.text_field :city %>
+    </div>
+  <div class="field quarter">
+      <%= f.label :zip_code %><br>
+    <%= f.text_field :zip_code %>
+    </div>
+  <div class="field half">
+      <%= f.label :country %><br>
+    <%= f.text_field :country %>
+    </div>
+  <div class="field">
+      <%= f.label :university %><br>
+    <%= f.text_field :university %>
+    </div>
+  <div class="field half">
+      <%= f.label :supervising_professor %><br>
+    <%= f.text_field :supervising_professor %>
+    </div>
+  <div class="field half">
+      <%= f.label :email %><br>
+    <%= f.text_field :email %>
+    </div>
+  <div class="field terms_of_service">
+      <%= f.check_box :terms_of_service %><br>
+      <%= f.label :terms_of_service %>
+    </div>
+
+  <div class="field">
+          <%= f.fields_for :images do |ff| %>
+            <div class="col-md-4 col-xs-12 col">
+            <div class="upload">
+              <%= ff.file_field :src %>
+              </div>
+            </div>
+          <% end %>
+  </div>
+  <br><br>
+
+  <div class="actions">
+    <%= f.submit :value => "register" %>
+  </div>
+<% end %>

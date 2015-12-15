@@ -1,0 +1,12 @@
+<div class="row">
+	<%= link_to button_tag(  t('register') , :class => "register-button pink-button button", data: {toggle: "modal", target: "#myModal"} ), new_registration_path %>
+</div>
+
+<div id="myModal" class="modal fade">
+	<div class="modal-dialog">
+		<div class="registration row ">
+			<button type="button" class="close" data-dismiss="modal"> <span> <%=  t( "close" )  %> </span> <span> <%= inline_svg('X.svg') %></span> </button>
+			  <%= render 'layouts/registration_form' %>
+		</div>
+	</div>
+</div>

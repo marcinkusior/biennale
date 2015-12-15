@@ -1,0 +1,9 @@
+
+  <%= form_for([:admin, @newsaddresse]) do |f| %>
+  <div class="ghost"> <%= t('subscribetonews') %> </div>
+    <div class="field">
+      <%= f.text_field :email, :placeholder => t('youremail')%>
+       <%= f.submit t('subscribe') %>
+      </div>
+
+  <% end %>

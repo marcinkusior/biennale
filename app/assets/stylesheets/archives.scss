@@ -1,0 +1,267 @@
+// Place all the styles related to the archives controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+@keyframes fade{
+	0%{ opacity: 0; bottom: 20px }
+	100%{ opacity: 1; bottom: 0; }
+}
+
+.archive-all, .archive-one{
+	transition: 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+	position: absolute;
+}
+
+.contest_gallery{
+	#more-gallery-images{ 
+		width: 100% !important;
+		margin: 30px 0 100px;
+		padding-top: 24px;
+		padding-bottom: 24px;
+		background: black;
+		color: white;
+		text-transform: uppercase;
+		letter-spacing: 4px;
+		border: 2px solid black;
+		font-size: 10px;
+		border-radius: 3px;
+		transition: 0.3s;
+
+		&:hover{
+			background: #BDCCD4;
+			border: 2px solid #BDCCD4;
+			color: black;	
+		}
+	}
+}
+
+.single_gallery{
+	p{max-width: 670px; margin-left: auto; margin-right: auto}
+}
+
+.archive-one{
+	opacity: 0; 
+	z-index: -10; 
+	left: 0; 
+	right: 0; 
+	padding-top: 40px; 
+	p{ text-align: left; max-width: 670px; margin: 0 auto; font-size: 12px; line-height: 18px;}
+}
+.one-image:first-of-type{margin-top: 20px}
+.one-image{width: 100%; height: auto; max-width: 670px; margin: 10px auto }
+
+.archive{
+
+	.row{margin: 0}
+
+	margin: 0 0 100px;
+	text-align: center;
+
+	select{
+		line-height: 50px;
+	}
+
+	h3{margin-bottom: 60px;}
+
+	select{
+		width: 100%;
+		border: 1.5px solid  #BDCCD4;
+		color: #B3B3B3;
+		letter-spacing: 1px;
+		padding: 13px 8px;
+		background: white;
+		max-width: 400px;
+		margin: 0 10px;
+		option{color: #4D4D4D}
+}
+
+select:nth-child(2){ max-width: 120px }
+
+select:focus{outline: 0}
+
+	button{transition: 0.3s}
+
+	button{
+		background: black;
+		color: white;
+		text-transform: uppercase;
+		letter-spacing: 4px;
+		border: 2px solid black;
+		font-size: 10px;
+		padding: 17px 0 17px 3px;
+		margin-left: 10px;
+		width: 112px;
+		border-radius: 3px;
+		
+		&:hover{
+			background: #BDCCD4;
+			border: 2px solid #BDCCD4;
+			color: black;	
+		}
+	}
+
+	button#more-images{width: 100% !important; margin-left: 0; padding-top: 24px; display: none; padding-bottom: 24px; margin-bottom: 100px}
+}
+
+#archiveModal, #galleryModal, .single_gallery{background: #F9FBFB }
+#archiveModal .archive_select{ margin-top: 0 }
+
+.Conference{
+	.recordBody{ margin: 100px 0  200px; overflow: hidden; }
+	.archive{
+		.modal-content{ width: 670px; overflow: hidden; }
+	}
+
+	@media(max-width: 992px){ .archive .modal-content{ width: 670px; overflow: hidden; margin: 0 auto } }
+}
+
+.recordBody{ margin: 100px 0  200px; overflow: visible; }
+
+.archive-image{
+	position: relative;
+	width: 210px;
+	height: 135px;
+	background-size: cover;
+	margin: 0px 0 20px;
+	background-position: center;
+	animation-name: fade;
+	animation-duration: 1s;
+	animation-timing-function: cubic-bezier(.27,0,.175,1);
+	animation-fill-mode: forwards;
+	order: -1;
+	-webkit-order: -1;
+	&:hover{ cursor: pointer; filter: opacity(60%); }
+	opacity: 0;
+}
+
+.absoluteGallery{ position: absolute; }
+
+.flexbox{
+	display: flex;
+	// justify-content: space-between;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.blank{ width: 210px; height: 0.2px; order: 2; -webkit-order: 2 }
+
+.col{padding: 0}
+
+.absoluteRecord{
+	position: absolute;
+	p{margin: 0; font-size: 15px; line-height: 24px;}
+}
+
+.fading{
+	// position: relative;
+	animation-name: fade;
+	animation-duration: 1s;
+	animation-timing-function: cubic-bezier(.27,0,.175,1);
+}
+
+.mockupButton{ 
+	z-index: -1;
+	position: absolute;
+	right: 0;
+	top: 0;
+  width: 100px;
+  height: 35px;
+  opacity: 0;
+  background: white;
+  &:hover{ opacity: 0.5; cursor: pointer }
+}
+
+.Conference{
+	@media(max-width: 767px){
+		// .close{right: 0 !important}
+		.archive .modal-dialog{max-width: 560px; margin: 20px auto}
+		select{max-width: 400px; width: 400px; margin: 10px 0}
+		select:nth-child(2){max-width: 400px; width: 400px}
+		.openArchive{width: 400px; margin: 10px auto }
+		.archive .modal-content{width: 570px;}
+	}
+
+		@media(max-width: 639px){
+		// .close{right: 0 !important}
+		.archive .modal-dialog{max-width: 280px; margin: 20px auto}
+		select{max-width: 280px; width: 280px; margin: 10px auto; display: block}
+		select:nth-child(2){max-width: 280px; width: 280px}
+		.openArchive{width: 280px; margin: 10px auto; display: block;  }
+		.archive .modal-content{width: 280px;}
+		.recordBody{margin: 40px 0 80px	}
+	}
+}
+
+.Contest{
+	.close{right: 0 !important; z-index: 10; transition: 1.5s cubic-bezier(0.77, 0, 0.175, 1);}
+
+		@media(max-width: 768px){
+			.archive button.openArchive{ width: 100%; margin-left: 0}
+			.archive .archiveModal .close{right: 0}
+			select{ width: 100%; max-width: 100% !important; margin: 0 0 20px }
+		}
+
+	#archiveModal, #galleryModal{
+
+		.modal-dialog{margin-left: auto; margin-right: auto}
+		.row{margin: 0}
+
+		.container-fluid{padding: 0}
+
+		@media(max-width: 940px){
+			.recordBody{ margin: 100px 0  50px; overflow: visible; }
+		}
+
+
+
+		@media(min-width: 280px){
+			.modal-dialog, .recordBody{max-width: 280px;}
+			.archive-image{margin-left: 0;}
+		}
+
+		@media(max-width: 480px){
+		 .archive-image{ margin-left: auto !important; margin-right: auto !important}
+
+		}
+
+			@media(min-width: 480px){
+			.modal-dialog, .recordBody{max-width: 460px;}
+			.archive-image:nth-child(2n +1){margin-left: 0;}
+			.archive-image:not(:nth-child(2n +1)){margin-left: 20px;}
+		}
+
+
+
+		@media(min-width: 640px){
+			.modal-dialog, .recordBody{max-width: 440px;}
+			.archive-image:nth-child(2n +1){margin-left: 0;}
+			.archive-image:not(:nth-child(2n +1)){margin-left: 20px;}
+		}
+
+		@media(min-width: 768px){
+			.modal-dialog, .recordBody{max-width: 670px;}
+			.archive-image:nth-child(3n + 1){margin-left: 0;}
+			.archive-image:not(:nth-child(3n + 1)){margin-left: 20px;}
+
+		}
+
+		@media(min-width: 940px){
+			.modal-dialog, .recordBody{max-width: 900px;}
+			.archive-image:nth-child(4n + 1){margin-left: 0;}
+			.archive-image:not(:nth-child(4n + 1)){margin-left: 20px;}
+		}
+
+		@media(min-width: 1130px){
+			.modal-dialog, .recordBody{max-width: 1130px;}
+			
+			.archive-image:nth-child(5n + 1){margin-left: 0;}
+			.archive-image:not(:nth-child(5n + 1)){margin-left: 20px;}
+		}
+	}
+}
+
+select{
+	option{ }
+}

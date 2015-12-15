@@ -1,0 +1,10 @@
+// Place all the styles related to the Admin::Vote controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.Admin.results{
+	width: 100%;
+	margin: 0;
+}
+
+.panel-button{ input, select{float: right; margin-left: 20px}}

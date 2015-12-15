@@ -1,0 +1,1 @@
+json.extract! @registration, :first_Name, :last_Name, :telephone, :street, :city, :zip_code, :country, :University, :supervisor_proffesor, :email, :terms_of_servie, :created_at, :updated_at

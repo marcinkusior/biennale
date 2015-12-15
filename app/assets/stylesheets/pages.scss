@@ -1,0 +1,198 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+@media(min-width: 976px){
+	.container{max-width: 1130px;}
+}
+
+// .poster{ transition: 1.2s cubic-bezier(0.77, 0, 0.175, 1) }
+
+header{
+	// border-bottom: 1px solid #F8E70F;
+	border-top: 0;
+}
+
+// .container{width: 950px !important}
+
+a{
+	transition: 0.3s;
+}
+
+//MAIN NAV
+
+.main-nav{
+	position: relative;
+	.logo{
+	 line-height: 100px;
+		img{width: 60px; height: 52px;}
+	 }
+
+	 ul:not(.localization-menu){
+
+		li a{
+			padding: 0 15px;
+			color: black;
+			&:hover{
+				color: #B0BCC1;
+				background: transparent;
+			}
+			&:focus{background-color: transparent; border: 0}
+		}
+	}
+
+	.localization-menu{
+		line-height: 100px;
+		font-weight: 600;
+		letter-spacing: 2px;
+		li:first-child{padding: 0 15px}
+		li{
+			// color: #34ABDD;
+			a{
+				padding: 0 15px;
+				// color: #34ABDD
+
+			 }
+			a:hover{color: black; background: transparent;}
+		}
+	}
+
+	.close{display: none;}
+}
+
+.row{text-align: center;}
+
+// POSTER
+.poster{
+	background: #F4E500;
+}
+
+
+
+.banner{
+		margin-top:50px;
+		margin-bottom: 100px;
+	img{
+		width: 100%;
+		height: auto;
+	}
+}
+
+
+h3{ text-align: center; }
+
+
+
+
+// PARTNERS
+hr{ border-top: 1px solid #d7e0e5; margin: 0 }
+
+.partners-parent{
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	justify-content: center;
+	margin: 100px 0 60px;
+	// align-content: center;
+
+	.partner{
+		text-align: center;
+
+		img{
+			margin-bottom: 40px;
+			height: auto;
+		}
+	}
+}
+
+//CONTACT
+
+.Contact{
+
+	.paragraph{
+		overflow: hidden;
+		div{
+			width: 50%;
+			float: left;
+		}
+	}
+
+	.newsletter-form{position: relative;}
+
+	.ghost{
+		color: #4d4d4d;
+	 	position: relative;
+	 	left: 48px;
+	 	bottom: 10px;
+	 	text-align: left;
+	}
+	.contact-flex{
+		
+		h3{width: 100%}
+		width: 100% !important;
+	  display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+// BUTTONS
+
+ .pink-button{
+	text-transform: uppercase;
+	color: white;
+	background: #ff4c69;
+	padding: 28px 100px 22px;
+	letter-spacing: 8px;
+	border-radius: 5px;
+	border: 0;
+	font-weight: 500;
+	transition: all 0.3s linear;
+	border-bottom: 0px solid black;
+	margin-top: 40px;
+	margin-bottom: 150px;
+	}
+
+.pink-button:hover{
+	background: #FF3356;
+}
+
+.pink-button:focus{
+	outline: 0
+}
+
+
+//FOOTER
+
+.footer{
+ background-color:  #F9FBFB;
+	p{ margin: 0px; }
+}
+
+.float-left{
+	margin-left: 15px;
+	float: left;
+	text-align: left;
+}
+
+.float-right{
+	float: right;
+	text-align: right;
+	margin-right: 15px;
+}
+
+.no-list{ 
+	list-style: none;
+	
+	li{float: left;}
+ }
+
+ .relative{ position: relative; }
+
+ .Contest{
+ 	.archive{
+ 		select{ max-width: 210px; option{color: #4D4D4D}}
+ 		button{width: 210px;}
+ 	}
+ }

@@ -1,0 +1,291 @@
+
+---
+markers:
+  columns:
+  - id
+  - lat
+  - lng
+  - desc
+  - created_at
+  - updated_at
+  records: 
+  - - '1'
+    - '50.060463'
+    - '19.923726'
+    - Muzeum
+    - '2015-11-06 14:50:53.332929'
+    - '2015-11-06 14:50:53.332929'
+
+---
+pages:
+  columns:
+  - id
+  - title
+  - order
+  - created_at
+  - updated_at
+  - slug
+  - titlePL
+  records: 
+  - - '1'
+    - Biennial
+    - '1'
+    - '2015-11-04 15:27:10.988737'
+    - '2015-11-06 14:42:03.52245'
+    - Biennial
+    - Biennale
+  - - '2'
+    - Conference
+    - '2'
+    - '2015-11-04 15:27:53.39448'
+    - '2015-11-05 22:24:44.113089'
+    - Conference
+    - Konferencja
+  - - '3'
+    - Contest
+    - '3'
+    - '2015-11-04 15:28:02.743208'
+    - '2015-11-05 22:24:34.784913'
+    - Contest
+    - Konkurs
+  - - '4'
+    - Contact
+    - '4'
+    - '2015-11-04 15:28:11.951173'
+    - '2015-11-08 11:52:47.303467'
+    - Contact
+    - Kontakt
+
+---
+registrations:
+  columns:
+  - id
+  - first_name
+  - last_name
+  - telephone
+  - street
+  - city
+  - zip_code
+  - country
+  - university
+  - supervising_professor
+  - email
+  - terms_of_service
+  - created_at
+  - updated_at
+  - serial
+  - group_name
+  records: 
+  - - '112'
+    - ssdsd
+    - hjddhd
+    - '85585'
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - fkfkff@pq.pl
+    - true
+    - '2015-11-13 15:05:44.724986'
+    - '2015-11-13 15:05:44.724986'
+    - ''
+    - ffkff@pq.pl
+  - - '113'
+    - ssdd
+    - dkddk
+    - '30330'
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - dkdkdd@op.pl
+    - true
+    - '2015-11-13 15:21:44.639617'
+    - '2015-11-13 15:21:44.639617'
+    - CS853
+    - ''
+
+---
+images:
+  columns:
+  - id
+  - src
+  - registration_id
+  - created_at
+  - updated_at
+  records: 
+  - - '332'
+    - 14.png
+    - '112'
+    - '2015-11-13 15:05:44.729525'
+    - '2015-11-13 15:05:44.729525'
+  - - '333'
+    - 20.png
+    - '112'
+    - '2015-11-13 15:05:44.758941'
+    - '2015-11-13 15:05:44.758941'
+  - - '334'
+    - 19.png
+    - '112'
+    - '2015-11-13 15:05:44.766628'
+    - '2015-11-13 15:05:44.766628'
+  - - '335'
+    - 15.png
+    - '113'
+    - '2015-11-13 15:21:44.643863'
+    - '2015-11-13 15:21:44.643863'
+  - - '336'
+    - 18.png
+    - '113'
+    - '2015-11-13 15:21:44.658113'
+    - '2015-11-13 15:21:44.658113'
+  - - '337'
+    - 18.png
+    - '113'
+    - '2015-11-13 15:21:44.665202'
+    - '2015-11-13 15:21:44.665202'
+
+---
+newsaddresses:
+  columns:
+  - id
+  - email
+  - created_at
+  - updated_at
+  records: 
+  - - '21'
+    - kusior.marcin@gmail.com
+    - '2015-11-13 12:41:07.226199'
+    - '2015-11-13 12:41:07.226199'
+
+---
+paragraphs:
+  columns:
+  - id
+  - body
+  - page_id
+  - created_at
+  - updated_at
+  - bodyPL
+  records: 
+  - - '1'
+    - "<h3 style=\"text-align: center;\">BIENNIAL</h3>\r\n\r\n<p style=\"text-align:
+      justify;\">Sed ornare dolor metus, vitae cursus dui vulputate sed. Vivamus imperdiet
+      arcu sit&nbsp;amet hendrerit congue. Sed ac ante a nisl congue efficitur. Ut
+      et euismod purus. Ut&nbsp;in risus felis. Ut vehicula ac ex at aliquet.&nbsp;Proin
+      ac libero id velit&nbsp;finibus porttitor.&nbsp;Morbi sodales, nisi non <a href=\"http://localhost:3000/en/Biennial\">eleifend
+      mattis</a>, lectus turpis gravida tortor, et luctus erat&nbsp;eros eget est.
+      Vivamus in finibus&nbsp;leo. Mauris nec orci erat.<a href=\"http://localhost:3000/admin/paragraphs/1\">
+      Proin libero orci,</a> ornare&nbsp;finibus urna interdum, mattis dapibus purus.<br
+      />\r\nPraesent orci diam, pulvinar ut laoreet vel, sodales at risus. Sed in
+      diam vitae quam&nbsp;porta imperdiet. Praesent eleifend ullamcorper tellus,
+      id facilisis risus lacinia&nbsp;vel.&nbsp;Pellentesquealiquet ac nisl quis rhoncus.
+      Cras maximus, est ultrices bibendum&nbsp;congue, lectus purus pretium sapien,
+      ac aliquet neque mauris sed felis. Fusce ac&nbsp;dignissim libero. Pellentesque
+      ultrices tempus lobortis. In aliquet vestibulum tortor,&nbsp;at accumsan sem
+      pretium sed.</p>\r\n"
+    - '1'
+    - '2015-11-05 11:32:08.461721'
+    - '2015-11-12 20:24:11.809774'
+    - "<h3 style=\"text-align: center;\">BIENNALE</h3>\r\n\r\n<p style=\"text-align:
+      justify;\">Sed ornare dolor metus, vitae cursus dui vulputate sed. Vivamus imperdiet
+      arcu sit&nbsp;amet hendrerit congue. Sed ac ante a nisl congue efficitur. Ut
+      et euismod purus. Ut&nbsp;in risus felis. Ut vehicula ac ex at aliquet.&nbsp;Proin
+      ac libero id velit&nbsp;finibus porttitor.&nbsp;Morbi sodales, nisi non eleifend
+      mattis, lectus turpis gravida tortor, et luctus erat&nbsp;eros eget est. Vivamus
+      in finibus&nbsp;leo. Mauris nec orci erat.<a href=\"http://localhost:3000/admin/paragraphs/1\">
+      Proin libero orci,</a> ornare&nbsp;finibus urna interdum, mattis dapibus purus.</p>\r\n"
+  - - '2'
+    - "<h3 style=\"text-align: center;\">SUBJECT</h3>\r\n\r\n<h2 style=\"text-align:
+      center;\"> <span> Self/ie - design it </span> </h2>\r\n\r\n<h3 style=\"text-align:
+      center;\">RULES</h3>\r\n\r\n<p style=\"text-align: justify;\">Presentation or
+      lecture can be submitted by independent researcher at art, design or&nbsp;polytechnic
+      university or designer with significant design or/and academic achievements.
+      Subject of the presentation or lecture must be sent before 31/12/2015 to the&nbsp;organisers
+      at e-mail&nbsp;nfo@inaw.pl&nbsp;&nbsp;In the case of great interest the organizer
+      reserves the right to choose from submitted topics. Reviewed publication will
+      include&nbsp;the topics presented at the conference also translated into English.
+      Authors interested in participation in the conference and publication must pay
+      100 euro. More details with the acceptation of the topic of presentation or
+      lecture will be sent to the&nbsp;authors by e-mail. The organizer provides accommodation
+      to the authors of works&nbsp;presented&nbsp;at&nbsp;the&nbsp;conference.</p>\r\n"
+    - '2'
+    - '2015-11-12 20:09:59.793714'
+    - '2015-11-13 13:08:24.187033'
+    - "<h3 style=\"text-align: center;\">SUBJECT</h3>\r\n\r\n<h2 style=\"text-align:
+      center;\">Self/ie - design it</h2>\r\n\r\n<h3 style=\"text-align: center;\">RULES</h3>\r\n\r\n<p
+      style=\"text-align: justify;\">Presentation or lecture can be submitted by independent
+      researcher at art, design or&nbsp;polytechnic university or designer with significant
+      design or/and academic achievements. Subject of the presentation or lecture
+      must be sent before 31/12/2015 to the&nbsp;organisers at e-mail&nbsp;nfo@inaw.pl&nbsp;&nbsp;In
+      the case of great interest the organizer reserves the right to choose from submitted
+      topics. Reviewed publication will include&nbsp;the topics presented at the conference
+      also translated into English. Authors interested in participation in the conference
+      and publication must pay 100 euro. More details with the acceptation of the
+      topic of presentation or lecture will be sent to the&nbsp;authors by e-mail.
+      The organizer provides accommodation to the authors of works&nbsp;presented&nbsp;at&nbsp;the&nbsp;conference.</p>\r\n"
+
+---
+events:
+  columns:
+  - id
+  - timedate
+  - description
+  - order
+  - created_at
+  - updated_at
+  - timedatePL
+  - descPL
+  records: 
+  - - '1'
+    - "<p>18.00 Bunkier</p>\r\n"
+    - "<p>laoaoa</p>\r\n"
+    - '1'
+    - '2015-11-05 22:41:23.850571'
+    - '2015-11-05 22:41:23.850571'
+    - "<p>18.00 BunkierPL</p>\r\n"
+    - "<p>PLPL</p>\r\n"
+  - - '2'
+    - "<p>12.00, Gdzies tam</p>\r\n"
+    - "<p>lorem upsium dolor sit amet</p>\r\n"
+    - '2'
+    - '2015-11-12 12:20:14.485242'
+    - '2015-11-12 12:20:14.485242'
+    - ''
+    - ''
+
+---
+generals:
+  columns:
+  - id
+  - registration_conference
+  - registration_contest
+  - voting_contest
+  - created_at
+  - updated_at
+  records: 
+  - - '2'
+    - true
+    - true
+    - false
+    - '2015-11-06 14:19:20.868226'
+    - '2015-11-12 14:40:23.448903'
+
+---
+administrators:
+  columns:
+  - id
+  - email
+  - password_digest
+  - created_at
+  - updated_at
+  records: 
+  - - '2'
+    - kusior.marcin@gmail.com
+    - "$2a$10$IT/rlczoDDvFIn0zeHIf5.SfbvYlop4JVmrV3qmzi5fEZkXAy2q7e"
+    - '2015-11-08 17:13:41.784145'
+    - '2015-11-08 17:19:30.141018'

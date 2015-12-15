@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Timedate:</strong>
+  <%= @event.timedate %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @event.description %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @event.order %>
+</p>
+
+<%= link_to 'Edit', edit_admin_event_path(@event) %> |
+<%= link_to 'Back', admin_events_path %>

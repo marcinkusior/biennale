@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Contest record:</strong>
+  <%= @public_image.contest_record %>
+</p>
+
+<p>
+  <strong>Src:</strong>
+  <%= @public_image.src %>
+</p>
+
+<%= link_to 'Edit', edit_admin_public_image_path(@public_image) %> |
+<%= link_to 'Back', admin_public_images_path %>

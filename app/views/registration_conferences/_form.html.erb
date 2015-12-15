@@ -1,0 +1,88 @@
+<div class="registration row">
+
+<div class="col-md-16 col-md-offset-4">
+<%= form_for( @registration) do |f| %>
+  <% if @registration.errors.any? %>
+    <div id="error_explanation">
+
+      <ul>
+      <% @registration.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+   <%= f.hidden_field :serial, :value => create_serial %>
+
+  <div class="field half">
+      <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+    </div>
+  <div class="field half">
+      <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+    </div>
+  <div class="field half">
+      <%= f.label :telephone %>
+    <%= f.text_field :telephone %>
+    </div>
+ <div class="field half">
+      <%= f.label :email %>
+    <%= f.text_field :email %>
+    </div>
+  <div class="field full">
+      <%= f.label :street %>
+    <%= f.text_field :street %>
+    </div>
+  <div class="field quarter">
+      <%= f.label :city %>
+    <%= f.text_field :city %>
+    </div>
+  <div class="field quarter">
+      <%= f.label :zip_code %>
+    <%= f.text_field :zip_code %>
+    </div>
+  <div class="field half">
+      <%= f.label :country %>
+    <%= f.text_field :country %>
+    </div>
+  <div class="field full">
+      <%= f.label :university %>
+    <%= f.text_field :university %>
+    </div>
+  <div class="field full">
+      <%= f.label :subject %>
+    <%= f.text_field :subject %>
+    </div>
+ 
+
+  <div class="field full terms_of_service">
+      <span class = "static_form">
+        <%= f.check_box :terms_of_service %>
+          <p> <%= t( "agreeto" )  %>  <%= link_to t( "terms_of_use" ), "/#{I18n.locale}/Terms", :target => "_blank" %>
+          </p>
+      </span>
+    </div>
+
+  <div class="field full">
+    <p class="ghost"> <%= t( "text_file" ) %> </p>
+  </div>
+
+  <div class="field full">
+
+  <div class="field full">
+      <div class=" static_form">
+      <%= f.file_field :attachment %>
+      </div>
+  </div>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit :value => t( "register" ), data: {disable_with: "..."}, :class => "pink-button full" %>
+  </div>
+<% end %>
+</div> <!-- end col -->
+</div><!-- end row -->
+

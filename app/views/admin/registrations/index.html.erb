@@ -1,0 +1,49 @@
+  <% warning = "W przypadku wysokiej liczby rekordów (>50) proces archiwizacji może zająć do kilku minut. Czy chcesz kontynuować?" %>
+
+  <h1>Rejestracje Konkurs</h1>
+
+  <%= form_tag("/admin/registrations/archive", method: "get", class: 'panel-button') do %>
+   <%= submit_tag("Archiwizuj Zaznaczone", data: { confirm: warning, disable_with: 'Proszę czekać' } ) %>
+   <%= select_tag(:archive_id,  options_from_collection_for_select(ContestArchive.all, "id", "title")) %>
+   
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Imię</th>
+        <th>Nazwisko</th>
+        <th>Email</th>
+        <th>Numer id</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th> <%= check_box_tag( :selectAll, :selectAll ) %> </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @registrations.each do |registration| %>
+        <tr>
+          <td><%= registration.first_name %></td>
+          <td><%= registration.last_name %></td>
+          <td><%= registration.email %></td>
+          <td><%= registration.serial %></td>
+          <td><%= link_to 'Show', [:admin, registration] %></td>
+          <td><%= link_to 'Edit', edit_admin_registration_path(registration) %></td>
+          <td><%= link_to 'Destroy', [:admin, registration], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td> <%= check_box_tag("record_ids[]", registration.id ) %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% end %>
+
+  <br>
+
+  <%= link_to 'New Registration', new_admin_registration_path %>
+
+<script>
+  $('#selectAll').click(function(){
+    var prop = ( $(this).prop('checked') )
+      $('input').prop('checked', prop)
+  })
+</script>

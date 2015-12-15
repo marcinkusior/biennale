@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @contest_record.title %>
+</p>
+
+<p>
+  <strong>Titlepl:</strong>
+  <%= @contest_record.titlePL %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @contest_record.body %>
+</p>
+
+<p>
+  <strong>Bodypl:</strong>
+  <%= @contest_record.bodyPL %>
+</p>
+
+<%= link_to 'Edit', edit_admin_contest_record_path(@contest_record) %> |
+<%= link_to 'Back', admin_contest_records_path %>

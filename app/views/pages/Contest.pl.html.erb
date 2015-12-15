@@ -1,0 +1,13 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-20 col-xs-offset-2 col-md-14 col-md-offset-5">
+			<%= raw( @page.bodyPL ) if @page.present? %>
+		</div>
+	</div> <!-- end row -->
+</div> <!-- end container -->
+
+<%= render 'layouts/contest_gallery' if check_settings('voting_contest') && !@gallery_archive.blank? %>
+
+<%= render 'layouts/registration' if check_settings('registration_contest') %>
+
+<%= render 'layouts/contest_archive' if check_settings('contest_archive_on') %>

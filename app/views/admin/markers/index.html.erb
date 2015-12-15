@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Znaczniki</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Szerokość</th>
+      <th>Długość</th>
+      <th>Opis</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @markers.each do |marker| %>
+      <tr>
+        <td><%= marker.lat %></td>
+        <td><%= marker.lng %></td>
+        <td><%= marker.desc %></td>
+        <td><%= link_to 'Edit', edit_admin_marker_path(marker) %></td>
+        <td><%= link_to 'Destroy', [:admin, marker], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nowy Znacznik', new_admin_marker_path %>

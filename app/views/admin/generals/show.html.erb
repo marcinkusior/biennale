@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Registration conference:</strong>
+  <%= @general.registration_conference %>
+</p>
+
+<p>
+  <strong>Registration:</strong>
+  <%= @general.registration_contest %>
+</p>
+
+<p>
+  <strong>Voting:</strong>
+  <%= @general.voting_contest %>
+</p>
+
+<%= link_to 'Edit', edit_admin_general_path(@general) %> |
+<%= link_to 'Back', admin_generals_path %>

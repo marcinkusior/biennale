@@ -1,0 +1,33 @@
+<h1>Rekordy</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Titlepl</th>
+      <th>Body</th>
+      <th>Bodypl</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contest_records.each do |contest_record| %>
+      <tr>
+        <td><%= contest_record.title %></td>
+        <td><%= contest_record.titlePL %></td>
+        <td><%= contest_record.body %></td>
+        <td><%= contest_record.bodyPL %></td>
+        <td><%= link_to 'Show', [:admin, contest_record] %></td>
+        <td><%= link_to 'Edit', edit_admin_contest_record_path(contest_record) %></td>
+        <td><%= link_to 'Destroy', [:admin, contest_record], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contest record', new_admin_contest_record_path %>

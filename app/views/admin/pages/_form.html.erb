@@ -1,0 +1,66 @@
+<%= form_for([:admin, @page]) do |f| %>
+  <% if @page.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@page.errors.count, "error") %> prohibited this page from being saved:</h2>
+
+      <ul>
+      <% @page.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+
+    <div class="col-xs-5">
+
+      <div class="field">
+          <%= f.label :title, 'Tytuł' %><br>
+        <%= f.text_field :title %>
+        </div>
+
+        <div class="field">
+          <%= f.label :titlePL, 'Tytuł - PL' %><br>
+        <%= f.text_field :titlePL %>
+        </div>
+
+          <div class="field">
+          <%= f.label :slug %> <span>(nie zmieniać bez potrzeby)</span> <br>
+        <%= f.text_field :slug %>
+        </div>
+        
+      <div class="field">
+        <%= f.label :order, 'Kolejność' %><br>
+        <%= f.number_field :order %>
+      </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+
+    <%= link_to 'Back', admin_pages_path %>
+
+    </div> <!-- end col- 8 -->
+
+    <div class="col-xs-19">
+      <div class="field">
+        <%= f.label :body, "Treść" %><br>
+        <%= f.bootsy_area :body, class: 'form-control', rows: 12 %>
+      </div>
+
+      <div class="field">
+        <%= f.label :bodyPL, "Treść -  PL" %><br>
+        <%= f.bootsy_area :bodyPL, class: 'form-control', rows: 12 %>
+      </div>
+
+    </div> <!-- end col-16 -->
+
+  </div>
+
+
+<% end %>
+
+<script>
+
+</script>

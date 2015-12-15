@@ -1,0 +1,1 @@
+json.extract! @general, :registration_conference, :registration, :voting, :created_at, :updated_at

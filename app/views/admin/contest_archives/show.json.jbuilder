@@ -1,0 +1,1 @@
+json.extract! @contest_archive, :title, :titlePL, :created_at, :updated_at

@@ -1,0 +1,26 @@
+function contest_gallery(){
+
+	$('.open_modal').click(function(event){
+		event.preventDefault();
+
+		$('.single_gallery').empty()
+
+		$.ajax({
+		  type: "GET",
+		  url: "/registrations/fetch_images",
+		  dataType: "JSON",
+		  data: { 'registration_id': $(this).data('id') },
+		  success: function(data) {
+		    console.log(data);
+		    data.forEach(function(image){
+		    	$('.single_gallery').append(" <img src="+ image.src.url +" /> ")
+		    })
+		    
+		  }
+		});
+	})
+
+
+	
+
+}

@@ -1,0 +1,10 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-20 col-xs-offset-2 col-md-14 col-md-offset-5">
+			<%= raw( @page.bodyPL ) if @page.present? %>
+		</div>
+	</div> <!-- end row -->
+</div> <!-- end container -->
+<%= render 'layouts/registration_conference' if check_settings('registration_conference') %>
+
+<%= render 'layouts/archive' if check_settings('archive_on') %>

@@ -1,0 +1,38 @@
+<%= form_for([:admin, @paragraph]) do |f| %>
+  <% if @paragraph.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@paragraph.errors.count, "error") %> prohibited this paragraph from being saved:</h2>
+
+      <ul>
+      <% @paragraph.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+      <%= f.label :body %><br>
+    <%= f.text_area :body%>
+    </div>
+
+  <div class="field">
+    <%= f.label :bodyPL %><br>
+    <%= f.text_area :bodyPL %>
+  </div>
+
+  <div class="field">
+    <%= f.label :page_id %><br>
+
+    <% if params[:page_id].present? %>
+      <%= f.select :page_id, Page.all.map{|page| [page.title, page.id] }, :selected => params[:page_id] %>
+    <% else %>
+      <%= f.select :page_id, Page.all.map{|page| [page.title, page.id] } %>
+    <% end %>
+    </div>
+    <br>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+

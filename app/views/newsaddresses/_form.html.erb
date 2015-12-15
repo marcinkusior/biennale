@@ -1,0 +1,11 @@
+
+  <%= form_for( @newsaddresse) do |f| %>
+  	
+  	
+    <div class="field">
+	    <div class="ghost"> <%= t('subscribetonews') %> </div>
+      <%= f.text_field :email, :placeholder => t('youremail')%>
+       <%= f.submit t('subscribe') %>
+      </div>
+
+  <% end %>

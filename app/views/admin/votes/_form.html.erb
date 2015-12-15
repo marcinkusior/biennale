@@ -1,0 +1,31 @@
+<%= form_for([:admin, @vote]) do |f| %>
+  <% if @vote.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@vote.errors.count, "error") %> prohibited this vote from being saved:</h2>
+
+      <ul>
+      <% @vote.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+
+    <%= f.label :contest_record_id %><br>
+    <% if params[:contest_record_id].present? %>
+      <%= f.select :contest_record_id, ContestRecord.all.map{|archive| [archive.title, archive.id] }, :selected => params[:contest_record_id] %>
+    <% else %>
+      <%= f.select :contest_record_id, ContestRecord.all.map{|archive| [archive.title, archive.id] } %>
+    <% end %>
+    </div>
+  <div class="field">
+      <%= f.label :ip_address %><br>
+    <%= f.text_field :ip_address %>
+    </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

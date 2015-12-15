@@ -1,0 +1,36 @@
+<hr>
+<div class="container">
+<div class="results-wrapper">
+	<h3 class="blue"> <%= t( "results" ) %> </h3>
+
+	<div class="row">
+			<table class=" results">
+				<%  @results.each do |record|  %>
+					<tr class="result-row">
+						<td> <div class="result-serial"> <%= record[0] %> </div> </td>
+						<td class="line-wrapper">
+							<div class="result-line" style='width: <%= record[1] %>%;'></div>
+							<div class="result-value" style='left: <%= record[1] %>%; '> <p> <%= record[2] %></p> </div>
+							</td>
+						<td><div class="result-serial"> <%= record[1].to_s %>% </div></td>
+					</tr>
+				<% end %>
+			</table>
+	</div>
+
+</div>
+</div> <!-- end container -->
+
+<script>
+	(function(){
+
+		$('.line-wrapper').hover(
+				function(){
+					$(this).find('.result-value').css('opacity', '1')
+				}, function(){
+					$(this).find('.result-value').css('opacity', '0')
+				}
+			);
+
+	})()
+</script>
