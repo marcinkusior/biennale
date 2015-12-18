@@ -24,8 +24,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'yaml_db'
-gem 'devise'
-gem "passenger"
 gem 'rails-admin-scaffold'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
@@ -43,6 +41,7 @@ gem 'therubyracer'
 gem "jquery-scrollto-rails"
 gem 'jquery-easing-rails'
 gem 'bootsy'
+gem 'seed_dump'
 
 gem 'routing-filter'
 gem 'dotenv-rails', :groups => [:development, :test]  
@@ -51,14 +50,6 @@ gem 'bcrypt', '~> 3.1.7'
 
 # gem 'capistrano-rails', group: :development
 gem 'rails_12factor', group: :production
-
-group :development do
-    gem 'capistrano',         require: false
-    gem 'capistrano-rvm',     require: false
-    gem 'capistrano-rails',   require: false
-    gem 'capistrano-bundler', require: false
-    gem 'capistrano3-puma',   require: false
-end
 
 gem 'unicorn'
 
