@@ -53,8 +53,8 @@ $md: 992px;
 		}
 		.float-left, .float-right{ float: none; text-align: center; margin: 0 }
 		.xs-gone{ display: none; }
-		.footer{ padding: 0; 
-			ul{padding: 0; display: inline-block; margin: 0 auto}
+		.footer{
+			ul{padding: 0; display: inline-block; margin: 0 auto;}
 			p{text-align: center;}
 		}
 		.no-list li{ margin: 0 10px; }
@@ -193,8 +193,8 @@ body{
 	.postersm, .posterlg{display: none;}
 
 	.registration .close{
-		top: 20px;
-		right: 20px;
+		top: 30px;
+		right: 30px;
 	}
 
 	.mockupButton{top: 20px}
@@ -237,4 +237,11 @@ body{
 
 @media(max-width: 992px) and (min-width: 640px){
 	.modal-content{ margin: 0 0 0 30px;	 }
+}
+
+@media(max-width: 690px){
+	.archive-one{
+
+		padding-top: 60px;
+	}
 }

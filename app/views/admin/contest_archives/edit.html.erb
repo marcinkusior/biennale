@@ -19,7 +19,7 @@
 		  </thead>
 
 		  <tbody>
-		    <% @contest_archive.contest_records.order(:id).each do |record| %>
+		    <% @contest_archive.contest_records.order(id: :desc).each do |record| %>
 		      <tr>
 		      	<td><%= image_tag record.public_images.first.src.url(:thumb) if record.public_images.first %></td>
 		        <td><%= record.title %></td>

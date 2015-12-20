@@ -8,7 +8,7 @@
 			<p>Akademia Sztuk Pięknych im. Jana Matejki w Krakowie</p>
 		</div>
 		<div class="float-right">
-		<span class = "md-gone"><br></span>
+		<span class = "md-gone"><p></p></span>
 			<ul class="no-list">
 			<% Page.order(:order).where.not(order: nil).each do |page| %>
 				<li> <%= link_to I18n.locale == :en ? page.title : page.titlePL , "/#{I18n.locale}/#{page.slug}" %> </li>

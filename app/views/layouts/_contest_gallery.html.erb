@@ -12,7 +12,7 @@
 <div id="galleryModal" class="modal fade" data-backdrop="false">
 	<div class="modal-dialog">
 		<div class="registration row ">
-						<button type="button" class="close" data-dismiss="modal"> <span> <%= t( "close" ) %> </span><span> <%= inline_svg('X.svg') %></span>
+						<button type="button" class="close" data-dismiss="modal"> <span class="xs-gone"> <%= t( "close" ) %> </span><span> <%= inline_svg('X.svg') %></span>
 						</button>
 						<div class="vote">
 							<% if unique_ip(request.remote_ip) && check_settings('voting_on') %>
@@ -29,6 +29,7 @@
 	  </div>
   </div>
 </div>
+	<%= render 'layouts/simple_footer' %>
 </div>
 
 </div> <!-- end container -->

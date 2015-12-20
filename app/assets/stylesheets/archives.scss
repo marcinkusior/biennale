@@ -9,9 +9,8 @@
 	100%{ opacity: 1; bottom: 0; }
 }
 
-.archive-all, .archive-one{
+ .archive-one{
 	transition: 1.2s cubic-bezier(0.77, 0, 0.175, 1);
-	position: absolute;
 }
 
 .contest_gallery{
@@ -23,9 +22,9 @@
 		background: black;
 		color: white;
 		text-transform: uppercase;
-		letter-spacing: 4px;
+		letter-spacing: 0.3em;
 		border: 2px solid black;
-		font-size: 10px;
+		font-size: 14px;
 		border-radius: 3px;
 		transition: 0.3s;
 
@@ -53,10 +52,9 @@
 .one-image{width: 100%; height: auto; max-width: 670px; margin: 10px auto }
 
 .archive{
-
 	.row{margin: 0}
 
-	margin: 0 0 100px;
+	margin: 0 0 25px;
 	text-align: center;
 
 	select{
@@ -67,7 +65,7 @@
 
 	select{
 		width: 100%;
-		border: 1.5px solid  #BDCCD4;
+		// border: 1.5px solid  #BDCCD4;
 		color: #B3B3B3;
 		letter-spacing: 1px;
 		padding: 13px 8px;
@@ -81,14 +79,14 @@ select:nth-child(2){ max-width: 120px }
 
 select:focus{outline: 0}
 
-	button{transition: 0.3s}
+	button[type='submit']{transition: 0.3s}
 
 	button{
-		background: black;
-		color: white;
+		background: #BDCCD4;
+		color: black;
 		text-transform: uppercase;
 		letter-spacing: 4px;
-		border: 2px solid black;
+		border: 2px solid #BDCCD4;
 		font-size: 10px;
 		padding: 17px 0 17px 3px;
 		margin-left: 10px;
@@ -96,20 +94,21 @@ select:focus{outline: 0}
 		border-radius: 3px;
 		
 		&:hover{
-			background: #BDCCD4;
-			border: 2px solid #BDCCD4;
-			color: black;	
+			background: black;
+			border: 2px solid black;
+			color: white;	
 		}
 	}
 
-	button#more-images{width: 100% !important; margin-left: 0; padding-top: 24px; display: none; padding-bottom: 24px; margin-bottom: 100px}
+	button#more-images{ opacity:0; background: black; border: 2px solid #BDCCD4; color: white; width: 100% !important; margin-left: 0; padding-top: 24px; display: none; padding-bottom: 24px}
+	button#more-images:hover{ background: #BDCCD4; border: 2px solid #BDCCD4; color: black;}
 }
 
 #archiveModal, #galleryModal, .single_gallery{background: #F9FBFB }
 #archiveModal .archive_select{ margin-top: 0 }
 
 .Conference{
-	.recordBody{ margin: 100px 0  200px; overflow: hidden; }
+	.recordBody{ margin: 100px 0 0; overflow: hidden; }
 	.archive{
 		.modal-content{ width: 670px; overflow: hidden; }
 	}
@@ -117,7 +116,7 @@ select:focus{outline: 0}
 	@media(max-width: 992px){ .archive .modal-content{ width: 670px; overflow: hidden; margin: 0 auto } }
 }
 
-.recordBody{ margin: 100px 0  200px; overflow: visible; }
+.recordBody{ margin: 100px 0  50px; overflow: visible; }
 
 .archive-image{
 	position: relative;
@@ -126,6 +125,7 @@ select:focus{outline: 0}
 	background-size: cover;
 	margin: 0px 0 20px;
 	background-position: center;
+	transition: 0.25s;
 	animation-name: fade;
 	animation-duration: 1s;
 	animation-timing-function: cubic-bezier(.27,0,.175,1);
@@ -140,7 +140,6 @@ select:focus{outline: 0}
 
 .flexbox{
 	display: flex;
-	// justify-content: space-between;
 	flex-wrap: wrap;
 	justify-content: space-around;
 }
@@ -151,6 +150,12 @@ select:focus{outline: 0}
 
 .absoluteRecord{
 	position: absolute;
+	top: 100px;
+	p{margin: 0; font-size: 15px; line-height: 24px;}
+}
+
+.hideRecord{
+	opacity: 0;	
 	p{margin: 0; font-size: 15px; line-height: 24px;}
 }
 

@@ -1,7 +1,7 @@
 class ArchivesController < ApplicationController
   def fetch_records
   	id = params['archive_id']
-    records = Archive.find(id).records
+    records = Archive.find(id).records.order(id: :desc)
     respond_to do |format|
       format.json { render json: records } 
     end
@@ -9,7 +9,7 @@ class ArchivesController < ApplicationController
 
   def fetch_contest_records
     id = params['archive_id']
-    records = ContestArchive.find(id).contest_records.limit( params['limit'] ).offset(params['offset'])
+    records = ContestArchive.find(id).contest_records.order(id: :desc).limit( params['limit'] ).offset(params['offset'])
     images = records.map {|record| record.public_images.first  }
     respond_to do |format|
       format.json { render json: images } 

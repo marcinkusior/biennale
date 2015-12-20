@@ -6,13 +6,14 @@
 	margin: 0 0 100px;
 
 	.gallery-wrapper{
-		margin: 50px -25px;
+		margin: 50px -25px 0;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
 }
 
 .blank{
+	margin: 0 25px;
 	width: 343px;
 	height: 210px;
 }
@@ -87,7 +88,7 @@
 		&:hover{opacity: 0.6; cursor: pointer}
 	}
 
-	.blank{ margin: 20px 25px;}
+	.blank{ margin: 0 25px;}
 }
 
 .single_gallery{margin-top: -20px; z-index: 0;}

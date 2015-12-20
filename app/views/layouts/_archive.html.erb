@@ -15,6 +15,9 @@
 		  <%= render 'layouts/archive_modal' %>
 		</div>
 	</div>
+	
+	<%= render 'layouts/simple_footer' %>
+
 </div>
 
 <div class="backdrop"></div>
@@ -29,9 +32,14 @@
 	$('.archive button').click(function(){
 		var val = $(this).prev().val();
 		 alldata.forEach( function(data){ if(data.id.toString() === val){ text = locale === 'en' ?  data.body : data.bodyPL }});
-		$('#recordBody').children().fadeOut(900, function(){ $(this).remove() });
-		var newElem = $('#recordBody').append(" <div class='absoluteRecord' > "+ text +" </div> " )
-		$('#recordBody').css('height', text.length/2 - 100 +"px")
+
+		$('#recordBody').children().fadeOut(900, function(){ 
+			$(this).remove() 
+		});
+		$('.hideRecord').remove();
+
+		$('#recordBody').append(" <div class='absoluteRecord' > "+ text +" </div> " );
+		$('#recordBody').append(" <div class='hideRecord' > "+ text +" </div> " );
 	})
 
 	$('.record_select').change(function(){

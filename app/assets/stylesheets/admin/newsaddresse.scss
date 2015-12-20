@@ -23,11 +23,11 @@
 input[type='text']:focus{outline: 0}
 
 	input[type='submit']{
-		background: black;
-		color: white;
+		background: #BDCCD4;
+		color: black;
 		text-transform: uppercase;
 		letter-spacing: 4px;
-		border: 2px solid black;
+		border: 2px solid #BDCCD4;
 		border-radius: 3px;
 		font-size: 10px;
 		padding: 0 20px;
@@ -35,9 +35,9 @@ input[type='text']:focus{outline: 0}
 		transition: 0.3s;
 
 		&:hover{
-			background: #BDCCD4;
-			border: 2px solid #BDCCD4;
-			color: black;	
+			background: black;
+			border: 2px solid black;
+			color: white;	
 		}
 	}
 }

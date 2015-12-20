@@ -18,7 +18,7 @@
 
 		<ul class="nav navbar-nav navbar-right">
 			<% Page.order(:order).where.not(order: nil).each do |page| %>
-				<li> <%= link_to I18n.locale == :en ? page.title : page.titlePL , "/#{I18n.locale}/#{page.slug}" %> </li>
+				<li class="<%= 'current' if action_name == page.title %>"> <%= link_to I18n.locale == :en ? page.title : page.titlePL , "/#{I18n.locale}/#{page.slug}" %> </li>
 			<% end %>
 		</ul>
 	</div>

@@ -1,19 +1,6 @@
- <div class="archive">
-	 <div class="archive-all">
+<div class="archive">
+	
 
-	<h3 class="blue"><%= t( "archive" ) %></h3>
-
-			<% title = I18n.locale == :en ? 'title' : 'titlePL' %>
-			<%= select_tag( :archive_select, options_from_collection_for_select(@archives, "id", title), :class=>"archive_select", :prompt=> t( "biennial" )  )  %>
-
-				<%= button_tag( t( "show" ), :class => "openArchive loadArchive" ) %>
-
-				<div class="body-container">
-				</div>
-		</div>
-		
-
-		<div class="archive-one"> 
-		</div>
+	<div class="archive-one"> 
 	</div>
 </div>

@@ -13,10 +13,6 @@ function addingCssRules(){
 	return style.sheet;
 })();
 
-
-	console.log(document.styleSheets);
-	console.log(sheet);
-
 	var primaryColor= $('body').data('primary-color');
 	var secondaryColor = $('body').data('secondary-color');
 
@@ -39,7 +35,10 @@ function addingCssRules(){
 	addCSSRule(sheet, ".box", "border: 1px solid " + primaryColor );
 
 	addCSSRule(sheet, ".upload-desc", "background-color: " + primaryColor );
-	
+
+	if( !isSafari ){ 
+		addCSSRule(sheet, ".archive select", "border-color: #BDCCD4;" );
+	}
 
 	function addCSSRule(sheet, selector, rules, index) {
 		if(sheet.insertRule) {

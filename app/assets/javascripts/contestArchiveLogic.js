@@ -16,10 +16,12 @@ function contestArchiveLogic(){
 		var val = $(this).prev().val() ;
   	body.attr('current', val)
   	var more = $('#more-images');
-		more.css('opacity', '0')
+  	more.css('transition', 'ddsdl')
+		more.css('opacity', 0) 
 		more.animate({
-			'opacity': '1'
-		}, 900)
+			opacity: 1
+		}, 500, function(){ more.css( 'transition', '0.3s' ); })
+
 		$.ajax( {
 		  type: "GET",
 		  url: "/archives/fetch_contest_records",
@@ -53,7 +55,6 @@ function contestArchiveLogic(){
 		  dataType: "JSON",
 		  data: { 'archive_id': val, 'limit': 5, 'offset': offset},
 		  success: function(data) {	
-		  	console.log(data);
 		    alldata = data;
 		    data.length < 5 ? moreImg.css('display', 'none') : moreImg.css('display', 'block');
 		    data.forEach( function(object){
@@ -79,7 +80,6 @@ function contestArchiveLogic(){
 
 			one.css({'opacity': '1', 'z-index': '1', 'top':  topOffset});
 			$('.mockupButton').css({'z-index': '11', 'top': topOffset});
-			$('.close').css('top', topOffset);
 			archiveOneFill(val, one);
 		})
 	}

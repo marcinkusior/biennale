@@ -1,6 +1,6 @@
 
   body{
-  	font-family: 'Hind', sans-serif;
+    font-family: 'Hind', sans-serif;
     font-size: 13px;
   }
 
@@ -12,7 +12,7 @@
     padding-bottom: 5px;
   }
  
-	h3{
+  h3{
     font-size: 15px; 
     line-height: 16px;
     margin: 100px 0 25px;
@@ -24,42 +24,43 @@
 
     h6{ font-size: 18px; line-height: 32px; font-family: 'PT Serif'; text-align: left; }
 
-  	.main-nav li a{ font-size: 12.5px; line-height: 100px; letter-spacing: 2px; font-weight: 500 }
+    .main-nav li a{ font-size: 12.5px; line-height: 100px; letter-spacing: 2px; font-weight: 500 }
+    .current a{ color: #B0BCC1 !important}
 
-  	.program{
-  		p {
+    .program{
+      p {
         font-size: 16px;
         line-height: 24px;
 
     };
 
-  		td:first-child p{
-  			font-size: 16px;
-  			font-family: 'Hind', sans-serif;
-  			color: black;
-  			font-weight: 500;
+      td:first-child p{
+        font-size: 16px;
+        font-family: 'Hind', sans-serif;
+        color: black;
+        font-weight: 500;
         letter-spacing: 1px;
-  		}
-  	}
+      }
+    }
 
     .validate_checkbox p{color: #808080}
 
-  	p{
-  		font-family: 'PT Serif', serif;
+    p{
+      font-family: 'PT Serif', serif;
       font-size: 18px;
-  		// color: #34ABDD;
+      // color: #34ABDD;
       line-height: 32px;
       margin: 50px 0 50px;
       text-align: left;
       
       a:hover{ color: black; text-decoration: none;}
 
-  	}
+    }
 
     .blue{
      // color: #34ABDD;
      }
-  	
+    
 
 
     .ghost{
@@ -90,6 +91,8 @@
     letter-spacing: 1px;
     line-height: 13px;
   }
+
+
   
   .row{ margin-top: 100px; }
 
