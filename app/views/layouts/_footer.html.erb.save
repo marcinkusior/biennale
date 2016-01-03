@@ -1,0 +1,39 @@
+<div class="footer ">
+<hr>
+<div class="container">
+	
+	<div class="row">
+		<div class="float-left">
+			<p> <strong>Wydział Architektury Wnętrz </strong> </p>
+			<p>Akademia Sztuk Pięknych im. Jana Matejki w Krakowie</p>
+		</div>
+		<div class="float-right">
+		<span class = "md-gone"><p></p></span>
+		<span class = "md-gone"><p></p></span>
+			<ul class="no-list">
+			<% Page.order(:order).where.not(order: nil).each do |page| %>
+				<li> <%= link_to I18n.locale == :en ? page.title : page.titlePL , "/#{I18n.locale}/#{page.slug}" %> </li>
+			<% end %>
+			<span class="xs-gone md-gone"> <li>|</li> </span>
+			<span class='md-up'> <br> </span>
+			<li> <%= link_to 'Facebook', 'https://www.facebook.com/biennaleinaw' %> </li>
+			</ul>
+		</div>
+	</div> <!-- end row -->
+
+		<div class="row">
+		
+			<div class="float-right">
+				<p><%= link_to 'Terms and Conditions', "/#{I18n.locale}/Terms_Contest" %> <span class = "xs-gone"><br>
+				</span><%= link_to 'Privacy Policy', "/#{I18n.locale}/Privacy" %></p><br>
+			</div>
+
+			<div class="float-left">
+				<p>
+				<%= link_to 'info@inaw.pl', 'mailto:info@inaw.pl' %> <br>
+				 2015 inaw | design by <%= link_to 'meoko', 'http://www.meoko.co ' %> ;)
+				</p>
+			</div>
+		</div>
+</div> <!-- end container -->
+</div> <!-- end footer -->

@@ -1,0 +1,6 @@
+*.log
+*.sql
+*.sqlite
+
+config/app_environment_variables.rb
+config/database.yml

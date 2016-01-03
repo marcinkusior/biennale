@@ -16,7 +16,7 @@ function addingCssRules(){
 	var primaryColor= $('body').data('primary-color');
 	var secondaryColor = $('body').data('secondary-color');
 
-	addCSSRule(sheet, "h2", "border-bottom: 2px solid " + secondaryColor );
+	addCSSRule(sheet, "h2 span", "border-bottom: 2px solid " + secondaryColor );
 	addCSSRule(sheet, ".main-nav", "border-bottom: 1px solid " + secondaryColor );
 
 	addCSSRule(sheet, "h2", "color:" + primaryColor );

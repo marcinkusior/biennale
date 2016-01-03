@@ -34,15 +34,6 @@
 <% if controller.class.name.split("::").first == 'Admin' %>
 	</div>
 <% end %>
-
-	<% if action_name == 'Contact' %>
-		<div id="map" ></div>
-		<div id="markers">
-		<% Marker.all.each do |marker| %>
-			<i data-lat = " <%= marker.lat %> " data-lng = " <%= marker.lng %>" data-desc=" <%= marker.desc %> "></i>
-		<% end %>
-	</div>
-	<% end %>
 	<% if controller.class.name.split("::").first != 'Admin' && action_name != 'inactive' %>
 		<%= render 'layouts/footer' %>
 	<% end %>

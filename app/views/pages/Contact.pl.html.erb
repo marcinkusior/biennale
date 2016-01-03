@@ -1,13 +1,33 @@
 <div class="container">
   <div id="map-info" class="row" data-lat='<%= @center.lat || 50.066383 %>' data-lng='<%= @center.lng || 19.941618 %>'data-zoom="<%= @zoom %>">
-  	<div class="col-xs-20 col-xs-offset-2 col-md-14 col-md-offset-5">
-      <div class="contact-flex">
-    		<%= raw( @page.bodyPL ) if @page.present? %>
+    <div class="col-xs-20 col-xs-offset-2 col-md-14 col-md-offset-5">
+      <div class="paragraph">
+        <div class="contact-flex">
+          <%= raw( @page.bodyPL ) if @page.present? %>
+        </div>
       </div>
+
+      <div class="newsletter-form xs-gone">
+         <%= render 'newsaddresses/form'%>
+      </div>
+
+    </div>
+  </div> <!-- end row -->
+</div> <!-- end container -->
+
+
+<div id="map" ></div>
+<div id="markers">
+<% Marker.all.each do |marker| %>
+  <i data-lat = " <%= marker.lat %> " data-lng = " <%= marker.lng %>" data-desc=" <%= marker.desc %> "></i>
+<% end %>
+</div>
+
+<div class="container xs-appear">
+    <div class="col-xs-20 col-xs-offset-2 col-md-14 col-md-offset-5">
       <div class="newsletter-form">
         <%= render 'newsaddresses/form'%>
       </div>
-  	</div>
   </div> <!-- end row -->
 </div> <!-- end container -->
 
@@ -54,4 +74,3 @@ function addMarker(lat, lng, title){
   })
 }
 </script>
-

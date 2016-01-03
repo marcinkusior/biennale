@@ -54,7 +54,7 @@
 .archive{
 	.row{margin: 0}
 
-	margin: 0 0 25px;
+	margin: 0 0 30px;
 	text-align: center;
 
 	select{
@@ -104,11 +104,11 @@ select:focus{outline: 0}
 	button#more-images:hover{ background: #BDCCD4; border: 2px solid #BDCCD4; color: black;}
 }
 
-#archiveModal, #galleryModal, .single_gallery{background: #F9FBFB }
+#archiveModal {background: #F9FBFB }
 #archiveModal .archive_select{ margin-top: 0 }
 
 .Conference{
-	.recordBody{ margin: 100px 0 0; overflow: hidden; }
+	.recordBody{ margin: 100px 0 0; overflow: hidden; background: #F9FBFB }
 	.archive{
 		.modal-content{ width: 670px; overflow: hidden; }
 	}
@@ -200,13 +200,21 @@ select:focus{outline: 0}
 }
 
 .Contest{
-	.close{right: 0 !important; z-index: 10; transition: 1.5s cubic-bezier(0.77, 0, 0.175, 1);}
+	.close{right: 10px !important; z-index: 10; transition: 1.5s cubic-bezier(0.77, 0, 0.175, 1);}
 
 		@media(max-width: 768px){
 			.archive button.openArchive{ width: 100%; margin-left: 0}
 			.archive .archiveModal .close{right: 0}
 			select{ width: 100%; max-width: 100% !important; margin: 0 0 20px }
 		}
+
+		@media(max-width: 640px){
+			.recordBody{margin: 40px 0 30px	}
+			.archive-image{width: 130px; height: 85px}
+			.blank{width: 130px}
+			.archive button#more-images, button#more-gallery-images{ padding-top: 16px; padding-bottom: 16px; border: 0 }
+		}
+
 
 	#archiveModal, #galleryModal{
 

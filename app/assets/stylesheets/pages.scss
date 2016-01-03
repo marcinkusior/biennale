@@ -113,6 +113,7 @@ hr{ border-top: 1px solid #d7e0e5; margin: 0 }
 		div{
 			width: 50%;
 			float: left;
+			a::after{ content: " "; display: block; clear: both }
 		}
 	}
 
@@ -150,6 +151,7 @@ hr{ border-top: 1px solid #d7e0e5; margin: 0 }
 	border-bottom: 0px solid black;
 	margin-top: 40px;
 	margin-bottom: 150px;
+	min-width: 280px;
 	}
 
 .pink-button:hover{

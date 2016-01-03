@@ -7,14 +7,29 @@
         </div>
       </div>
 
-      <div class="newsletter-form">
-        <%= render 'newsaddresses/form'%>
+      <div class="newsletter-form xs-gone">
+         <%= render 'newsaddresses/form'%>
       </div>
 
   	</div>
   </div> <!-- end row -->
 </div> <!-- end container -->
 
+
+<div id="map" ></div>
+<div id="markers">
+<% Marker.all.each do |marker| %>
+  <i data-lat = " <%= marker.lat %> " data-lng = " <%= marker.lng %>" data-desc=" <%= marker.desc %> "></i>
+<% end %>
+</div>
+
+<div class="container xs-appear">
+    <div class="col-xs-20 col-xs-offset-2 col-md-14 col-md-offset-5">
+      <div class="newsletter-form">
+        <%= render 'newsaddresses/form'%>
+      </div>
+  </div> <!-- end row -->
+</div> <!-- end container -->
 
 <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOmYFHMmQDhd9hvc3MB1eMoOLq3MCw_zA&callback=initMap">

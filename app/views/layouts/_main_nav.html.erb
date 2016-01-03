@@ -20,6 +20,13 @@
 			<% Page.order(:order).where.not(order: nil).each do |page| %>
 				<li class="<%= 'current' if action_name == page.title %>"> <%= link_to I18n.locale == :en ? page.title : page.titlePL , "/#{I18n.locale}/#{page.slug}" %> </li>
 			<% end %>
+			<li class="local-switch" >
+				<% if locale == :en %>
+					<%= link_to "Pl / En", locale: :pl %>
+				<% else %>
+					<%= link_to "Pl / En", locale: :en %>
+				<% end %>
+			</li>
 		</ul>
 	</div>
 

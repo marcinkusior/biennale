@@ -1,0 +1,51 @@
+<header class="main-nav">
+	<div class="container">
+	<div class="navbar-left logo">  <%= link_to image_tag('logo.png'), root_path %> </div>
+
+		
+	<div class="nav-menus">
+		<button type="button" class="menu-toggle" data-dismiss="modal"> <span> <%= inline_svg('X.svg') %></span> </button>
+		<ul class="localization-menu nav navbar-nav navbar-right">
+			<li>|</li>
+
+			<% if locale == :en %>
+				<li> <%= link_to "Pl", locale: :pl %> </li>
+			<% else %>
+				<li> <%= link_to "En", locale: :en %> </li>
+			<% end %>
+			<li><%= link_to 'Fb', 'https://www.facebook.com/biennaleinaw' %></li>
+		</ul>
+
+		<ul class="nav navbar-nav navbar-right">
+			<% Page.order(:order).where.not(order: nil).each do |page| %>
+				<li class="<%= 'current' if action_name == page.title %>"> <%= link_to I18n.locale == :en ? page.title : page.titlePL , "/#{I18n.locale}/#{page.slug}" %> </li>
+			<% end %>
+						<li class="local-switch" >
+				<% if locale == :en %>
+					<%= link_to "Pl / En", locale: :pl %>
+				<% else %>
+					<%= link_to "Pl / En", locale: :en %>
+				<% end %>
+			</
+		</ul>
+	</div>
+
+	<button class="menu-open"><%= inline_svg('menu.svg') %></button>
+		
+	</div> <!-- end container -->
+</header>
+
+
+<script>
+	(function(){
+		$('.menu-toggle').click(function(){
+			$('.nav-menus').toggleClass('slideMenu');
+			$('.content').toggleClass('slide-left');
+		})
+
+		$('.menu-open').click(function(){
+			$('.nav-menus').toggleClass('slideMenu');
+			$('.content').toggleClass('slide-left');
+		})
+	})()
+</script>
