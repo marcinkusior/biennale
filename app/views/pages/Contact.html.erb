@@ -1,9 +1,9 @@
 <div class="container">
   <div id="map-info" class="row" data-lat='<%= @center.lat || 50.066383 %>' data-lng='<%= @center.lng || 19.941618 %>'data-zoom="<%= @zoom %>">
-  	<div class="col-xs-20 col-xs-offset-2 col-md-14 col-md-offset-5">
+    <div class="col-xs-20 col-xs-offset-2 col-md-14 col-md-offset-5">
       <div class="paragraph">
         <div class="contact-flex">
-      		<%= raw( @page.body ) if @page.present? %>
+          <%= raw( @page.body ) if @page.present? %>
         </div>
       </div>
 
@@ -11,7 +11,7 @@
          <%= render 'newsaddresses/form'%>
       </div>
 
-  	</div>
+    </div>
   </div> <!-- end row -->
 </div> <!-- end container -->
 
@@ -19,7 +19,7 @@
 <div id="map" ></div>
 <div id="markers">
 <% Marker.all.each do |marker| %>
-  <i data-lat = " <%= marker.lat %> " data-lng = " <%= marker.lng %>" data-desc=" <%= marker.desc %> "></i>
+  <i data-lat = " <%= marker.lat %> " data-lng = " <%= marker.lng %>" data-desc=" <%= marker.desc %> " data-color="<%= marker.color %>" ></i>
 <% end %>
 </div>
 
@@ -41,7 +41,6 @@ var info = $('#map-info');
 var lat = parseFloat(info.data('lat'));
 var lng = parseFloat( info.data('lng'));
 var zoom = info.data('zoom');
-console.log( lat );
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -56,21 +55,37 @@ function initMap() {
     // disableDefaultUI: true
   });
 
-  console.log( $('#markers').children() );
+  var styles = [
+  {
+    stylers: [
+      { hue: "#00ffe6" },
+      { saturation: -100 }
+    ]
+  }
+];
+
+map.setOptions({styles: styles});
+
   $('#markers').children().each( function(idx, marker){
-    console.log(typeof parseFloat($(marker).data('lat')) )
-    addMarker( parseFloat($(marker).data('lat')), parseFloat( $(marker).data('lng') ), $(marker).data('desc') )
+    addMarker( parseFloat($(marker).data('lat')), parseFloat( $(marker).data('lng') ), $(marker).data('desc'), $(marker).data('color') )
   } )
 }
 
 initMap();
 
 var marker;
-function addMarker(lat, lng, title){
+function addMarker(lat, lng, title, color){
+  var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + color.slice(1),
+    new google.maps.Size(21, 34),
+    new google.maps.Point(0,0),
+    new google.maps.Point(10, 34));
+
+
   marker = new google.maps.Marker({
     position: {lat: lat, lng: lng},
     map: map,
-    title: title
+    title: title,
+    icon: pinImage,
   })
 }
 </script>
