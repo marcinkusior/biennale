@@ -6,7 +6,8 @@ class Admin::PartnersController < ApplicationController
   # GET /admin/partners
   # GET /admin/partners.json
   def index
-    @partners = Partner.all
+    @kinds = { 'media' => 'medialny', 'honor' => 'honorowy', 'normal' => 'zwykły' }
+    @partners = Partner.all.order(id: :desc)
   end
 
   # GET /admin/partners/1
@@ -71,6 +72,6 @@ class Admin::PartnersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def partner_params
-      params.require(:partner).permit(:name, :image)
+      params.require(:partner).permit(:name, :image, :kind)
     end
 end

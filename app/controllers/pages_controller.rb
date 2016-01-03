@@ -4,6 +4,10 @@ class PagesController < ApplicationController
 	before_action :block, :except => :inactive
 
 	def Biennial
+		partners = Partner.all.order(id: :desc)
+		@honor_partners = partners.where(kind: 'honor')
+		@media_partners = partners.where(kind: 'media')
+		@partners = partners.where(kind: 'normal')
 	end
 
 	def Conference
