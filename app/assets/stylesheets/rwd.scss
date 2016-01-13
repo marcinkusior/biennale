@@ -74,6 +74,14 @@ $md: 992px;
 				text-align: center;
 				a{font-size: 10px}
 			}
+			.row:nth-child(2){
+				p,a{font-size: 10px;}
+			}
+		}
+		.simple-footer{
+			.container{padding: 0;}
+			ul{margin-top: 0;}
+			p,a{font-size: 10px}
 		}
 		.no-list li{ margin: 0 6px; }
 		.registration .field{width: 100%; padding: 0 3px 20px;}
@@ -112,6 +120,16 @@ $md: 992px;
 		 }
 
 	#archiveModal .absoluteRecord{ top: 40px }
+
+	ul.nav{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+	}
  }
 
 

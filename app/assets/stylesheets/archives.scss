@@ -110,7 +110,7 @@ select:focus{outline: 0}
 .Conference{
 	.recordBody{ margin: 100px 0 0; overflow: hidden; background: #F9FBFB }
 	.archive{
-		.modal-content{ width: 670px; overflow: hidden; }
+		.modal-content{ width: 670px; overflow: hidden; background: #F9FBFB}
 	}
 
 	@media(max-width: 992px){ .archive .modal-content{ width: 670px; overflow: hidden; margin: 0 auto } }
