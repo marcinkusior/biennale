@@ -69,10 +69,12 @@ Rails.application.routes.draw do
     end
     root 'pages#Biennial'
   end
+  
   get '/inactive' => 'pages#inactive'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
+  get '/instruction' => 'pages#instruction'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
