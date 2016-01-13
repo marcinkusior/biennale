@@ -10,7 +10,7 @@ class RegistrationConference < ActiveRecord::Base
 	validates :country, presence: true
 	validates :university, presence: true
 	validates :telephone, presence: true, format: { with: /[0-9()-+ ]+/, on: :create }
-	validates :attachment, presence: true
+	# validates :attachment, presence: true
 
 	mount_uploader :attachment, AttachmentUploader
 

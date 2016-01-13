@@ -51,8 +51,8 @@ class RegisterMail < ApplicationMailer
 
 	def conference_backup_mail(registration)
 		@registration = registration
-			ext = File.extname( @registration.attachment.path )
-			mail.attachments["#{@registration.first_name}_#{@registration.last_name}.#{ext}"] = File.read( @registration.attachment.path )
+			# ext = File.extname( @registration.attachment.path )
+			# mail.attachments["#{@registration.first_name}_#{@registration.last_name}.#{ext}"] = File.read( @registration.attachment.path )
 
 		mail(
 			to: 'inawbiennale@gmail.com',
