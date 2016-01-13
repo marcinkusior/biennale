@@ -15,6 +15,12 @@
       <%= f.label :image, 'Zmień obraz:' %><br>
     <%= f.file_field :image %>
     </div>
+    
+    <div class="field">
+      <%= f.label :kind, 'Typ:' %><br>
+      <%= f.select :kind, [['Zwykły', 'normal'], ['Honorowy', 'honor'], ['Medialny', 'media']] %>
+    </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

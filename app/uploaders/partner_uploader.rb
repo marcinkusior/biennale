@@ -32,7 +32,7 @@ class PartnerUploader < CarrierWave::Uploader::Base
   # end
 
   version :thumb do
-    process :resize_to_fit => [95, 100]
+    process :resize_to_fit => [240, 100]
   end
 
   # Create different versions of your uploaded files:
