@@ -121,15 +121,6 @@ $md: 992px;
 
 	#archiveModal .absoluteRecord{ top: 40px }
 
-	ul.nav{
-    height: 100vh;
-    width: 100vw;
-    position: absolute;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-	}
  }
 
 
@@ -144,6 +135,18 @@ $md: 992px;
 .backdrop.slide-left{opacity: 1;}
 
 @media(max-width: 768px){
+
+ul.nav{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+}
+
 body{
 
 		.logo{display: inline-block;}
@@ -246,6 +249,7 @@ body{
 }
 
 @media(max-width: 768px){
+
 	.postermd{
 		display: block;
 		max-height: 100vh;
