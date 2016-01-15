@@ -30,7 +30,6 @@
 <% end %>
 <div class="content url" data-url="<%= request.env['PATH_INFO'] %>" > 
 		<%= yield %>
-	
 <% if controller.class.name.split("::").first == 'Admin' %>
 	</div>
 <% end %>

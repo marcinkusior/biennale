@@ -52,10 +52,12 @@
 .one-image{width: 100%; height: auto; max-width: 670px; margin: 10px auto }
 
 .archive{
-	.row{margin: 0}
-
-	margin: 0 0 30px;
+	margin: 0 0 100px;
 	text-align: center;
+
+.row{margin: 0}
+
+	
 
 	select{
 		line-height: 50px;
@@ -196,6 +198,7 @@ select:focus{outline: 0}
 		.openArchive{width: 280px; margin: 10px auto; display: block;  }
 		.archive .modal-content{width: 280px;}
 		.recordBody{margin: 40px 0 80px	}
+		#archive_select.archive { margin: 0 0 30px }
 	}
 }
 
@@ -214,6 +217,8 @@ select:focus{outline: 0}
 			.blank{width: 130px}
 			.archive button#more-images, button#more-gallery-images{ padding-top: 16px; padding-bottom: 16px; border: 0 }
 		}
+
+		
 
 
 	#archiveModal, #galleryModal{

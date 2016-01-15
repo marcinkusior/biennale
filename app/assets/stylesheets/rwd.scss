@@ -41,7 +41,7 @@ $md: 992px;
 
  }
 
-// GENERAL RDW 320-640px
+// GENERAL RDW <640px
 
   @media(max-width: 640px){
 	.new_newsaddresse{ margin-bottom: 30px; margin-top: 40px }
@@ -120,7 +120,6 @@ $md: 992px;
 		 }
 
 	#archiveModal .absoluteRecord{ top: 40px }
-
  }
 
 
@@ -135,8 +134,7 @@ $md: 992px;
 .backdrop.slide-left{opacity: 1;}
 
 @media(max-width: 768px){
-
-ul.nav{
+	ul.nav{
     height: 100vh;
     width: 100vw;
     position: absolute;
@@ -145,7 +143,7 @@ ul.nav{
     flex-direction: column;
     justify-content: center;
     margin: 0;
-}
+	}
 
 body{
 
@@ -249,7 +247,6 @@ body{
 }
 
 @media(max-width: 768px){
-
 	.postermd{
 		display: block;
 		max-height: 100vh;
@@ -311,3 +308,4 @@ body{
 		padding-top: 60px;
 	}
 }
+
