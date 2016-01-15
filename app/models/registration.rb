@@ -5,7 +5,7 @@ class Registration < ActiveRecord::Base
 	validates :serial, presence: true
 	validates :first_name, presence: true
 	validates :last_name, presence: true
-	validates :email,presence: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
+	validates :email,presence: true, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
 	validates :terms_of_service, presence: true
 	validates :telephone, presence: true, format: { with: /[0-9()-+ ]+/, on: :create }
 	validates :street, presence: true

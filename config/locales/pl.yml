@@ -53,3 +53,48 @@ pl:
   edition: "edycja"
   more: 'więcej'
   results: 'wyniki'
+
+  activerecord:
+    attributes:
+      registration_conference:
+        email: ""
+        first_name: ""
+        last_name: ""
+        street: ""
+        city: ""
+        zip_code: ""
+        country: ""
+        university: ""
+        telephone: ""
+        terms_of_service: ""
+        
+
+    errors:
+      models: 
+        registration_conference:
+          attributes:
+            first_name:
+              blank: "Imię nie może być puste"
+            last_name:
+              blank:"Nazwisko nie może być puste"
+            email:
+              blank: "Proszę podać adres email"
+              taken: "Ades e-mail już istnieje."
+              invalid: "Proszę podać właściwy adres emails"
+            street:
+              blank: "Proszę podać ulicę"
+            city:
+              blank: "Proszę podać miasto"
+            zip_code:
+              blank: "Proszę podać kod pocztowy"
+            country:
+              blank: "Proszę podać kraj"
+            university:
+              blank: "Proszę podać uczelnię"
+            telephone:
+              blank: "Proszę podać numer telefonu"
+              invalid: "Proszę podać właściwy numer telefonu"
+            terms_of_service:
+              blank: "Musisz zaakceptować politykę użytkowania i prywatności"
+
+              
