@@ -13,9 +13,10 @@ class RegistrationsController < ApplicationController
         format.json {  }
         
         BackupMailJob.new.async.perform(@registration)
+        # RegisterMailJob.new.async.perform(@registration)
+
         # RegisterMail.backup_mail(@registration).deliver_now
-        RegisterMailJob.new.async.perform(@registration)
-        # RegisterMail.register_success_mail(@registration).deliver_now
+        RegisterMail.register_success_mail(@registration).deliver_now
       else
         format.html { 
         @registration.images = [];

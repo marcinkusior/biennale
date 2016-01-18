@@ -11,10 +11,10 @@ class RegistrationConferencesController < ApplicationController
         format.html { redirect_to root_path, notice: 'Registration was successfully created.' }
         format.json { render action: 'show', status: :created, location: @registration }
 
-        ConferenceRegisterMailJob.new.async.perform(@registration)
+        # ConferenceRegisterMailJob.new.async.perform(@registration)
         ConferenceBackupMailJob.new.async.perform(@registration)
         
-        # RegisterMail.register_conference_success_mail(@registration).deliver_now
+        RegisterMail.register_conference_success_mail(@registration).deliver_now
         # RegisterMail.conference_backup_mail(@registration).deliver_now
       else
         format.html {

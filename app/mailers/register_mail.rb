@@ -5,7 +5,8 @@ class RegisterMail < ApplicationMailer
 
 		@registration = registration
 		
-		mail.attachments['4thBiennial.pdf'] = File.read(File.join(Rails.root, 'app','pdfs','konkurs.pdf'))
+		pdf = locale == :en ? File.read(File.join(Rails.root, 'app','pdfs','konkurs.pdf')) : File.read(File.join(Rails.root, 'app','pdfs','konkursPL.pdf'))
+		mail.attachments['4thBiennial.pdf'] = pdf
 		mail.attachments['4thBiennialForm.pdf'] = WickedPdf.new.pdf_from_string( render_to_string(:pdf => 'Form',:template => 'attachments/registration_success.pdf.erb'))
 
 		mail(
