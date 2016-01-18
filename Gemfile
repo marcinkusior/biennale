@@ -4,7 +4,7 @@
 
 
 source 'https://rubygems.org'
-ruby "2.1.5"
+ruby "2.2.1"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
@@ -47,6 +47,7 @@ gem "jquery-scrollto-rails"
 gem 'jquery-easing-rails'
 gem 'bootsy'
 gem 'seed_dump'
+gem 'sucker_punch'
 
 gem 'routing-filter'
 gem 'dotenv-rails', :groups => [:development, :test]  
