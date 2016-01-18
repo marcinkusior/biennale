@@ -4,11 +4,9 @@ class RegisterMail < ApplicationMailer
 	def register_success_mail(registration)
 
 		@registration = registration
-		# mail.attachments["4thBiennial-form.pdf"] = File.read(File.join(Rails.root, 'app','pdfs','konkurs.pdf'))
 		
 		mail.attachments['4thBiennial.pdf'] = File.read(File.join(Rails.root, 'app','pdfs','konkurs.pdf'))
 		mail.attachments['4thBiennialForm.pdf'] = WickedPdf.new.pdf_from_string( render_to_string(:pdf => 'Form',:template => 'attachments/registration_success.pdf.erb'))
-
 
 		mail(
 			to: @registration.email,
@@ -32,7 +30,9 @@ class RegisterMail < ApplicationMailer
 		 )
 	end
 
+####################################
 	# CONFERENCE REGISTRATION MAILS
+####################################
 	def register_conference_success_mail(registration)
 		@registration = registration
 
@@ -41,12 +41,10 @@ class RegisterMail < ApplicationMailer
 		mail.attachments['4thBiennial.pdf'] = pdf
 		mail.attachments['4thBiennialForm.pdf'] = WickedPdf.new.pdf_from_string( render_to_string(:pdf => 'Form',:template => 'attachments/registration_conference_success.pdf.erb'))
 
-
 		mail(
 			to: @registration.email,
 			subject: "Registration in 4th Biennale INAW Conference",
 		 )
-
 	end
 
 

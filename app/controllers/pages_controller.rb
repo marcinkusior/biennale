@@ -55,7 +55,7 @@ class PagesController < ApplicationController
 	end
 
 	def instruction
-		pdf_filename = File.join(Rails.root, 'app','pdfs','wytyczne.pdf')
+		pdf_filename = File.join(Rails.root, 'app','pdfs','wytyczne-konferencja.pdf')
 		send_file(pdf_filename, :filename => "your_document.pdf", :disposition => 'inline', :type => "application/pdf")
 	end
 

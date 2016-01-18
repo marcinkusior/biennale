@@ -12,8 +12,10 @@ class RegistrationsController < ApplicationController
         format.html { redirect_to root_path, notice: 'Registration was successfully created.' }
         format.json {  }
         
-        RegisterMail.register_success_mail(@registration).deliver_now
-        RegisterMail.backup_mail(@registration).deliver_now
+        BackupMailJob.new.async.perform(@registration)
+        # RegisterMail.backup_mail(@registration).deliver_now
+        RegisterMailJob.new.async.perform(@registration)
+        # RegisterMail.register_success_mail(@registration).deliver_now
       else
         format.html { 
         @registration.images = [];
@@ -32,11 +34,8 @@ class RegistrationsController < ApplicationController
       format.json { render json: images } 
     end
   end
-
-
   
   private
-    # Use callbacks to share common setup or constraints between actions.
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def registration_params
