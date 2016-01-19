@@ -55,8 +55,8 @@ class PagesController < ApplicationController
 	end
 
 	def instruction
-		pdf_filename = File.join(Rails.root, 'app','pdfs','wytyczne-konferencja.pdf')
-		send_file(pdf_filename, :filename => "your_document.pdf", :disposition => 'inline', :type => "application/pdf")
+		pdf_filename = locale == :en ? File.join(Rails.root, 'app','pdfs','wytyczne.pdf') : File.join(Rails.root, 'app','pdfs','wytycznePL.pdf')
+		send_file(pdf_filename, :filename => "ConferenceReq.pdf", :disposition => 'inline', :type => "application/pdf")
 	end
 
 	private
