@@ -1,3 +1,12 @@
+
+
+
+
+
+
+
+
+
 class ContestRecord < ActiveRecord::Base
 	belongs_to :contest_archive
 	has_many :public_images, dependent: :destroy

@@ -48,6 +48,7 @@ gem 'jquery-easing-rails'
 gem 'bootsy'
 gem 'seed_dump'
 gem 'sucker_punch'
+gem 'rubyzip'
 
 gem 'routing-filter'
 gem 'dotenv-rails', :groups => [:development, :test]  
