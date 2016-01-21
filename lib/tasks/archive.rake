@@ -1,20 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 namespace :archive do 
   desc "TODO"
   task add_to_archive: :environment do

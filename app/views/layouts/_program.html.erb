@@ -1,3 +1,12 @@
+
+
+
+
+
+
+
+
+
 <div class="container">	
 	<div class="row section-program">
 
@@ -7,10 +16,10 @@
 			<div class="row table-row">
 				<% Event.all.order(:order).each do |event| %>
 					<div class="col-sm-12 program-left">
-						<%= raw(event.timedate)  %>
+						<%= locale == :en ? raw(event.timedate) : raw(event.timedatePL) %>
 					</div>
 					<div class="col-sm-12 program-right">
-						<%= raw(event.description)  %>
+						<%= locale == :en ? raw(event.description) : raw(event.descPL) %>
 					</div>
 				<% end %>
 			</div>
