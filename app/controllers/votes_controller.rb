@@ -1,6 +1,6 @@
+
 class VotesController < ApplicationController
   def create
-    # render json: 'spierdalaj' if unique_ip(params['ip_address']) == false
     redirect_to('/Biennial') and return if unique_ip(params['ip_address']) == false
 
     @vote = Vote.new(ip_address: params['ip_address'], contest_record_id: params['contest_record_id'] )

@@ -1,3 +1,12 @@
+
+
+
+
+
+
+
+
+
 class GalleriesController < ApplicationController
   def fetch_record
   	id = params['record_id']
@@ -15,7 +24,8 @@ class GalleriesController < ApplicationController
 
     ids.each do |id|
       object = ContestRecord.find(id)
-      objects << [object.public_images.first, object.serial, object.votes.length]
+      record = object.public_images.first
+      objects << [record, object.serial, object.votes.length]
     end
 
     respond_to do |format|

@@ -1,0 +1,28 @@
+  
+
+  <% if  action_name == 'new' %>
+    <%=  f.fields_for( :public_images) do |ff|  %>
+      <%= ff.file_field :src %>
+    <% end %>
+
+  <% else %>
+      <% @contest_record.public_images.each_with_index do |image, idx| %>
+        <div class="img-wrapper ordering-movable" data-id="<%= image.id %>" data-order="<%= idx %>" style="order:<%= idx %>" >
+        <%= image_tag image.src.url(:thumb) %>
+        <div class="ordering-control">
+          <button class="ordering-button glyphicon glyphicon-chevron-up" data-ordering='-1'> </button>
+          <button class="ordering-button glyphicon glyphicon-chevron-down" data-ordering='+1'></button>
+        </div>
+        <%= link_to 'Usuń', "/admin/public_images/#{image.id}", method: :delete, :class => "img-delete" %>
+        </div>
+
+      <% end %>
+      <%= link_to '+ Dodaj obraz', "/admin/public_images/new?contest_record_id=#{@contest_record.id}", :class=>"flex-last" %>
+      
+  <% end %> <!-- end if -->
+
+  <br>
+
+<script>
+  ordering()
+</script>
