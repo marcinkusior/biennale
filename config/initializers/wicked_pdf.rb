@@ -6,4 +6,3 @@ WickedPdf.config = {
   #localpath
   #:exe_path => '/home/marcin/.rvm/gems/ruby-2.2.1/bin/wkhtmltopdf'
 }
-	
