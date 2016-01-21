@@ -1,3 +1,15 @@
+
+
+
+
+
+
+
+
+
+
+
+
 <%= form_for([:admin, @contest_record]) do |f| %>
   <% if @contest_record.errors.any? %>
     <div id="error_explanation">
@@ -58,41 +70,24 @@
       <%= f.bootsy_area :body, class: 'form-control', rows: 6 %>
       </div>
     <div class="field">
-        <%= f.label :bodyPL, 'Treść PL' %><br>
+      <%= f.label :bodyPL, 'Treść PL' %><br>
       <%= f.bootsy_area :bodyPL, class: 'form-control', rows: 6 %>
       </div>
     </div> <!-- end col -->
 
 
     <div class="col-xs-5 col-xs-offset-1">
-
-    <% if  action_name == 'new' %>
-
-      <%=  f.fields_for( :public_images) do |ff|  %>
-        <%= ff.file_field :src %>
-      <% end %>
-
-      <% else %>
-
-        <% @contest_record.public_images.each do |image| %>
-          <div class="img-wrapper">
-          <%= image_tag image.src.url(:thumb) %>
-          <%= link_to 'Usuń', "/admin/public_images/#{image.id}", method: :delete, :class => "img-delete" %>
-        </div>
-        <hr>
-      <% end %>
-        <br>
-        <%= link_to '+ Dodaj obraz', "/admin/public_images/new?contest_record_id=#{@contest_record.id}" %>
-      
-    <% end %> <!-- end if -->
-
-
-      <hr>
+      <div class="ordering-container">
+      <%= render'images' %>
+      </div>
       <br>
+       <%= link_to button_tag('zapisz kolejnosc'), '' ,:class=>"update-ordering" %>
     </div>
-
-
 
   </div> <!-- end row -->
 
 <% end %>
+
+<script>
+  updateOrdering("/admin/update_order");
+</script>

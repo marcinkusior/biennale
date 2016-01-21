@@ -21,6 +21,7 @@ namespace :archive do
   	archive_folder = '3edition'
   	archive_name = 'Archive 2'
 
+
   	# Folders names will become names of records
   	folders_names = Dir.entries(File.join(Rails.root, 'contest_archive', archive_folder)).select{|name| File.extname(name) != '.zip' && name.length>5 }
 
