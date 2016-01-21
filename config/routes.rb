@@ -9,9 +9,11 @@ Rails.application.routes.draw do
   mount Bootsy::Engine => '/bootsy', as: 'bootsy'
   namespace :admin do
     resources :public_images
+    post 'update_order' => "public_images#update_order"
   end
   namespace :admin do
     resources :contest_records
+    post 'update_contest_record_order' => "contest_records#update_order"
   end
   namespace :admin do
     resources :contest_archives
@@ -42,7 +44,7 @@ Rails.application.routes.draw do
     get 'registrations_delete_all' => 'registrations#delete_all'
     get 'registration_conferences_delete_all' => 'registration_conferences#delete_all'
     get 'registrations/archive'
-    get 'registration_conferences/archive'
+    get 'registration_conferences/archive'    
     resources :administrators
     resources :images
     resources :registrations
