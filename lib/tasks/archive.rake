@@ -1,8 +1,17 @@
+
+
+
+
+
+
+
+
+
 namespace :archive do 
   desc "TODO"
   task add_to_archive: :environment do
   	archive_folder = '3edition'
-  	archive_name = 'Archive 2'
+  	archive_name = 'archiwum'
 
 
   	# Folders names will become names of records
