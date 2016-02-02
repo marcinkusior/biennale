@@ -4,6 +4,15 @@
 
 <div class="row">
 	<div class="col-md-20 col-md-offset-2 partners">
+	<% if @organizers.length > 0 then %>
+		<h3 class="blue "> <%= I18n.locale == :en ? 'ORGANIZERS' : 'ORGANIZATORZY' %> </h3>
+		<div class="partners-parent">
+			<% @organizers.each do |partner| %>
+				 <div class="partner"> <%= image_tag partner.image_url(:thumb) %> </div>
+			<% end %>
+		</div>
+	<% end %>
+
 		<h3 class="blue "> <%= I18n.locale == :en ? 'HONORARY PARTNERS' : 'PATRONAT HONOROWY' %> </h3>
 		<div class="partners-parent">
 			<% @honor_partners.each do |partner| %>

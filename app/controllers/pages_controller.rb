@@ -8,6 +8,7 @@ class PagesController < ApplicationController
 		@honor_partners = partners.where(kind: 'honor')
 		@media_partners = partners.where(kind: 'media')
 		@partners = partners.where(kind: 'normal')
+		@organizers = partners.where(kind: 'organizer')
 	end
 
 	def Conference
