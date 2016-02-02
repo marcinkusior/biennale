@@ -6,7 +6,7 @@ class Admin::PartnersController < ApplicationController
   # GET /admin/partners
   # GET /admin/partners.json
   def index
-    @kinds = { 'media' => 'medialny', 'honor' => 'honorowy', 'normal' => 'zwykły' }
+    @kinds = { 'media' => 'medialny', 'honor' => 'honorowy', 'normal' => 'zwykły', 'organizer' => 'organizator' }
     @partners = Partner.all.order(id: :desc)
   end
 
