@@ -10,37 +10,33 @@
 	<div class="col-xs-18">
 	
 	<%= link_to button_tag('zapisz kolejnosc'), '' ,:class=>"update-ordering" %>
-		<table class="table">
-		  <thead>
-		    <tr>
-		    	<th>Rekordy:</th>
-		      <th></th>
-		      <th></th>
-		      <th></th>
-		      <th></th>
-		    </tr>
-		  </thead>
+		<div class="table">
+		  <div>
+		    <trdiv>
+		    	<div>Rekordy:</div>
+		    </div>
+		  </div>
 
-		  <tbody class="ordering-container" >
+		  <div class="ordering-container" >
 		    <% @contest_archive.contest_records.order(id: :desc).each_with_index do |record, idx| %>
-		      <tr class="ordering-movable" data-order="<%= idx %>" 
+		      <div class="ordering-movable" data-order="<%= idx %>" 
 		      data-id="<%= record.id %>"
 					style="order:<%= idx %>"
 		      >
-		      	<td class="table-image"><%= image_tag record.public_images.first.src.url(:thumb) if record.public_images.first %></td>
-		        <td class="table-name"><%= record.title %></td>
-		        <td><%= link_to 'Edit', edit_admin_contest_record_path(record) %></td>
-		        <td><%= link_to 'Destroy', [:admin, record], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-		        <td>
+		      	<div class="table-image"><%= image_tag record.public_images.first.src.url(:thumb) if record.public_images.first %></div>
+		        <div class="table-name"><%= record.title %></div>
+		        <div><%= link_to 'Edit', edit_admin_contest_record_path(record) %></div>
+		        <div><%= link_to 'Destroy', [:admin, record], method: :delete, data: { confirm: 'Are you sure?' } %></div>
+		        <div>
   	        <div class="ordering-control">
 			          <button class="ordering-button glyphicon glyphicon-chevron-up" data-ordering='-1'> </button>
 	          <button class="ordering-button glyphicon glyphicon-chevron-down" data-ordering='+1'></button>
 	        </div>
-		        </td>
-		      </tr>
+		        </div>
+		      </div>
 		    <% end %>
-		  </tbody>
-		</table>
+		  </div>
+		</div>
 		
 		<%= link_to '+ Nowy Rekord', "/admin/contest_records/new?contest_archive_id=#{@contest_archive.id}" %>
 	</div>
