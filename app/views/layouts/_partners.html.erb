@@ -19,6 +19,15 @@
 				 <div class="partner"> <%= image_tag partner.image_url(:thumb) %> </div>
 			<% end %>
 		</div>
+		
+		<% if @media_partners.length > 0 then %>
+			<h3 class="blue "> <%= I18n.locale == :en ? 'MEDIA PARTNERS' : 'PATRONAT MEDIALNY' %> </h3>
+			<div class="partners-parent">
+			<% @media_partners.each do |partner| %>
+				 <div class="partner"> <%= image_tag partner.image_url(:thumb) %> </div>
+			<% end %>
+			</div>
+		<% end %>
 
 		<h3 class="blue "> <%= I18n.locale == :en ? 'PARTNERS' : 'PATRONAT' %> </h3>
 		<div class="partners-parent">
