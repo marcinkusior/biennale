@@ -1,10 +1,17 @@
+
+
+
+
+
+
+
   <% warning = "W przypadku wysokiej liczby rekordów (>50) proces archiwizacji może zająć do kilku minut. Czy chcesz kontynuować?" %>
 
   <h1>Rejestracje Konkurs</h1>
 
   <%= form_tag("/admin/registrations/archive", method: "get", class: 'panel-button') do %>
    <%= submit_tag("Archiwizuj Zaznaczone", data: { confirm: warning, disable_with: 'Proszę czekać' } ) %>
-   <%= select_tag(:archive_id,  options_from_collection_for_select(ContestArchive.all, "id", "title")) %>
+   <%= select_tag(:archive_id,  options_from_collection_for_select(ContestArchive.all.order('created_at DESC'), "id", "title")) %>
    
   <table class="table">
     <thead>
