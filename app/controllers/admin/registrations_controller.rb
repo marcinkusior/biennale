@@ -32,7 +32,7 @@ class Admin::RegistrationsController < ApplicationController
 
     respond_to do |format|
       if @registration.save
-        format.html { redirect_to Biennale_path, notice: 'Registration was successfully created.' }
+        format.html { redirect_to [:admin, @registration], notice: 'Registration was successfully created.' }
         format.json { render action: 'show', status: :created, location: @registration }
       else
         format.html { 
