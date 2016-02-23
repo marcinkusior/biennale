@@ -89,7 +89,7 @@ class Admin::RegistrationsController < ApplicationController
       end
     end
     archive.save
-    redirect_to "/admin/contest_archives"
+    redirect_to "/admin/registrations", notice: 'Registrations were successfully archived'
   end
 
   private

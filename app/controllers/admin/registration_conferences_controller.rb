@@ -87,7 +87,7 @@ class Admin::RegistrationConferencesController < ApplicationController
       end
     end
     archive.save
-    redirect_to "/admin/archives"
+    redirect_to "/admin/registration_conferences"
   end
 
   private
