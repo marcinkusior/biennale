@@ -11,6 +11,9 @@ class PagesController < ApplicationController
 		@organizers = partners.where(kind: 'organizer')
 	end
 
+	def Program
+	end
+
 	def Conference
 		@archives = Archive.all.order(id: :desc)
 	end
