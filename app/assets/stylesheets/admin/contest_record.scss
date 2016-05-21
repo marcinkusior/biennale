@@ -56,17 +56,21 @@
 	}
 
 	a[data-wysihtml5-command-value='h3']{
-				margin-top: -20px;
+		margin-top: -20px;
 		&::after{ 
 
 			content: "Nagłówek";
 			display: block;
 		}
-
 	}
 
 	a[data-wysihtml5-command-value='h4']{
-		display: none;
+		margin-top: -20px;
+		&::after{ 
+
+			content: "Nagłówek Program";
+			display: block;
+		}
 	}
 
 	a[data-wysihtml5-command-value='h5']{
