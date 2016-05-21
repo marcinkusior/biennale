@@ -67,7 +67,7 @@
 		var moreImages = $(this);
 		var gallery = $('.gallery-wrapper');
 		var data = gallery.data('ids');
-		var n = gallery.children().length - 2 == 0 ? 9 : 3;
+		var n = gallery.children().length - 2 == 0 ? 9 : 12;
 		data = data.slice( gallery.children().length - 2, gallery.children().length - 2 + n );
 
 		$.ajax( {
@@ -76,7 +76,6 @@
 			  dataType: "JSON",
 			  data: { 'ids': data },
 			  success: function(data) {	
-			  	console.log(data);
 			  	data.forEach(function(object){
 			  		gallery.append("<div class='gallery-item'> <div class='serial' data-votes='"+ object[2] +"' data-toggle='modal' data-target='#galleryModal'> <p> "+ object[1] +" </p> </div> <img class='gallery-image' style='background-image: url("+ object[0].src.gallery.url +")' data-id='"+ object[0].contest_record_id +"' ></div>")
 			  	})
