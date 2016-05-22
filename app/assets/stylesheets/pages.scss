@@ -92,22 +92,28 @@ hr{ border-top: 1px solid #d7e0e5; margin: 0 }
 	padding: 40px 0 20px;
 	h3{margin: 60px 0 0}
 }
-.partners-parent{
-	display: flex;
-	flex-wrap: wrap;
-	width: 100%;
-	justify-content: center;
-	margin: 60px 0 0;
+// .partners-parent{
+// 	display: flex;
+// 	flex-wrap: wrap;
+// 	width: 100%;
+// 	justify-content: center;
+// 	margin: 60px 0 0;
 	
-	.partner{
-		text-align: center;
+.partners{
+	text-align: center;
 
-		img{
-			margin-bottom: 40px;
-			height: auto;
-		}
+	img{
+		width: 100%;
+		margin-bottom: 40px;
+		height: auto;
 	}
 }
+
+.partners.Admin{
+	img{ width: 50%; }
+}
+
+// }
 
 //PROGRAM PAGE
 

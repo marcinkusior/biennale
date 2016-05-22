@@ -4,38 +4,26 @@
 
 <div class="row">
 	<div class="col-md-20 col-md-offset-2 partners">
-	<% if @organizers.length > 0 then %>
-		<h3 class="blue "> <%= I18n.locale == :en ? 'ORGANIZERS' : 'ORGANIZATORZY' %> </h3>
-		<div class="partners-parent">
-			<% @organizers.each do |partner| %>
-				 <div class="partner"> <%= image_tag partner.image_url(:thumb) %> </div>
-			<% end %>
-		</div>
-	<% end %>
+		<% if @organizers %>
+			<h3 class="blue "> <%= I18n.locale == :en ? 'ORGANIZERS' : 'ORGANIZATORZY' %> </h3>
+			<div class="partners"> <%= image_tag @organizers.image_url %> </div>
+		<% end %>
 
-		<h3 class="blue "> <%= I18n.locale == :en ? 'HONORARY PARTNERS' : 'PATRONAT HONOROWY' %> </h3>
-		<div class="partners-parent">
-			<% @honor_partners.each do |partner| %>
-				 <div class="partner"> <%= image_tag partner.image_url(:thumb) %> </div>
-			<% end %>
-		</div>
-
-	<% if @media_partners.length > 0 then %>
-		<h3 class="blue "> <%= I18n.locale == :en ? 'MEDIA PARTNERS' : 'PATRONAT MEDIALNY' %> </h3>
-		<div class="partners-parent">
-			<% @media_partners.each do |partner| %>
-				 <div class="partner"> <%= image_tag partner.image_url(:thumb) %> </div>
-			<% end %>
-		</div>
-	<% end %>
-
-		<h3 class="blue "> <%= I18n.locale == :en ? 'PARTNERS' : 'PATRONAT' %> </h3>
-		<div class="partners-parent">
-			<% @partners.each do |partner| %>
-				 <div class="partner"> <%= image_tag partner.image_url(:thumb) %> </div>
-			<% end %>
-		</div>
-	</div>
+		<% if @honor_partners %>
+			<h3 class="blue "> <%= I18n.locale == :en ? 'HONORARY PARTNERS' : 'PATRONAT HONOROWY' %> </h3>
+			<div class="partners"> <%= image_tag @honor_partners.image_url %> </div>
+		<% end %>
+			
+		<% if @partners %>
+			<h3 class="blue "> <%= I18n.locale == :en ? 'PARTNERS' : 'PATRONAT' %> </h3>
+		  <div class="partners"> <%= image_tag @partners.image_url %> </div>
+		<% end %>
+	
+		<% if @media_partners %>
+			<h3 class="blue "> <%= I18n.locale == :en ? 'MEDIA PARTNERS' : 'PATRONAT MEDIALNY' %> </h3>
+			<div class="partners"> <%= image_tag @media_partners.image_url %> </div>
+		<% end %>
+	</div
 </div>
 
 </div> <!-- end container -->

@@ -5,10 +5,10 @@ class PagesController < ApplicationController
 
 	def Biennial
 		partners = Partner.all.order(id: :desc)
-		@honor_partners = partners.where(kind: 'honor')
-		@media_partners = partners.where(kind: 'media')
-		@partners = partners.where(kind: 'normal')
-		@organizers = partners.where(kind: 'organizer')
+		@honor_partners = partners.where(kind: 'honor')[0]
+		@media_partners = partners.where(kind: 'media')[0]
+		@partners = partners.where(kind: 'normal')[0]
+		@organizers = partners.where(kind: 'organizer')[0]
 	end
 
 	def Program
