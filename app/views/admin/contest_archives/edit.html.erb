@@ -8,8 +8,8 @@
 		<%= link_to 'Back', admin_contest_archives_path %>
 	</div>
 	<div class="col-xs-18">
-	
-	<%= link_to button_tag('zapisz kolejnosc'), '' ,:class=>"update-ordering" %>
+	<%= link_to '+ Nowy Rekord', "/admin/contest_records/new?contest_archive_id=#{@contest_archive.id}" %> <br>
+	<%= link_to button_tag('zapisz kolejnosc'), '' ,:class=>"update-ordering float-right" %>
 		<div class="table">
 		  <div>
 		    <trdiv>
@@ -37,8 +37,6 @@
 		    <% end %>
 		  </div>
 		</div>
-		
-		<%= link_to '+ Nowy Rekord', "/admin/contest_records/new?contest_archive_id=#{@contest_archive.id}" %>
 	</div>
 </div>
 

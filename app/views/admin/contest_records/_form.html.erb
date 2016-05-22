@@ -78,7 +78,15 @@
 
     <div class="col-xs-5 col-xs-offset-1">
       <div class="ordering-container">
+      
+    <% if  action_name == 'new' %>
+      <%=  f.fields_for( :public_images) do |ff|  %>
+        <%= ff.file_field :src %>
+      <% end %>
+    <% else %>
       <%= render'images' %>
+    <% end %>
+      
       </div>
       <br>
        <%= link_to button_tag('zapisz kolejnosc'), '' ,:class=>"update-ordering" %>
