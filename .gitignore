@@ -8,6 +8,8 @@ Gemfile
 config/app_environment_variables.rb
 config/database.yml
 
+/vendor/bundle/**/*
+.ruby-version
 
 ###############################################################################################
 # Ignore all logfiles and tempfiles.

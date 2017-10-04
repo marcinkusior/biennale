@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 class ArchiveMaker
 	require 'rubygems'
 	require 'zip'
@@ -32,5 +25,3 @@ archive_name = gets.chomp
 puts Dir.entries(archive_name)
 
 # ArchiveMaker.extract_file(zipfile_name)
-
-
