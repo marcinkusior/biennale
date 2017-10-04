@@ -8,7 +8,12 @@
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
-<body id="body" class=" <%= controller_name %> <%= action_name %> <%= controller.class.name.split("::").first %> " data-locale="<%= I18n.locale %>" data-primary-color="<%= General.first.primary_color %>" data-secondary-color="<%= General.first.secondary_color %>" >
+<body id="body"
+	class=" <%= controller_name %> <%= action_name %> <%= controller.class.name.split("::").first %> "
+	data-locale="<%= I18n.locale %>"
+	data-primary-color="<%= General.first.primary_color %>"
+	data-secondary-color="<%= General.first.secondary_color %>"
+>
 
 <%= render 'layouts/logout' if session[:administrator_id] %>
 
@@ -18,24 +23,31 @@
 		<%= image_tag('poster-960.jpg', :class => 'posterlg') %>
 		<%= image_tag('poster-768.jpg',  :class => "postermd") %>
 		<%= image_tag('poster-640.jpg',  :class => "postersm") %>
-		</div>	
+		</div>
 	<% end %>
 </div>
 
-<% if controller.class.name.split("::").first == 'Admin' %>
-	<%= render 'layouts/admin_nav' %>
-	<div class="container">
-<% else %>
-	<%= render "layouts/main_nav" unless action_name == 'inactive' %>
-<% end %>
-<div class="content url" data-url="<%= request.env['PATH_INFO'] %>" > 
-		<%= yield %>
-<% if controller.class.name.split("::").first == 'Admin' %>
-	</div>
-<% end %>
-	<% if controller.class.name.split("::").first != 'Admin' && action_name != 'inactive' %>
-		<%= render 'layouts/footer' %>
+<% unless action_name == 'inactive'%>
+	<% if controller.class.name.split("::").first == 'Admin' %>
+		<%= render 'layouts/admin_nav' %>
+	<% else %>
+		<%= render "layouts/main_nav" %>
 	<% end %>
+<% end %>
+
+<div class="content url" data-url="<%= request.env['PATH_INFO'] %>" >
+	<% if controller.class.name.split("::").first == 'Admin' %>
+		<div class="container">
+			<%= yield %>
+		</div>
+	<% else %>
+			<%= yield %>
+	<% end %>
+</div>
+
+<% unless controller.class.name.split("::").first == 'Admin' || action_name == 'inactive' %>
+	<%= render 'layouts/footer' %>
+<% end %>
 
 <script>
 	(function(){
@@ -47,16 +59,16 @@
 </script>
 <% if controller.class.name.split("::").first == 'Admin' %>
 	<script>
-			$('textarea').keydown(function(e) {
-				if( e.shiftKey && e.keyCode == 32){
-					e.preventDefault();
-					var caret = $(this).caret();
-					txt1= $(this).val(); 
-					var txt2 = txt1.slice(0, caret) + "&nbsp;" + txt1.slice(caret);
-					$(this).val(txt2);
-					$(this).caret( caret +6 )
-				}
-			});
+		$('textarea').keydown(function(e) {
+			if( e.shiftKey && e.keyCode == 32){
+				e.preventDefault();
+				var caret = $(this).caret();
+				txt1= $(this).val();
+				var txt2 = txt1.slice(0, caret) + "&nbsp;" + txt1.slice(caret);
+				$(this).val(txt2);
+				$(this).caret( caret +6 )
+			}
+		});
 	</script>
 <% end %>
 
