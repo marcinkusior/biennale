@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160121124327) do
+ActiveRecord::Schema.define(version: 20171005225912) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "administrators", force: :cascade do |t|
     t.string   "email"
@@ -44,6 +47,17 @@ ActiveRecord::Schema.define(version: 20160121124327) do
     t.datetime "updated_at", null: false
     t.string   "titlePL"
   end
+
+  create_table "banner_images", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "imageable_id"
+    t.string   "imageable_type"
+    t.string   "image"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "banner_images", ["imageable_type", "imageable_id"], name: "index_banner_images_on_imageable_type_and_imageable_id", using: :btree
 
   create_table "bootsy_image_galleries", force: :cascade do |t|
     t.integer  "bootsy_resource_id"
@@ -123,6 +137,8 @@ ActiveRecord::Schema.define(version: 20160121124327) do
     t.integer  "edition_no"
     t.string   "primary_color"
     t.string   "secondary_color"
+    t.string   "primary_banner"
+    t.string   "secondary_banner"
   end
 
   create_table "images", force: :cascade do |t|
@@ -176,6 +192,17 @@ ActiveRecord::Schema.define(version: 20160121124327) do
     t.datetime "updated_at", null: false
     t.string   "kind"
   end
+
+  create_table "pictures", force: :cascade do |t|
+    t.string   "title"
+    t.string   "src"
+    t.integer  "pictureable_id"
+    t.string   "pictureable_type"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "pictures", ["pictureable_type", "pictureable_id"], name: "index_pictures_on_pictureable_type_and_pictureable_id", using: :btree
 
   create_table "presentation_descs", force: :cascade do |t|
     t.string   "src"

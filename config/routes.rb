@@ -1,35 +1,9 @@
 Rails.application.routes.draw do
-  get 'votes/create'
-
-  namespace :admin do
-    get 'results' =>'votes#results'
-    get 'votes_delete_all' => 'votes#delete_all'
-    resources :votes
-  end
   mount Bootsy::Engine => '/bootsy', as: 'bootsy'
-  namespace :admin do
-    resources :public_images
-    post 'update_order' => "public_images#update_order"
-  end
-  namespace :admin do
-    resources :contest_records
-    post 'update_contest_record_order' => "contest_records#update_order"
-  end
-  namespace :admin do
-    resources :contest_archives
-  end
-
-
-  namespace :admin do
-    resources :records
-  end
-  namespace :admin do
-    resources :archives
-  end
   filter :locale
 
-  get 'newsaddresses/create'
-
+  get 'votes/create'
+  resources :newsaddresses, only: [:create]
   get 'registrations/fetch_images', to: 'registrations#fetch_images'
   get 'archives/fetch_records'
   get 'archives/fetch_contest_records'
@@ -38,9 +12,15 @@ Rails.application.routes.draw do
   get 'galleries/fetch_record'
   post 'votes/create'
 
-  resources :newsaddresses, only: [:create]
+  get '/inactive' => 'pages#inactive'
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+  get '/instruction' => 'pages#instruction'
 
   namespace :admin do
+    root 'generals#settings'
+
     get 'registrations_delete_all' => 'registrations#delete_all'
     get 'registration_conferences_delete_all' => 'registration_conferences#delete_all'
     get 'registrations/archive'
@@ -54,10 +34,19 @@ Rails.application.routes.draw do
     resources :paragraphs
     resources :pages
     resources :markers
-    resources :newsaddresses
     resources :generals
+    resources :contest_archives
+    resources :records
+    resources :archives
+    resources :votes
+    resources :public_images
+    resources :contest_records
+    resources :newsaddresses
 
-    root 'generals#settings'
+    get 'results' =>'votes#results'
+    get 'votes_delete_all' => 'votes#delete_all'
+    post 'update_order' => "public_images#update_order"
+    post 'update_contest_record_order' => "contest_records#update_order"
   end
 
   # mount Ckeditor::Engine => '/ckeditor'
@@ -71,11 +60,4 @@ Rails.application.routes.draw do
     end
     root 'pages#Biennial'
   end
-
-  get '/inactive' => 'pages#inactive'
-  get '/login' => 'sessions#new'
-  post '/login' => 'sessions#create'
-  get '/logout' => 'sessions#destroy'
-  get '/instruction' => 'pages#instruction'
-
 end

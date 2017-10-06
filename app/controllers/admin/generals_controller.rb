@@ -75,6 +75,10 @@ class Admin::GeneralsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def general_params
-      params.require(:general).permit(:edition_no, :primary_color, :secondary_color, :block_site, :registration_conference, :registration_contest, :voting_contest, :partners_on, :program_on, :results_on, :archive_on, :voting_on, :contest_archive_on, :contest_archive_id, :map_zoom, :marker_id)
+      params.require(:general).permit(:edition_no, :primary_color, :secondary_color, :block_site,
+                                      :registration_conference, :registration_contest, :voting_contest,
+                                      :partners_on, :program_on, :results_on, :archive_on, :voting_on,
+                                      :contest_archive_on, :contest_archive_id, :map_zoom, :marker_id,
+                                      :primary_banner, :secondary_banner)
     end
 end

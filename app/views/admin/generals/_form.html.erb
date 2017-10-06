@@ -86,16 +86,14 @@
     </div>
 
   </div>
-  
-  <div class="col-sm-6">  
+
+  <div class="col-sm-6">
     <div class="field">
         <%= f.label :edition_no, 'Numer Edycji' %>
         <%= f.number_field :edition_no %>
     </div>
 
-    <h2></h2>
-
-    <div class="field">
+    <div class="field distance-top">
       <%= f.label :primary_color, 'Kolor podstawowy' %>
       <%= f.text_field :primary_color %>
     </div>
@@ -103,6 +101,16 @@
     <div class="field">
       <%= f.label :secondary_color, 'Kolor dodatkowy' %>
       <%= f.text_field :secondary_color %>
+    </div>
+
+    <div class="field distance-top">
+      <%= f.label :primary_banner, 'Duży baner' %>
+      <%= f.file_field :primary_banner %>
+    </div>
+
+    <div class="field">
+      <%= f.label :secondary_banner, 'Mały baner' %>
+      <%= f.file_field :secondary_banner %>
     </div>
   </div>
 
