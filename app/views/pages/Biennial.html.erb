@@ -1,20 +1,19 @@
 <div class="container">
-	<div class="row">
-	<div class="col-xs-20 col-xs-offset-2 col-md-14 col-md-offset-5">
-		<%= raw( @page.body ) %>
-	</div>
-</div> <!-- end row -->
+  <div class="row">
+  	<div class="col-xs-20 col-xs-offset-2 col-md-14 col-md-offset-5">
+  		<%= raw( @page.body ) %>
+  	</div>
+  </div>
 
-<div class="row">
-	<div class="col-xs-24 banner">
-		<%= image_tag(@settings.secondary_banner) %>
-	</div>
-</div> <!-- end row -->
-</div> <!-- end container -->
+  <div class="row">
+  	<div class="col-xs-24 banner">
+  		<%= image_tag(@settings.secondary_banner) %>
+  	</div>
+  </div>
+</div>
 
 
 <%= render '/layouts/program'if check_settings('program_on') %>
-
 <%= render '/layouts/partners' if check_settings('partners_on') %>
 
 
