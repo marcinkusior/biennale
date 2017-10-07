@@ -1,43 +1,28 @@
 <hr>
 <div class="container">
-	
-
-<div class="row">
-	<div class="col-md-20 col-md-offset-2 partners">
-		<% if @organizers %>
-			<h3 class="blue "> <%= I18n.locale == :en ? 'ORGANIZERS' : 'ORGANIZATORZY' %> </h3>
-			<div class="partners"> <%= image_tag @organizers.image_url %> </div>
-		<% end %>
-
-		<% if @honor_partners %>
-			<h3 class="blue "> <%= I18n.locale == :en ? 'HONORARY PARTNERS' : 'PATRONAT HONOROWY' %> </h3>
-			<div class="partners"> <%= image_tag @honor_partners.image_url %> </div>
-		<% end %>
-			
-		<% if @partners %>
-			<h3 class="blue "> <%= I18n.locale == :en ? 'PARTNERS' : 'PATRONAT' %> </h3>
-		  <div class="partners"> <%= image_tag @partners.image_url %> </div>
-		<% end %>
-	
-		<% if @media_partners %>
-			<h3 class="blue "> <%= I18n.locale == :en ? 'MEDIA PARTNERS' : 'PATRONAT MEDIALNY' %> </h3>
-			<div class="partners"> <%= image_tag @media_partners.image_url %> </div>
-		<% end %>
-	</div
+	<div class="row">
+		<div class="col-md-20 col-md-offset-2 partners">
+			<% @partner_categories.each do |category| %>
+				<div class="partner-category">
+					<h3> <%= locale == :en ? category.name : category.namePl %> </h3>
+					<div class="partners">
+						<% category.partners.order(order: :asc).each do |partner| %>
+							<%= image_tag partner.image_url, class: 'partner' %>
+						<% end %>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	</div>
 </div>
 
-</div> <!-- end container -->
-
 <script>
-	
 	function evenOut(){
 		$('.partners-parent').children().each( function(idx, partner){
 			$(partner).css('width', '25%' );
 			if( idx != 0 && idx % 6 == 0 ){ $(partner).css('margin-right', '0.1px') }
-
 		} )
-	}	
+	}
 
 	evenOut();
-
 </script>

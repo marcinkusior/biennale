@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     get 'registration_conferences_delete_all' => 'registration_conferences#delete_all'
     get 'registrations/archive'
     get 'registration_conferences/archive'
+    resources :partner_categories
     resources :administrators
     resources :images
     resources :registrations
@@ -47,6 +48,8 @@ Rails.application.routes.draw do
     get 'votes_delete_all' => 'votes#delete_all'
     post 'update_order' => "public_images#update_order"
     post 'update_contest_record_order' => "contest_records#update_order"
+    post 'update_partners_order' => "partners#update_order"
+    post 'update_partner_categories_order' => "partner_categories#update_order"
   end
 
   # mount Ckeditor::Engine => '/ckeditor'

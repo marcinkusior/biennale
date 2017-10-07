@@ -1,13 +1,3 @@
-
-
-
-
-
-
-
-
-
-
 function ordering(){
 var movable_divs = $('.ordering-movable');
 
@@ -19,7 +9,7 @@ $('.ordering-container button').click(function(event){
   var movable_old = $(".ordering-movable[data-order="+ new_value +"]");
 
   if (new_value < 0 || new_value > movable_divs.length - 1){
-    new_value = old_value 
+    new_value = old_value
   }else{
     $(movable).attr('data-order', new_value).css('order', new_value) ;
     $(movable_old).attr('data-order', old_value).css('order', old_value);

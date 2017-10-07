@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171005225912) do
+ActiveRecord::Schema.define(version: 20171007144741) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -186,12 +186,24 @@ ActiveRecord::Schema.define(version: 20171005225912) do
 
   add_index "paragraphs", ["page_id"], name: "index_paragraphs_on_page_id", using: :btree
 
+  create_table "partner_categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "order",      default: 0
+    t.string   "namePl"
+  end
+
   create_table "partners", force: :cascade do |t|
     t.string   "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "kind"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.integer  "partner_category_id"
+    t.string   "url"
+    t.integer  "order"
   end
+
+  add_index "partners", ["partner_category_id"], name: "index_partners_on_partner_category_id", using: :btree
 
   create_table "pictures", force: :cascade do |t|
     t.string   "title"
@@ -281,6 +293,7 @@ ActiveRecord::Schema.define(version: 20171005225912) do
 
   add_foreign_key "images", "registrations"
   add_foreign_key "paragraphs", "pages"
+  add_foreign_key "partners", "partner_categories"
   add_foreign_key "presentation_descs", "registration_conferences"
   add_foreign_key "public_images", "contest_records"
   add_foreign_key "records", "archives"

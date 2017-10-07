@@ -12,14 +12,21 @@
   <% end %>
 
   <div class="field">
-      <%= f.label :image, 'Zmień obraz:' %><br>
+    <%= f.label :image, 'Zmień obraz:' %><br>
     <%= f.file_field :image %>
-    </div>
-    
-    <div class="field">
-      <%= f.label :kind, 'Typ:' %><br>
-      <%= f.select :kind, [['Zwykły', 'normal'], ['Honorowy', 'honor'], ['Medialny', 'media'],['Organizator', 'organizer']] %>
-    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :url, 'Url' %><br>
+    <%= f.text_field :url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :partner_category, 'Typ:' %><br>
+    <%= f.select :partner_category_id, PartnerCategory.all.map {|category| [category.name, category.id] },
+      selected: params[:partner_category_id] || @partner.partner_category_id
+    %>
+  </div>
 
   <div class="actions">
     <%= f.submit %>

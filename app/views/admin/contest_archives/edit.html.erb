@@ -19,7 +19,7 @@
 
 		  <div class="ordering-container" >
 		    <% @contest_archive.contest_records.order(id: :desc).each_with_index do |record, idx| %>
-		      <div class="ordering-movable" data-order="<%= idx %>" 
+		      <div class="ordering-movable" data-order="<%= idx %>"
 		      data-id="<%= record.id %>"
 					style="order:<%= idx %>"
 		      >

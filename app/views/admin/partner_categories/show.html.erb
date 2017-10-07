@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @partner_category.name %>
+</p>
+
+<div class="partner-categories__partner-table">
+  <div class="table">
+    <div>
+      <%= link_to '+ Add Partner', new_admin_partner_path({partner_category_id: @partner_category.id}) %>
+      <%= link_to 'Zapisz kolejność', '', :class=>"update-ordering float-right"%>
+    </div>
+
+    <div class="ordering-container" >
+      <% @partner_category.partners.order(order: :asc).each_with_index do |partner, idx| %>
+        <div class="ordering-movable partner-categories__partner-row"
+          data-order="<%= idx %>"
+          data-id="<%= partner.id %>"
+          style="order:<%= idx %>"
+        >
+          <div class="table-image"><%= image_tag partner.image_url %></div>
+          <div><%= link_to 'Edit', edit_admin_partner_path(partner) %></div>
+          <div><%= link_to 'Destroy', [:admin, partner], method: :delete, data: { confirm: 'Are you sure?' } %></div>
+          <div>
+          <div class="ordering-control">
+              <button class="ordering-button glyphicon glyphicon-chevron-up" data-ordering='-1'> </button>
+          <button class="ordering-button glyphicon glyphicon-chevron-down" data-ordering='+1'></button>
+        </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <%= link_to 'Edit', edit_admin_partner_category_path(@partner_category) %> |
+  <%= link_to 'Back', admin_partner_categories_path %>
+</div>
+
+<script type="text/javascript">
+  ordering();
+  updateOrdering("/admin/update_partners_order");
+</script>

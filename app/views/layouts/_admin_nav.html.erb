@@ -3,15 +3,15 @@
 	<div class="navbar-left logo"> <%= link_to 'Ustawienia', admin_root_path %></div>
 
 		<ul class="nav navbar-nav navbar-right nav-logout">
-			<li> <%= link_to 'Wyloguj się', '/logout' %> </li>	
+			<li> <%= link_to 'Wyloguj się', '/logout' %> </li>
 		</ul>
 
 		<ul class="nav navbar-nav navbar-right">
-			
+
 				<li> <%= link_to 'Strony', admin_pages_path %> </li>
 
 				<li> <%= link_to 'Program', admin_events_path %> </li>
-				<li class="dropdown-trigger"> <a href=""> Rejestracje<b class="caret"></b> </a>	
+				<li class="dropdown-trigger"> <a href=""> Rejestracje<b class="caret"></b> </a>
 					<ul class="dropdown">
 
 						<li> <%= link_to 'Konkurs', admin_registrations_path %> </li>
@@ -19,7 +19,7 @@
 					</ul>
 				</li>
 
-				<li class="dropdown-trigger"> <a href=""> Archiwa <b class="caret"></b> </a>	
+				<li class="dropdown-trigger"> <a href=""> Archiwa <b class="caret"></b> </a>
 					<ul class="dropdown">
 
 						<li> <%= link_to 'Konkurs', admin_contest_archives_path %> </li>
@@ -29,14 +29,14 @@
 
 				<li> <%= link_to 'Głosowanie', admin_results_path %> </li>
 
-				<li class="dropdown-trigger"> <a href=""> Inne<b class="caret"></b> </a>	
+				<li class="dropdown-trigger"> <a href=""> Inne<b class="caret"></b> </a>
 					<ul class="dropdown">
-						<li> <%= link_to 'Partnerzy', admin_partners_path %></li>
+						<li> <%= link_to 'Partnerzy', admin_partner_categories_path %></li>
 						<li> <%= link_to 'Subskrybenci', admin_newsaddresses_path %> </li>
 						<li> <%= link_to 'Znaczniki (mapa)', admin_markers_path %> </li>
 						<li> <%= link_to 'Administratorzy', admin_administrators_path %> </li>
 					</ul>
-				</li>		
+				</li>
 		</ul>
 
 	</div> <!-- end container -->
