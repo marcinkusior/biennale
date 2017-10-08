@@ -1,82 +1,85 @@
+@import url(https://fonts.googleapis.com/css?family=PT+Serif:400,400italic);
+@import url(https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700);
 
-  body{
-    font-family: 'Hind', sans-serif;
-    font-size: 13px;
-  }
 
-  h2{
-    font-family: 'PT Serif';
-    font-size: 65px;
-    margin-top: 50px;
-    display: inline-block;
-    padding-bottom: 5px;
-  }
+body{
+  font-family: 'Hind', sans-serif;
+  font-size: 13px;
+}
 
-  h3{
-    font-size: 15px;
-    line-height: 18px;
-    margin: 100px 0 25px;
-    font-weight: bold;
-    // color: #F4E500;
-    letter-spacing: 10px;
-    text-transform: uppercase;
-  }
+h2{
+  font-family: 'PT Serif';
+  font-size: 65px;
+  margin-top: 50px;
+  display: inline-block;
+  padding-bottom: 5px;
+}
 
-  h4{
-    font-size: 16px;
-    line-height: 24px;
-    margin: 35px auto 80px;
-    color: black;
+h3{
+  font-size: 15px;
+  line-height: 18px;
+  margin: 100px 0 25px;
+  font-weight: bold;
+  // color: #F4E500;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+}
 
-  }
+h4{
+  font-size: 16px;
+  line-height: 24px;
+  margin: 35px auto 80px;
+  color: black;
 
-    h6{ font-size: 18px; line-height: 32px; font-family: 'PT Serif'; text-align: left; }
+}
 
-    .main-nav li a{ font-size: 12.5px; line-height: 100px; letter-spacing: 2px; font-weight: 500 }
-    .current a{ color: #B0BCC1 !important}
+  h6{ font-size: 18px; line-height: 32px; font-family: 'PT Serif'; text-align: left; }
 
-    .program{
-      p {
-        font-size: 16px;
-        line-height: 24px;
+  .main-nav li a{ font-size: 12.5px; line-height: 100px; letter-spacing: 2px; font-weight: 500 }
+  .current a{ color: #B0BCC1 !important}
 
-    };
-
-      td:first-child p{
-        font-size: 16px;
-        font-family: 'Hind', sans-serif;
-        color: black;
-        font-weight: 500;
-        letter-spacing: 1px;
-      }
-    }
-
-    .validate_checkbox p{color: #808080}
-
-    p{
-      font-family: 'PT Serif', serif;
-      font-size: 18px;
-      // color: #34ABDD;
-      line-height: 32px;
-      margin: 50px 0 50px;
-      text-align: left;
-
-      a:hover{ color: black; text-decoration: none;}
-
-    }
-
-    .ghost{
-      color: #4D4D4D;
-      font-size: 14px;
-      font-family: 'Hind';
-      letter-spacing: 1px;
-      line-height: 17.5px;
-      text-align: center;
-    }
-
-    .pink-button{
+  .program{
+    p {
       font-size: 16px;
+      line-height: 24px;
+
+  };
+
+    td:first-child p{
+      font-size: 16px;
+      font-family: 'Hind', sans-serif;
+      color: black;
+      font-weight: 500;
+      letter-spacing: 1px;
     }
+  }
+
+  .validate_checkbox p{color: #808080}
+
+  p{
+    font-family: 'PT Serif', serif;
+    font-size: 18px;
+    // color: #34ABDD;
+    line-height: 32px;
+    margin: 50px 0 50px;
+    text-align: left;
+
+    a:hover{ color: black; text-decoration: none;}
+
+  }
+
+  .ghost{
+    color: #4D4D4D;
+    font-size: 14px;
+    font-family: 'Hind';
+    letter-spacing: 1px;
+    line-height: 17.5px;
+    text-align: center;
+  }
+
+  .pink-button{
+    font-size: 16px;
+  }
 
 .Contact{
   p{
@@ -85,11 +88,9 @@
 }
 
 .footer, .simple-footer{
-  // color: #34ABDD;
   p, a{
     font-family: 'Hind', sans-serif;
     font-size: 11.5px;
-    // color: #34ABDD;
     letter-spacing: 1px;
     line-height: 14px;
   }
