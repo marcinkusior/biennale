@@ -1,14 +1,10 @@
-@import url(https://fonts.googleapis.com/css?family=PT+Serif:400,400italic);
-@import url(https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700);
-
-
 body{
   font-family: 'Hind', sans-serif;
   font-size: 13px;
 }
 
 h2{
-  font-family: 'PT Serif';
+  font-family: 'PT Serif', sans-serif;
   font-size: 65px;
   margin-top: 50px;
   display: inline-block;
@@ -30,7 +26,6 @@ h4{
   line-height: 24px;
   margin: 35px auto 80px;
   color: black;
-
 }
 
   h6{ font-size: 18px; line-height: 32px; font-family: 'PT Serif'; text-align: left; }
