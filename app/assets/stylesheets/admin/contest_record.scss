@@ -8,10 +8,6 @@
   src: url(asset_path('glyphicons-halflings-regular.eot?#iefix')) format('embedded-opentype'), url(asset_path('glyphicons-halflings-regular.woff')) format('woff'), url(asset_path('glyphicons-halflings-regular.ttf')) format('truetype'), url(asset_path('glyphicons-halflings-regular.svg#glyphicons_halflingsregular')) format('svg');
 }
 
-@import url(https://fonts.googleapis.com/css?family=PT+Serif:400,400italic);
-@import url(https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700);
-
-
 .contest_records{
 	.img-wrapper{text-align: center; margin: 0 auto; padding: 10px 20px 10px 10px; display: block; position: relative;}
 
@@ -22,7 +18,7 @@
 		bottom: 0;
 		padding: 1px 3px;
 		&:hover{text-decoration: underline}
-		
+
 	}
 }
 
@@ -34,7 +30,7 @@
 	.dropdown-menu{li{overflow: hidden;}}
 	a[data-wysihtml5-command-value='p']{
 		margin-top: -20px;
-		&::after{ 
+		&::after{
 
 			content: "Normalny Tekst";
 			display: block;
@@ -47,7 +43,7 @@
 
 	a[data-wysihtml5-command-value='h2']{
 				margin-top: -20px;
-		&::after{ 
+		&::after{
 
 			content: "Tytuł";
 			display: block;
@@ -57,7 +53,7 @@
 
 	a[data-wysihtml5-command-value='h3']{
 		margin-top: -20px;
-		&::after{ 
+		&::after{
 
 			content: "Nagłówek";
 			display: block;
@@ -66,7 +62,7 @@
 
 	a[data-wysihtml5-command-value='h4']{
 		margin-top: -20px;
-		&::after{ 
+		&::after{
 
 			content: "Nagłówek Program";
 			display: block;
@@ -78,7 +74,7 @@
 	}
 	a[data-wysihtml5-command-value='h6']{
 				margin-top: -20px;
-		&::after{ 
+		&::after{
 
 			content: "Autor";
 			display: block;
@@ -122,6 +118,6 @@
 		}
 		.flex-last{order: 99}
 
-	} 
+	}
 }
 

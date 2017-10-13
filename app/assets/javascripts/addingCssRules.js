@@ -20,9 +20,8 @@ function addingCssRules(){
 	addCSSRule(sheet, ".main-nav", "border-bottom: 1px solid " + secondaryColor );
 
 	addCSSRule(sheet, "h2", "color:" + primaryColor );
-	addCSSRule(sheet, "p", "color:" + primaryColor );
-	addCSSRule(sheet, "a", "color:" + primaryColor );
-	addCSSRule(sheet, "p a", "border-bottom: 1px solid " + secondaryColor );
+	// addCSSRule(sheet, "p", "color:" + primaryColor );
+	// addCSSRule(sheet, "a", "color:" + primaryColor );
 	addCSSRule(sheet, "h6", "color:" + primaryColor );
 	addCSSRule(sheet, "li", "color:" + primaryColor );
 	addCSSRule(sheet, ".localization-menu li a", "color:" + primaryColor );
@@ -36,7 +35,7 @@ function addingCssRules(){
 
 	addCSSRule(sheet, ".upload-desc", "background-color: " + primaryColor );
 
-	if( !isSafari ){ 
+	if( !isSafari ){
 		addCSSRule(sheet, ".archive select", "border-color: #BDCCD4;" );
 	}
 

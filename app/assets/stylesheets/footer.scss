@@ -1,0 +1,55 @@
+.footer{
+ 	background-color: #F9FBFB;
+ 	padding-bottom: 100px;
+	p{ margin: 0px; }
+	.list-element {
+		float: left;
+		margin-left: 20px;
+	}
+
+	.no-underline {
+		a:after {
+			display: none;
+		}
+	}
+
+	&__row {
+		p {
+			height: 14px;
+		}
+		p:first-child {
+			margin-bottom: 4px;
+		}
+	}
+
+	.meoko-logo-wrapper {
+		position: relative;
+	}
+
+	.meoko-logo {
+    position: absolute;
+    right: -22px;
+    top: -2px;
+	}
+
+	.align-right {
+		text-align: right;
+	}
+}
+
+@media(max-width: 640px) {
+	.footer {
+		.meoko-logo {
+			right: inherit;
+			padding-left: 4px;
+		}
+	}
+}
+
+.simple-footer {
+  padding-bottom: 0.1px;
+  .container {
+ 		margin: 37.5px auto;
+	}
+	.row {margin-top: 0}
+}

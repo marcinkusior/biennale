@@ -3,7 +3,16 @@
     background: <%= @settings.primary_color %>;
   }
 
-  .logo svg {
+  .logo svg, .meoko-logo svg{
     fill: <%= @settings.secondary_color %>;
   }
+
+  p a:after {
+    background-color: <%= @settings.secondary_color %>;
+  }
+
+  p, a {
+    color: <%= @settings.primary_color %>
+  }
+
 </style>

@@ -1,26 +1,30 @@
 <div class="footer simple-footer">
 <hr>
-<div class="container">
-	
-	<div class="row">
-		<div class="float-right">
-		<span class = "md-gone"><p></p></span>
-			<ul class="no-list">
-			<% Page.order(:order).where.not(order: nil).each do |page| %>
-				<li> <%= link_to I18n.locale == :en ? page.title : page.titlePL , "/#{I18n.locale}/#{page.slug}" %> </li>
-			<% end %>
-			<span class="xs-gone md-gone"> <li>|</li> </span>
-			<span class='md-up'> <br> </span>
-			<li> <%= link_to 'Facebook', 'https://www.facebook.com/biennaleinaw' %> </li>
-			</ul>
-		</div>
-
+	<div class="container">
+		<div class="row footer__row">
 			<div class="float-left">
-				<p>
-				<%= link_to 'info@inaw.pl', 'mailto:info@inaw.pl' %> <br>
-				 2016 inaw | design by <%= link_to 'meoko', 'http://www.meoko.co ' %> ;)
+				<p><%= link_to 'info@inaw.pl', 'mailto:info@inaw.pl' %> </p>
+				<p class="meoko-logo-wrapper no-underline">
+					<%= Date.today.year %> inaw | design by
+					<a href="http://piotreksrebro.com" target="_blank" class="meoko-logo"><%= render partial: 'svg/meoko' %></a>
 				</p>
 			</div>
+
+			<div class="float-right footer__row xs-gone no-underline">
+				<p class="xmd-gone"></p>
+				<div class="no-list">
+					<% Page.order(:order).where.not(order: nil).each do |page| %>
+							<p class="list-element">
+								<%= link_to I18n.locale == :en ? page.title : page.titlePL , "/#{I18n.locale}/#{page.slug}" %>
+							</p>
+					<% end %>
+					<span class="xmd-gone">
+						<p class="list-element">|</p>
+						<p class="list-element"><%= link_to 'Facebook', 'https://www.facebook.com/biennaleinaw' %></p>
+					</span>
+				</div>
+				<p class="xmd-up float-right"><%= link_to 'Facebook', 'https://www.facebook.com/biennaleinaw' %></p>
 			</div>
-</div> <!-- end container -->
-</div> <!-- end footer -->
+		</div>
+	</div>
+</div>

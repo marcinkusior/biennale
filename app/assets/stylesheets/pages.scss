@@ -3,20 +3,25 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-@media(min-width: 976px){
-	.container{max-width: 1130px;}
-}
-
-
 header{
-	// border-bottom: 1px solid #F8E70F;
 	border-top: 0;
 }
 
-// .container{width: 950px !important}
 
-a{
+p a {
+	border-bottom: none;
 	transition: 0.3s;
+	position: relative;
+
+	&:after {
+		content: '';
+		width: 100%;
+		background-color: black;
+		height: 1px;
+		position: absolute;
+		bottom: 3px;
+		left: 0;
+	}
 }
 
 //MAIN NAV
@@ -180,13 +185,11 @@ hr{ border-top: 1px solid #d7e0e5; margin: 0 }
 	outline: 0
 }
 
-
-//FOOTER
-
-.footer{
- background-color:  #F9FBFB;
- padding-bottom: 100px;
-	p{ margin: 0px; }
+.Contest{
+ 	.archive{
+ 		select{ max-width: 210px; option{color: #4D4D4D}}
+ 		button{width: 210px;}
+ 	}
 }
 
 .float-left{
@@ -203,23 +206,8 @@ hr{ border-top: 1px solid #d7e0e5; margin: 0 }
 
 .no-list{
 	list-style: none;
-
+	overflow: hidden;
 	li{float: left;}
  }
 
- .relative{ position: relative; }
-
- .Contest{
- 	.archive{
- 		select{ max-width: 210px; option{color: #4D4D4D}}
- 		button{width: 210px;}
- 	}
- }
-
- .simple-footer{
-  padding-bottom: 0.1px;
-  .container{
- 		margin: 37.5px auto;
-	 }
-	 .row{margin-top: 0}
-	}
+.relative{ position: relative; }

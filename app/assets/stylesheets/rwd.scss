@@ -10,7 +10,10 @@ $md: 992px;
 	}
 }
  // RAW 640-768px
-	.md-up{display: none}
+	.md-up, .xmd-up {
+		display: none
+	}
+
  @media(max-width: 768px) and (min-width: 640px){
 	.results{ width: 570px }
 	h3{margin: 80px 0 50px}
@@ -23,13 +26,8 @@ $md: 992px;
 		h3{margin: 10px 0 0}
 	 }
 	.md-up{ display: block; }
-	.float-left{max-width: 195px}
 	.md-gone{display: none}
-	.no-list{
-		margin-top: 0;
-		padding: 0;
-		li{margin-left: 10px; float: right}
-	}
+	.float-left{max-width: 195px}
 
 		.registration{
 			h3{ margin: 80px 0 20px }
@@ -40,6 +38,17 @@ $md: 992px;
 		}
 
  }
+
+@media(max-width: 992px) and (min-width: 640px){
+	.xmd-gone {display: none}
+	.xmd-up {display: block}
+
+	.no-list{
+		margin-top: 0;
+		padding: 0;
+		li{margin-left: 10px; float: right}
+	}
+}
 
 // GENERAL RDW <640px
 
@@ -54,24 +63,26 @@ $md: 992px;
   	h2{ font-size: 45px; margin: 0 }
    	h3{ margin: 40px 0 30px; }
 	.archive h3{ margin-bottom: 30px }
-	.xs-appear{display: inline} 
+	.xs-appear{display: inline}
    	p{margin: 30px 0 40px; font-size: 16px; line-height: 28px }
   	.banner{margin: 0 0 100px;}
 		.footer .row{margin: 0; }
 		.program{margin: 0 0 40px; width: 100%; text-align: left}
-		
+
 		.program td{ width: 100%; display: block; text-align: left !important}
-		.partners-parent{ margin: 30px 0 0; 
+		.partners-parent{ margin: 30px 0 0;
 			.partner img{max-width: 65px; margin-bottom: 20px}
 		}
 		.partners{
 			h3{margin: 20px 0 0}
 		}
 		.float-left, .float-right{ float: none; text-align: center; margin: 0 }
-		.xs-gone{ display: none; }
+
+		.xs-gone{ display: none !important; }
+
 		.footer{
 			padding: 0;
-			.container{ padding: 30px 0;}	
+			.container{ padding: 30px 0;}
 			ul{padding: 0; display: flex; justify-content: center ; margin: 20px 0 20px;}
 			p
 			{
@@ -96,7 +107,7 @@ $md: 992px;
 			label{font-size: 11px;}
 			.ghost{margin: 20px 0}
 			.col{padding: 0 !important; margin: 10px auto; width: 210px; height: 60px;}
-			.submit{ 
+			.submit{
 				padding: 25px 5vw;
 				margin: 0 0 30px;
 		    		letter-spacing: 3px;
@@ -109,7 +120,7 @@ $md: 992px;
 			.field{margin: 0}
 			input{width: 100%; max-width: 420px !important; margin-left: 0 !important}
 			input:nth-child(3){margin-top: 20px;}
-			
+
 			.paragraph{
 				overflow: hidden;
 				div{
@@ -134,7 +145,7 @@ $md: 992px;
 
 //body transition class
 .content{
-	transition: .9s cubic-bezier(.27,0,.175,1); 
+	transition: .9s cubic-bezier(.27,0,.175,1);
 	position: relative;
 	opacity: 1;
 	right: 0;
@@ -167,7 +178,7 @@ body{
 			top: 38px;
 			z-index: 5;
 			&:focus{outline: 0}
-			transition: .9s cubic-bezier(.27,0,.175,1); 
+			transition: .9s cubic-bezier(.27,0,.175,1);
 		}
 
 		.menu-toggle.is-visible{display: block}
@@ -216,17 +227,17 @@ body{
 				}
 			 }
 			} // end localiztation menu
-			
+
 			li{
 				text-align: center;
 				a{
-					line-height: 60px !important; 
+					line-height: 60px !important;
 					font-size: 20px;
 					&:hover{ color: #BDCCD4 }
 				}
 			}
 		}
-		
+
 		.slideMenu{opacity: 1; z-index: 4; top: 0; background: #F4E500}
 	}
 }
