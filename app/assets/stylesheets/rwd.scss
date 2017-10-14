@@ -200,7 +200,6 @@ body{
 			position: fixed;
 			top: 20vh;
 			left: 0;
-			background: white;
 			z-index: -1;
 			transition: .9s cubic-bezier(.77,0,.175,1);
 
@@ -238,7 +237,7 @@ body{
 			}
 		}
 
-		.slideMenu{opacity: 1; z-index: 4; top: 0; background: #F4E500}
+		.slide-menu{opacity: 1; z-index: 4; top: 0}
 	}
 }
 
