@@ -46,6 +46,7 @@ gem 'therubyracer'
 gem "jquery-scrollto-rails"
 gem 'jquery-easing-rails'
 gem 'bootsy'
+gem 'ckeditor'
 gem 'seed_dump'
 gem 'sucker_punch'
 gem 'rubyzip'
