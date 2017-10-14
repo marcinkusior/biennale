@@ -42,16 +42,16 @@
       <%= link_to 'Back', @record.archive_id ? "/admin/archives/#{@record.archive_id}/edit" : request.referer %>
 
     </div> <!-- end small column -->
-    
+
     <div class="col-xs-16">
       <div class="field">
       <%= f.label :body, 'Treść' %><br>
-      <%= f.bootsy_area :body, class: 'form-control', rows: 12 %>
+      <%= f.cktext_area :body %>
       </div>
 
       <div class="field">
         <%= f.label :bodyPL, 'Treść PL' %><br>
-      <%= f.bootsy_area :bodyPL, class: 'form-control', rows: 12 %>
+      <%= f.cktext_area :bodyPL %>
       </div>
     </div> <!-- end big column -->
   </div> <!-- end row -->

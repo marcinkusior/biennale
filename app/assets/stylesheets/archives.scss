@@ -14,7 +14,7 @@
 }
 
 .contest_gallery{
-	#more-gallery-images{ 
+	#more-gallery-images{
 		width: 100% !important;
 		margin: 30px 0 100px;
 		padding-top: 24px;
@@ -31,7 +31,7 @@
 		&:hover{
 			background: #BDCCD4;
 			border: 2px solid #BDCCD4;
-			color: black;	
+			color: black;
 		}
 	}
 }
@@ -41,11 +41,11 @@
 }
 
 .archive-one{
-	opacity: 0; 
-	z-index: -10; 
-	left: 0; 
-	right: 0; 
-	padding-top: 40px; 
+	opacity: 0;
+	z-index: -10;
+	left: 0;
+	right: 0;
+	padding-top: 40px;
 	p{ text-align: left; max-width: 670px; margin: 0 auto; font-size: 12px; line-height: 18px;}
 }
 .one-image:first-of-type{margin-top: 20px}
@@ -57,13 +57,13 @@
 
 .row{margin: 0}
 
-	
-
 	select{
 		line-height: 50px;
 	}
 
-	h3{margin-bottom: 60px;}
+	h3{
+		margin: 100px 0 60px;
+	}
 
 	select{
 		width: 100%;
@@ -94,11 +94,11 @@ select:focus{outline: 0}
 		margin-left: 10px;
 		width: 112px;
 		border-radius: 3px;
-		
+
 		&:hover{
 			background: black;
 			border: 2px solid black;
-			color: white;	
+			color: white;
 		}
 	}
 
@@ -157,7 +157,7 @@ select:focus{outline: 0}
 }
 
 .hideRecord{
-	opacity: 0;	
+	opacity: 0;
 	p{margin: 0; font-size: 15px; line-height: 24px;}
 }
 
@@ -168,7 +168,7 @@ select:focus{outline: 0}
 	animation-timing-function: cubic-bezier(.27,0,.175,1);
 }
 
-.mockupButton{ 
+.mockupButton{
 	z-index: -1;
 	position: absolute;
 	right: 0;
@@ -218,7 +218,7 @@ select:focus{outline: 0}
 			.archive button#more-images, button#more-gallery-images{ padding-top: 16px; padding-bottom: 16px; border: 0 }
 		}
 
-		
+
 
 
 	#archiveModal, #galleryModal{
@@ -273,7 +273,7 @@ select:focus{outline: 0}
 
 		@media(min-width: 1130px){
 			.modal-dialog, .recordBody{max-width: 1130px;}
-			
+
 			.archive-image:nth-child(5n + 1){margin-left: 0;}
 			.archive-image:not(:nth-child(5n + 1)){margin-left: 20px;}
 		}

@@ -15,7 +15,7 @@
       >
         <div class="ordering-table__attribute"> <%= archive.title %> </div>
         <div class="ordering-table__attribute"> <%= archive.titlePL %> </div>
-        <div><%= link_to 'Edit', edit_admin_contest_archive_path(archive) %></div>
+        <div><%= link_to 'Edit', edit_admin_archive_path(archive) %></div>
         <div><%= link_to 'Destroy', [:admin, archive], method: :delete, data: { confirm: 'Are you sure?' } %></div>
         <div>
         <div class="ordering-control">

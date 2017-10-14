@@ -6,29 +6,35 @@ body{
 h2{
   font-family: 'PT Serif', sans-serif;
   font-size: 65px;
-  margin-top: 50px;
-  display: inline-block;
+  // margin-top: 50px;
   padding-bottom: 5px;
+  margin: 0;
 }
 
 h3{
   font-size: 15px;
   line-height: 18px;
-  margin: 100px 0 25px;
+  // margin: 100px 0 25px;
   font-weight: bold;
-  // color: #F4E500;
   letter-spacing: 10px;
   text-transform: uppercase;
+  margin: 0;
 }
 
 h4{
   font-size: 16px;
   line-height: 24px;
-  margin: 35px auto 80px;
+  // margin: 35px auto 80px;
   color: black;
+  margin: 0;
 }
 
-  h6{ font-size: 18px; line-height: 32px; font-family: 'PT Serif'; text-align: left; }
+h6 {
+  font-size: 18px;
+  line-height: 32px;
+  font-family: 'PT Serif';
+  text-align: left;
+}
 
   .main-nav li a{ font-size: 12.5px; line-height: 100px; letter-spacing: 2px; font-weight: 500 }
   .current a{ color: #B0BCC1 !important}
@@ -56,7 +62,7 @@ h4{
     font-size: 18px;
     // color: #34ABDD;
     line-height: 32px;
-    margin: 50px 0 50px;
+    margin: 0;
     text-align: left;
 
     a:hover{ color: black; text-decoration: none;}

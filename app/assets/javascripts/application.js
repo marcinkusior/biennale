@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootsy
 //= require turbolinks
+//= require ckeditor/init
 //= require_tree .
 //= require jquery.scrollTo
 //= require jquery.easing
