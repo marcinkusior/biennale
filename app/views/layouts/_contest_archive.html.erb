@@ -1,6 +1,6 @@
 <hr>
 <div class="container">
-	
+
 
 <div class="archive" id="archive_select">
 
@@ -13,14 +13,13 @@
 <div id="archiveModal" class="modal fade" data-backdrop="false">
 	<div class="modal-dialog">
 		<div class="registration row ">
-			
+
 		<span class="modalControl">
-			<button type="button" class="close" data-dismiss="modal"> 
-				<span class = 'xs-gone'> <%=  t( "close" )  %> </span> <span> <%= inline_svg('X.svg') %></span> 
+			<button type="button" class="close" data-dismiss="modal">
+				<span class = 'xs-gone'> <%=  t( "close" )  %> </span> <span> <%= inline_svg('X.svg') %></span>
 			</button>
 		</span>
 		  <%= render 'layouts/contest_archive_modal' %>
-	 
 	</div>
 </div>
 
@@ -30,11 +29,8 @@
 <div class="backdrop"></div>
 
 </div> <!-- end container -->
-<script>	
+<script>
 
 contestArchiveLogic()
-
-
-
 	backdrop( $('.archive-image') );
-</script>	
+</script>

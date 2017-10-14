@@ -50,6 +50,8 @@ Rails.application.routes.draw do
     post 'update_contest_record_order' => "contest_records#update_order"
     post 'update_partners_order' => "partners#update_order"
     post 'update_partner_categories_order' => "partner_categories#update_order"
+    post 'update_contest_archive_order' => "contest_archives#update_order"
+    post 'update_archive_order' => "archives#update_order"
   end
 
   # mount Ckeditor::Engine => '/ckeditor'

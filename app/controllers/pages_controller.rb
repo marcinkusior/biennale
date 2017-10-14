@@ -11,12 +11,12 @@ class PagesController < ApplicationController
 	end
 
 	def Conference
-		@archives = Archive.all.order(id: :desc)
+		@archives = Archive.all.order(order: :asc)
 	end
 
 	def Contest
 		gallery_archive_id = General.first.contest_archive_id
-		@archives = ContestArchive.where.not(id: gallery_archive_id).order(id: :desc)
+		@archives = ContestArchive.where.not(id: gallery_archive_id).order(order: :asc)
 		@gallery_archive = ContestArchive.find(gallery_archive_id) unless gallery_archive_id.blank?
 		@gallery_archive_ids = @gallery_archive.contest_records.map{|record| record.id} unless gallery_archive_id.blank?
 

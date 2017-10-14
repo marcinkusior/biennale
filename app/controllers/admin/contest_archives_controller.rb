@@ -2,7 +2,7 @@ class Admin::ContestArchivesController < ApplicationController
   before_action :set_contest_archive, only: [:show, :edit, :update, :destroy]
 
   before_filter :authorize
-  
+
   # GET /admin/contest_archives
   # GET /admin/contest_archives.json
   def index
@@ -60,6 +60,19 @@ class Admin::ContestArchivesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to admin_contest_archives_url, notice: 'Contest archive was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def update_order
+    ids = params[:object][:ids]
+    order = params[:object][:order]
+    ids.each_with_index do |id, idx|
+      ContestArchive.find(id).update(order: order[idx])
+    end
+
+    respond_to do |format|
+      format.html { redirect_to request.referer, notice: 'Updated successfully' }
+      format.json {  }
     end
   end
 

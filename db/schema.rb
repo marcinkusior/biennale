@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171014112046) do
+ActiveRecord::Schema.define(version: 20171014114654) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,9 +43,10 @@ ActiveRecord::Schema.define(version: 20171014112046) do
 
   create_table "archives", force: :cascade do |t|
     t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.string   "titlePL"
+    t.integer  "order",      default: 0
   end
 
   create_table "banner_images", force: :cascade do |t|
@@ -92,8 +93,9 @@ ActiveRecord::Schema.define(version: 20171014112046) do
   create_table "contest_archives", force: :cascade do |t|
     t.string   "title"
     t.string   "titlePL"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "order",      default: 0
   end
 
   create_table "contest_records", force: :cascade do |t|

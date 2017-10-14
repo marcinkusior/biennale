@@ -2,7 +2,7 @@
 
 <h1>Listing Partner Categories</h1>
 
-<div class="partner-categories__categories-table">
+<div class="ordering-table">
   <div class="table">
     <div>
       <strong>Name</strong>
@@ -11,13 +11,13 @@
 
     <div class="ordering-container" >
       <% PartnerCategory.all.order(order: :asc).each_with_index do |category, idx| %>
-        <div class="ordering-movable partner-categories__category-row"
+        <div class="ordering-movable ordering-table__row"
           data-order="<%= idx %>"
           data-id="<%= category.id %>"
           style="order:<%= idx %>"
         >
-          <div class="partner-categories__category-name"> <%= category.name %> </div>
-          <div class="partner-categories__category-name"> <%= category.namePl %> </div>
+          <div class="ordering-table__attribute"> <%= category.name %> </div>
+          <div class="ordering-table__attribute"> <%= category.namePl %> </div>
           <div><%= link_to 'Partnerzy', admin_partner_category_path(category) %></div>
           <div><%= link_to 'Edit', edit_admin_partner_category_path(category) %></div>
           <div><%= link_to 'Destroy', [:admin, category], method: :delete, data: { confirm: 'Are you sure?' } %></div>

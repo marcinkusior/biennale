@@ -63,6 +63,19 @@ class Admin::ArchivesController < ApplicationController
     end
   end
 
+  def update_order
+    ids = params[:object][:ids]
+    order = params[:object][:order]
+    ids.each_with_index do |id, idx|
+      Archive.find(id).update(order: order[idx])
+    end
+
+    respond_to do |format|
+      format.html { redirect_to request.referer, notice: 'Updated successfully' }
+      format.json {  }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_archive
