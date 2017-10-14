@@ -79,6 +79,6 @@ class Admin::GeneralsController < ApplicationController
                                       :registration_conference, :registration_contest, :voting_contest,
                                       :partners_on, :program_on, :results_on, :archive_on, :voting_on,
                                       :contest_archive_on, :contest_archive_id, :map_zoom, :marker_id,
-                                      :primary_banner, :secondary_banner)
+                                      :primary_banner, :secondary_banner, :favicon)
     end
 end

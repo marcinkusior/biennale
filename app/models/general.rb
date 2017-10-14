@@ -3,4 +3,5 @@ class General < ActiveRecord::Base
 
   mount_uploader :primary_banner, ImageUploader
   mount_uploader :secondary_banner, ImageUploader
+  mount_uploader :favicon, ImageUploader
 end
