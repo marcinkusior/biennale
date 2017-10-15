@@ -1,7 +1,7 @@
 <header class="main-nav">
 	<div class="container">
 		<div class="navbar-left logo">
-			<%= render partial: 'svg/logo'%>
+			<%= link_to render(partial: 'svg/logo'), root_path %>
 		</div>
 		<div class="nav-menus">
 			<button type="button" class="menu-toggle" data-dismiss="modal"> <span> <%= inline_svg('X.svg') %></span> </button>
@@ -12,7 +12,7 @@
 				<% else %>
 					<li> <%= link_to "En", locale: :en %> </li>
 				<% end %>
-				<li><%= link_to 'Fb', 'https://www.facebook.com/biennaleinaw' %></li>
+				<li><%= link_to 'Fb', 'https://www.facebook.com/biennaleinaw', target: :_blank %></li>
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right">
