@@ -25,13 +25,13 @@
 		</div>
 
 		<div class="row">
-			<div class="float-right xs-gone">
+			<div class="float-right xs-gone footer__row">
 				<p><%= link_to 'Terms and Conditions', "/#{I18n.locale}/Terms_Contest" %></p>
 				<p class="align-right"><%= link_to 'Privacy Policy', "/#{I18n.locale}/Privacy" %></p>
 				<br>
 			</div>
 
-			<div class="float-right xs-appear">
+			<div class="float-right xs-appear footer__row">
 				<p>
 					<%= link_to 'Terms and Conditions', "/#{I18n.locale}/Terms_Contest" %>
 					<span class="xs-appear"> | </span>
@@ -40,7 +40,7 @@
 				<br>
 			</div>
 
-			<div class="float-left">
+			<div class="float-left footer__row">
 				<p><%= link_to 'info@inaw.pl', 'mailto:info@inaw.pl' %> </p>
 				<p class="meoko-logo-wrapper no-underline">
 					<%= Date.today.year %> inaw | design by
