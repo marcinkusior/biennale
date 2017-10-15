@@ -15,14 +15,14 @@
     <div class="col-xs-9">
       <div class="field ">
           <%= f.label :timedate, 'Data + miejsce' %><br>
-        <%= f.bootsy_area :timedate, class: 'form-control', rows: 8 %>
+        <%= f.cktext_area :timedate%>
         </div>
     </div>
-    
+
     <div class="col-xs-9 col-xs-offset-1">
       <div class="field ">
           <%= f.label :description, 'opis' %><br>
-        <%= f.bootsy_area :description, class: 'form-control', rows: 8  %>
+        <%= f.cktext_area :description %>
       </div>
     </div>
   </div>
@@ -31,14 +31,14 @@
     <div class="col-xs-9">
       <div class="field ">
           <%= f.label :timedatePL, 'Data + miejsce PL' %><br>
-        <%= f.bootsy_area :timedatePL, class: 'form-control', rows: 8  %>
+        <%= f.cktext_area :timedatePL %>
         </div>
     </div>
-    
+
     <div class="col-xs-9 col-xs-offset-1">
       <div class="field ">
           <%= f.label :descPL, 'opis PL' %><br>
-        <%= f.bootsy_area :descPL, class: 'form-control', rows: 8  %>
+        <%= f.cktext_area :descPL %>
       </div>
     </div>
   </div>
