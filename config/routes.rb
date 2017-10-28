@@ -44,6 +44,7 @@ Rails.application.routes.draw do
     resources :public_images
     resources :contest_records
     resources :newsaddresses
+    resources :attachments
 
     get 'results' =>'votes#results'
     get 'votes_delete_all' => 'votes#delete_all'
