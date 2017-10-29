@@ -1,5 +1,6 @@
 class Admin::PartnerCategoriesController < ApplicationController
   before_action :set_partner_category, only: [:show, :edit, :update, :destroy]
+  before_filter :authorize
 
   def index
     @partner_categories = PartnerCategory.all

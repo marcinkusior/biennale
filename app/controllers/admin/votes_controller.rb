@@ -1,5 +1,6 @@
 class Admin::VotesController < ApplicationController
   before_action :set_vote, only: [:show, :edit, :update, :destroy]
+  before_filter :authorize
 
   # GET /admin/votes
   # GET /admin/votes.json
@@ -61,13 +62,13 @@ class Admin::VotesController < ApplicationController
     end
   end
 
-  def results 
+  def results
 
     gallery_archive_id = General.first.contest_archive_id
     @archives = ContestArchive.where.not(id: gallery_archive_id)
     @gallery_archive = ContestArchive.find(gallery_archive_id) unless gallery_archive_id.blank?
     @gallery_archive_ids = @gallery_archive.contest_records.map{|record| record.id} unless gallery_archive_id.blank?
-       
+
     # gathering results
     total = Vote.all.length.to_f
     if General.first.contest_archive_id != nil

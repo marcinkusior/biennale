@@ -1,5 +1,6 @@
 class Admin::AttachmentsController < ApplicationController
   before_action :set_attachment, only: [:show, :edit, :update, :destroy]
+  before_filter :authorize
 
   def index
     @attachments = Attachment.all

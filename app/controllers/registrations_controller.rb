@@ -11,14 +11,11 @@ class RegistrationsController < ApplicationController
       if @registration.save
         format.html { redirect_to root_path, notice: 'Registration was successfully created.' }
         format.json {  }
-        
-        BackupMailJob.new.async.perform(@registration)
-        # RegisterMailJob.new.async.perform(@registration)
 
-        # RegisterMail.backup_mail(@registration).deliver_now
-        RegisterMail.register_success_mail(@registration).deliver_now
+        BackupMailJob.new.async.perform(@registration)
+        RegisterMailJob.new.async.perform(@registration)
       else
-        format.html { 
+        format.html {
         @registration.images = [];
          3.times { @registration.images.build};
           render action: :new
@@ -32,15 +29,15 @@ class RegistrationsController < ApplicationController
     id = params['registration_id']
     images = Registration.find(id).images
     respond_to do |format|
-      format.json { render json: images } 
+      format.json { render json: images }
     end
   end
-  
+
   private
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def registration_params
       params.require(:registration).permit(:first_name, :last_name, :telephone, :street, :city, :zip_code, :country, :university, :supervising_professor, :email, :terms_of_service, :serial, :group_name, images_attributes: [ :src, :registration_id])
     end
-  
+
 end
