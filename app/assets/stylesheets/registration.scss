@@ -2,10 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.registration{
-	.margin: 50px 0;
+.registration-new-form {
+	.header {
+		margin-top: 50px;
+	}
 
-	.container-fluid{		
+	input[type="file"]{
+		opacity: 0;
+		overflow: hidden;
+		height: 52px;
+		width: 100%;
+	}
+
+	input[type="file"]:hover{cursor: pointer;}
+}
+
+.registration{
+	.container-fluid{
 		@media(min-width: 768px){ padding: 50px 120px;}
 		padding: 50px 60px;
 	}
@@ -20,7 +33,7 @@
 	color: white;
 }
 
-.backdrop{ 
+.backdrop{
  transition: .9s cubic-bezier(.77,0,.175,1);
  position: fixed;
  top: 0; left: 0; right: 0; bottom: 0;

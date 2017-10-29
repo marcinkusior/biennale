@@ -16,7 +16,7 @@
 	.full{width: 100%;}
 	.quarter{width: 25%;}
 
-	label{ 
+	label{
 		text-transform: uppercase;
 		font-weight: 500;
 		font-size: 13px;
@@ -65,7 +65,7 @@
 	    opacity: 0.5;
 		}
 
-		input[type='checkbox']{ 
+		input[type='checkbox']{
 	    position: absolute;
 	    left: 0px;
 	    width: 25px;
@@ -80,7 +80,7 @@
 	 .field_with_errors{
 	 	margin: 0;
 	 	padding: 0;
-		
+
 		label{
 			border-bottom: 5px solid lightcoral;
 			margin-bottom: 0;
@@ -92,17 +92,15 @@
 	 	}
 	 }
 
-	
 	 input.validate.checked{border: 1px solid lightcoral;}
-	 span.validate{ 
-	 	border-bottom: 0; 
+	 span.validate{
+	 	border-bottom: 0;
 	 	p{
 	 			color: grey;
-			a{ border-bottom: 0; border-bottom: 2px solid lightcoral;}
 	 	}
 	 }
 
-	.validate_checkbox{	
+	.validate_checkbox{
 		border-left: 0;
 		border-right: 0;
 		border-top: 0;
@@ -141,7 +139,7 @@
 	.col:nth-child(1){ padding: 0 15px 0 0; }
 	.col:nth-child(2){ padding: 0 5px; }
 	.col:nth-child(3){ padding: 0 0 0 15px; }
-	
+
 	input[type="file"]{
 		opacity: 0;
 		overflow: hidden;
@@ -160,8 +158,8 @@
 		position: absolute;
 		// top: -20px;
 		right: 0px;
-		font-weight: 400; 
-		font-size: 12px; 
+		font-weight: 400;
+		font-size: 12px;
 		text-transform: uppercase;
 		svg{
 			overflow: visible;

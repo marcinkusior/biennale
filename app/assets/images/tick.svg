@@ -2,6 +2,7 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
+   fill="none";
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -62,25 +63,25 @@
        inkscape:connector-curvature="0" />
     <path
        d="m 583.2087,654.86776 -25,0 0,25 25,0 0,-25 z m -1.25,23.75 -22.5,0 0,-22.5 22.5,0 0,22.5 z"
-       style="fill:#34abdd;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       style="fill-opacity:1;fill-rule:nonzero;stroke:none"
        id="path156"
        inkscape:connector-curvature="0" />
     <path
        d="m 558.8337,655.49276 23.75,0 0,23.75 -23.75,0 0,-23.75 z"
-       style="fill:#34abdd;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       style="fill-opacity:1;fill-rule:nonzero;stroke:none"
        id="path158"
        inkscape:connector-curvature="0" />
     <path
        d="m 583.2087,654.86776 -25,0 0,25 25,0 0,-25 z m -1.25,23.75 -22.5,0 0,-22.5 22.5,0 0,22.5 z"
-       style="fill:#34abdd;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       style="fill-opacity:1;fill-rule:nonzero;stroke:none"
        id="path160"
        inkscape:connector-curvature="0" />
     <g
        id="g162"
        transform="matrix(1.25,0,0,-1.25,563.38783,666.68164)">
-      <path
+      <path class="tick-line"
          d="M 0,0 4.237,-6.408 11.714,5.311"
-         style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         style="fill:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
          id="path164"
          inkscape:connector-curvature="0" />
     </g>
