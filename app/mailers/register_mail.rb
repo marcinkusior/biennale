@@ -13,7 +13,7 @@ class RegisterMail < ApplicationMailer
 		end
 
 		mail.attachments[edition + 'thBiennial.pdf'] = attachment
-		# mail.attachments[edition + 'thBiennialForm.pdf'] = WickedPdf.new.pdf_from_string( render_to_string(:pdf => 'Form',:template => 'attachments/registration_success.pdf.erb'))
+		mail.attachments[edition + 'thBiennialForm.pdf'] = WickedPdf.new.pdf_from_string( render_to_string(:pdf => 'Form',:template => 'attachments/registration_success.pdf.erb'))
 
 		mail(
 			to: @registration.email,
@@ -44,12 +44,12 @@ class RegisterMail < ApplicationMailer
 
 		pdf = locale == :en ? File.read(File.join(Rails.root, 'app','pdfs','konferencja.pdf')) : File.read(File.join(Rails.root, 'app','pdfs','konferencjaPL.pdf'))
 
-		mail.attachments['4thBiennial.pdf'] = pdf
-		# mail.attachments['4thBiennialForm.pdf'] = WickedPdf.new.pdf_from_string( render_to_string(:pdf => 'Form',:template => 'attachments/registration_conference_success.pdf.erb'))
+		mail.attachments[edition + 'thBiennial.pdf'] = attachment
+		mail.attachments[edition + 'thBiennialForm.pdf'] = WickedPdf.new.pdf_from_string( render_to_string(:pdf => 'Form',:template => 'attachments/registration_conference_success.pdf.erb'))
 
 		mail(
 			to: @registration.email,
-			subject: "Registration in 4th Biennale INAW Conference",
+			subject: "Registration in #{edition}th Biennale INAW Conference",
 		 )
 	end
 
