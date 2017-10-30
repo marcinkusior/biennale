@@ -1,0 +1,29 @@
+<%= form_for([:admin, @general]) do |f| %>
+  <% if @general.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@general.errors.count, "error") %> prohibited this general from being saved:</h2>
+
+      <ul>
+      <% @general.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="">
+      <%= f.label :registration_conference_mail, "treść maila - en" %><br>
+      <%= f.cktext_area :registration_conference_mail %>
+    </div>
+
+    <div class="">
+      <%= f.label :registration_conference_mail_PL, "treść maila -  pl" %><br>
+      <%= f.cktext_area :registration_conference_mail_PL %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Wprowadź zmiany' %>
+  </div>
+<% end %>

@@ -2,19 +2,24 @@ class RegisterMail < ApplicationMailer
 
 	# CONTEST REGISTRATION MAILS
 	def register_success_mail(registration)
+		edition = General.first.edition_no.to_s;
 
 		@registration = registration
-		
-		pdf = locale == :en ? File.read(File.join(Rails.root, 'app','pdfs','konkurs.pdf')) : File.read(File.join(Rails.root, 'app','pdfs','konkursPL.pdf'))
-		mail.attachments['4thBiennial.pdf'] = pdf
-		mail.attachments['4thBiennialForm.pdf'] = WickedPdf.new.pdf_from_string( render_to_string(:pdf => 'Form',:template => 'attachments/registration_success.pdf.erb'))
+
+		if (locale = :en) then
+			attachment = File.read(File.join(Rails.root, 'app','pdfs','konkurs.pdf'))
+		else
+			attachment = File.read(File.join(Rails.root, 'app','pdfs','konkursPL.pdf'))
+		end
+
+		mail.attachments[edition + 'thBiennial.pdf'] = attachment
+		# mail.attachments[edition + 'thBiennialForm.pdf'] = WickedPdf.new.pdf_from_string( render_to_string(:pdf => 'Form',:template => 'attachments/registration_success.pdf.erb'))
 
 		mail(
 			to: @registration.email,
-			subject: "Registration in 4th Biennale INAW Contest" 
+			subject: "Registration in #{edition}th Biennale INAW Contest"
 		 )
-
-	end # end rgister_success_mail
+	end
 
 	def backup_mail(registration)
 		@registration = registration
@@ -27,7 +32,7 @@ class RegisterMail < ApplicationMailer
 
 		mail(
 			to: 'inawbiennale@gmail.com',
-			subject: "#{@registration.serial} #{@registration.first_name} #{@registration.last_name}" 
+			subject: "#{@registration.serial} #{@registration.first_name} #{@registration.last_name}"
 		 )
 	end
 
@@ -40,15 +45,13 @@ class RegisterMail < ApplicationMailer
 		pdf = locale == :en ? File.read(File.join(Rails.root, 'app','pdfs','konferencja.pdf')) : File.read(File.join(Rails.root, 'app','pdfs','konferencjaPL.pdf'))
 
 		mail.attachments['4thBiennial.pdf'] = pdf
-		mail.attachments['4thBiennialForm.pdf'] = WickedPdf.new.pdf_from_string( render_to_string(:pdf => 'Form',:template => 'attachments/registration_conference_success.pdf.erb'))
+		# mail.attachments['4thBiennialForm.pdf'] = WickedPdf.new.pdf_from_string( render_to_string(:pdf => 'Form',:template => 'attachments/registration_conference_success.pdf.erb'))
 
 		mail(
 			to: @registration.email,
 			subject: "Registration in 4th Biennale INAW Conference",
 		 )
 	end
-
-
 
 	def conference_backup_mail(registration)
 		@registration = registration
@@ -57,7 +60,7 @@ class RegisterMail < ApplicationMailer
 
 		mail(
 			to: 'inawbiennale@gmail.com',
-			subject: "konferencja #{@registration.first_name} #{@registration.last_name}" 
+			subject: "konferencja #{@registration.first_name} #{@registration.last_name}"
 		 )
 	end
 end

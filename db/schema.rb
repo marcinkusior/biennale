@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171028130215) do
+ActiveRecord::Schema.define(version: 20171029161924) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -128,8 +128,8 @@ ActiveRecord::Schema.define(version: 20171028130215) do
     t.boolean  "registration_conference"
     t.boolean  "registration_contest"
     t.boolean  "voting_contest"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.boolean  "block_site"
     t.boolean  "program_on"
     t.boolean  "partners_on"
@@ -146,6 +146,10 @@ ActiveRecord::Schema.define(version: 20171028130215) do
     t.string   "primary_banner"
     t.string   "secondary_banner"
     t.string   "favicon"
+    t.text     "registration_contest_mail"
+    t.text     "registration_conference_mail"
+    t.text     "registration_contest_mail_PL"
+    t.text     "registration_conference_mail_PL"
   end
 
   create_table "images", force: :cascade do |t|

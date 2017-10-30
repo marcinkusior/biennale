@@ -1,4 +1,17 @@
 
 <h1>Ustawienia</h1>
 
+<div class="row">
+  <div class="container">
+    <div class="col-xs-3 float-right">
+      <%= link_to 'edytuj mail konkurs', admin_email_contest_path %>
+    </div>
+    <div class="col-xs-3 float-right">
+      <%= link_to 'edytuj mail konferncja', admin_email_conference_path %>
+    </div>
+  </div>
+</div>
+<br>
+
 <%= render 'form' %>
+
