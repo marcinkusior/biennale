@@ -12,12 +12,12 @@ function contestArchiveLogic(){
 	})
 
 
-	$('.archive button:not(#more-images)').click(function( ){ 
+	$('.archive button:not(#more-images)').click(function( ){
 		var val = $(this).prev().val() ;
   	body.attr('current', val)
   	var more = $('#more-images');
   	more.css('transition', 'ddsdl')
-		more.css('opacity', 0) 
+		more.css('opacity', 0)
 		more.animate({
 			opacity: 1
 		}, 500, function(){ more.css( 'transition', '0.3s' ); })
@@ -48,13 +48,12 @@ function contestArchiveLogic(){
 	moreImg.click(function(event){
 		val =  body.attr('current');
 		var offset = $('.recordBody').children('.archive-image').length;
-		console.log(offset);
 		$.ajax( {
 		  type: "GET",
 		  url: "/archives/fetch_contest_records",
 		  dataType: "JSON",
 		  data: { 'archive_id': val, 'limit': 5, 'offset': offset},
-		  success: function(data) {	
+		  success: function(data) {
 		    alldata = data;
 		    data.length < 5 ? moreImg.css('display', 'none') : moreImg.css('display', 'block');
 		    data.forEach( function(object){

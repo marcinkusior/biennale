@@ -51,8 +51,7 @@
 		  url: "/votes/create",
 		  dataType: "JSON",
 		  data: { 'contest_record_id': id, 'ip_address': ip },
-		  success: function(data) {	
-		  	console.log(data);
+		  success: function(data) {
 		  	button.css('top', '-40px');
 		  	counter.css('top', '-40px');
 		  	var votes = parseInt(button.next().html()) + 1;
@@ -75,7 +74,7 @@
 			  url: "/galleries/fetch_records",
 			  dataType: "JSON",
 			  data: { 'ids': data },
-			  success: function(data) {	
+			  success: function(data) {
 			  	data.forEach(function(object){
 			  		gallery.append("<div class='gallery-item'> <div class='serial' data-votes='"+ object[2] +"' data-toggle='modal' data-target='#galleryModal'> <p> "+ object[1] +" </p> </div> <img class='gallery-image' style='background-image: url("+ object[0].src.gallery.url +")' data-id='"+ object[0].contest_record_id +"' ></div>")
 			  	})
@@ -99,7 +98,7 @@
 				  url: "/galleries/fetch_record",
 				  dataType: "JSON",
 				  data: { 'record_id': val, 'locale': $('body').data('locale') },
-				  success: function(data) {	
+				  success: function(data) {
 				  	gallery.empty();
 				  	$('.vote-number').html( votes);
 				  	data[1].forEach( function(object){

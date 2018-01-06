@@ -48,7 +48,6 @@ function registration_logic(){
         var label = $(this).siblings('label');
 
         if( file != undefined ){
-          console.log('')
         }else{
           label.find('span').html('upload file');
         if( $('.uploaded').length > 0 ){

@@ -7,12 +7,6 @@ function posterOnOpen(){
 	poster.ready( setPoster( ) )
 	window.onresize = setPoster;
 
-	// $('.logo').click(function(e){
-	// 	poster.css('transition', '1.2s');
-	// 	e.preventDefault();
-	// 	posterDown();
-	// })
-
 	$('.poster').click(function(){
 		if( $(window).scrollTop() < 200 ){
 			poster.css('transition', '1.2s');
@@ -23,14 +17,12 @@ function posterOnOpen(){
 
 
 	$('body').bind('wheel', function(e){
-		console.log();
 		poster.css('transition', '1.2s');
 
-		// console.log( $(window).scrollTop() )
 
 		if( e.originalEvent.wheelDelta < 0 ){ counter = 0 }
-		
-		
+
+
 		if ($(window).scrollTop() === 0 && e.originalEvent.wheelDelta > 0){
 			counter > 3 ? posterDown() : counter = counter +1;
 		}
@@ -40,9 +32,7 @@ function posterOnOpen(){
 		}
 
 		if( Math.round(poster.offset().top) > -(poster.height() ) && isFirefox === false ){
-			console.log(  poster.offset().top);
-			console.log(-poster.height());
-			window.onwheel = function(){  console.log('block'); return false; }
+			window.onwheel = function(){ return false; }
 		}
 
 		if( Math.round( poster.offset().top ) == -(poster.height()) ){
