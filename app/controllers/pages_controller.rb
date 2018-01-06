@@ -20,6 +20,9 @@ class PagesController < ApplicationController
 		@gallery_archive = ContestArchive.find(gallery_archive_id) unless gallery_archive_id.blank?
 		@gallery_archive_ids = @gallery_archive.contest_records.map{|record| record.id} unless gallery_archive_id.blank?
 
+		@registration = Registration.new
+		3.times { @registration.images.build }
+
 		# gathering results
 		total = Vote.all.length.to_f
 		if General.first.contest_archive_id != nil

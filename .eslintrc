@@ -1,0 +1,22 @@
+{
+  "parser": "babel-eslint",
+  "rules": {
+    "indent": [2, 2],
+    "quotes": [2, "single"],
+    "strict": "off"
+  },
+  "extends": ["eslint:recommended"],
+  "globals": {
+    "casper": true,
+    "sinon": true,
+    "plugins": true,
+    "should": true,
+    "SelectFx": true
+  },
+  "env": {
+    "node": true,
+    "browser": true,
+    "mocha": true,
+    "phantomjs": true,
+  }
+}

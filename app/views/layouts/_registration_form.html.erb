@@ -1,11 +1,21 @@
 <h3 class="blue"><%= t('register') %></h3>
 
 <p class="ghost"> <%= t( "fillform" ) %> </p>
-<% @registration = Registration.new %>
-<% 3.times{@registration.images.build }%>
 <%= form_for( @registration, :html => { :multipart => true }) do |f| %>
-
   <div class="modal-content ">
+
+  <% if @registration.errors.any? %>
+    <div class="field full">
+      <div id="error_explanation">
+        <ul>
+        <% @registration.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
   <%= f.hidden_field :serial, :value => create_serial %>
 
   <div class="field half">
@@ -52,12 +62,12 @@
       <%= f.label :email, t( 'email' ) %>
     <%= f.text_field :email, :class => "validate validate_email" %>
     </div>
-    
+
   <div class="field full terms_of_service">
       <span class = "validate validate_checkbox tick-container">
         <span class="tick"> <%= inline_svg('tick.svg') %></span>
         <span class="box">  <%= f.check_box :terms_of_service, :class => 'validate_present' %>  </span>
-       
+
         <p> <%= t( "agreeto" )  %>  <%= link_to t( "terms_of_use" ), "/#{I18n.locale}/Terms_Contest", :target => "_blank" %>
         </p>
       </span>
