@@ -81,6 +81,8 @@ class Admin::GeneralsController < ApplicationController
                                       :contest_archive_on, :contest_archive_id, :map_zoom, :marker_id,
                                       :primary_banner, :secondary_banner, :favicon, :registration_contest_mail,
                                       :registration_conference_mail, :registration_contest_mail_PL,
-                                      :registration_conference_mail_PL)
+                                      :registration_conference_mail_PL, :contest_mail_attachment,
+                                      :contest_mail_attachment_PL, :conference_mail_attachment,
+                                      :conference_mail_attachment_PL)
     end
 end

@@ -12,8 +12,8 @@ class RegistrationsController < ApplicationController
         format.html { redirect_to root_path, notice: 'Registration was successfully created.' }
         format.json {  }
 
-        BackupMailJob.new.async.perform(@registration)
-        RegisterMailJob.new.async.perform(@registration)
+        RegisterMailJob.new.perform(@registration)
+        BackupMailJob.new.perform(@registration)
       else
         format.html {
         @registration.images = [];

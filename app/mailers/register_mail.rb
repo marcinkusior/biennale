@@ -6,14 +6,8 @@ class RegisterMail < ApplicationMailer
 
 		@registration = registration
 
-		if (locale = :en) then
-			attachment = File.read(File.join(Rails.root, 'app','pdfs','konkurs.pdf'))
-		else
-			attachment = File.read(File.join(Rails.root, 'app','pdfs','konkursPL.pdf'))
-		end
-
-		mail.attachments[edition + 'thBiennial.pdf'] = attachment
-		mail.attachments[edition + 'thBiennialForm.pdf'] = WickedPdf.new.pdf_from_string( render_to_string(:pdf => 'Form',:template => 'attachments/registration_success.pdf.erb'))
+		mail.attachments[edition + 'thBiennial.pdf'] = contest_attachment if contest_attachment
+		# mail.attachments[edition + 'thBiennialForm.pdf'] = WickedPdf.new.pdf_from_string( render_to_string(:pdf => 'Form',:template => 'attachments/registration_success.pdf.erb'))
 
 		mail(
 			to: @registration.email,
@@ -43,10 +37,10 @@ class RegisterMail < ApplicationMailer
 		edition = General.first.edition_no.to_s;
 		@registration = registration
 
-		attachment = locale == :en ? File.read(File.join(Rails.root, 'app','pdfs','konferencja.pdf')) : File.read(File.join(Rails.root, 'app','pdfs','konferencjaPL.pdf'))
+		# attachment = locale == :en ? File.read(File.join(Rails.root, 'app','pdfs','konferencja.pdf')) : File.read(File.join(Rails.root, 'app','pdfs','konferencjaPL.pdf'))
 
-		mail.attachments[edition + 'thBiennial.pdf'] = attachment
-		mail.attachments[edition + 'thBienialForm.pdf'] = WickedPdf.new.pdf_from_string( render_to_string(:pdf => 'Form',:template => 'attachments/registration_conference_success.pdf.erb'))
+		mail.attachments[edition + 'thBiennial.pdf'] = conference_attachment if conference_attachment
+		# mail.attachments[edition + 'thBienialForm.pdf'] = WickedPdf.new.pdf_from_string( render_to_string(:pdf => 'Form',:template => 'attachments/registration_conference_success.pdf.erb'))
 
 		mail(
 			to: @registration.email,
@@ -63,5 +57,33 @@ class RegisterMail < ApplicationMailer
 			to: 'inawbiennale@gmail.com',
 			subject: "konferencja #{@registration.first_name} #{@registration.last_name}"
 		 )
+	end
+
+	def contest_attachment
+		attachment = false
+		if (locale == :en)
+			return false unless General.first.contest_mail_attachment_url
+			attachment_url = File.join(Rails.root, 'public', General.first.contest_mail_attachment_url);
+			attachment = File.read(attachment_url) if File.exist?(attachment_url)
+		else
+			return false unless General.first.contest_mail_attachment_PL_url
+			attachment_url = File.join(Rails.root, 'public', General.first.contest_mail_attachment_PL_url);
+			attachment = File.read(attachment_url) if File.exist?(attachment_url)
+		end
+		return attachment
+	end
+
+	def conference_attachment
+		attachment = false
+		if (locale == :en)
+			return false unless General.first.conference_mail_attachment_url
+			attachment_url = File.join(Rails.root, 'public', General.first.conference_mail_attachment_url);
+			attachment = File.read(attachment_url) if File.exist?(attachment_url)
+		else
+			return false unless General.first.conference_mail_attachment_PL_url
+			attachment_url = File.join(Rails.root, 'public', General.first.conference_mail_attachment_PL_url);
+			attachment = File.read(attachment_url) if File.exist?(attachment_url)
+		end
+		return attachment
 	end
 end
