@@ -16,6 +16,25 @@ class Registration < ActiveRecord::Base
 	validate :check_images_number
 
 
+  def self.test_registration
+    return Registration.new({
+      "id"=>1,
+      "first_name"=>"test",
+      "last_name"=>"test",
+      "telephone"=>"123456789",
+      "street"=>"testowy adres",
+      "city"=>"Test",
+      "zip_code"=>"30-000",
+      "country"=>"Polska",
+      "university"=>"Test",
+      "supervising_professor"=>"test",
+      "email"=>"inawbiennale@gmail.com",
+      "terms_of_service"=>true,
+      "serial"=>"test",
+      "group_name"=>"test"
+    })
+  end
+
 
 	private
 	  def images_count_valid?

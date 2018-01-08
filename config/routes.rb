@@ -57,6 +57,10 @@ Rails.application.routes.draw do
 
     get 'email_contest' => "emails#contest"
     get 'email_conference' => "emails#conference"
+    get 'email_send_contest' => "emails#send_contest"
+    get 'email_send_contest_pl' => "emails#send_contest_pl"
+    get 'email_send_conference' => "emails#send_conference"
+    get 'email_send_conference_pl' => "emails#send_conference_pl"
   end
 
   # mount Ckeditor::Engine => '/ckeditor'

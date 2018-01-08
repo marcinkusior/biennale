@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180106192757) do
+ActiveRecord::Schema.define(version: 20180107161258) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -154,6 +154,8 @@ ActiveRecord::Schema.define(version: 20180106192757) do
     t.string   "contest_mail_attachment_PL"
     t.string   "conference_mail_attachment"
     t.string   "conference_mail_attachment_PL"
+    t.string   "pdf_header"
+    t.string   "pdf_body"
   end
 
   create_table "images", force: :cascade do |t|

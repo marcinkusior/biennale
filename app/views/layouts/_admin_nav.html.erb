@@ -10,6 +10,14 @@
 
 				<li> <%= link_to 'Strony', admin_pages_path %> </li>
 
+				<li class="dropdown-trigger"> <a href=""> Email<b class="caret"></b> </a>
+					<ul class="dropdown">
+
+						<li> <%= link_to 'Konkurs', admin_email_contest_path %> </li>
+						<li> <%= link_to 'Konferencja', admin_email_conference_path %> </li>
+					</ul>
+				</li>
+
 				<li> <%= link_to 'Program', admin_events_path %> </li>
 				<li class="dropdown-trigger"> <a href=""> Rejestracje<b class="caret"></b> </a>
 					<ul class="dropdown">

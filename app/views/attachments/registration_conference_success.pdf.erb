@@ -107,18 +107,11 @@
  <body>
 
   <div class="container">
-
     <div class="row">
-
       <div class="header">
-          <p>5<span class = "up" >th</span> International Biennial <br>
-        of Interior Design INAW 2017 <br>
-        7-25.3.2018 Cracow
-      </p>
-
+        <%= raw(@settings.pdf_header) %>
+      </div>
     </div>
-
-    </div> <!-- end row -->
     <div class="row">
 
     <div id="id_2_1">
@@ -186,14 +179,9 @@
       </tbody>
     </table>
 
-    <p class="text">
-      In reply to the Self/ie - Design it Conference announcement I submit Application Letter. <br> I declare that I read and understand the conditions of Conference and its attachments. <br> I accept them. <br>
-      I also declare that I agree to allow Organiser to use my work in conference publications, especially: <br>
-
-       - in conference publication, <br>
-       - presenting paper in the official website of the Conference, <br>
-       - in after Conference publication <br>
-    </p>
+    <div class="text">
+      <%= raw(@settings.pdf_body) %>
+    </div>
 
     <div class="kreska"></div>
 

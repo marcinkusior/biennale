@@ -14,4 +14,20 @@ class RegistrationConference < ActiveRecord::Base
 
 	mount_uploader :attachment, RegistrationUploader
 
+  def self.test_registration
+    return RegistrationConference.new({
+		  "id"=>5,
+		  "first_name"=>"test",
+		  "last_name"=>"test",
+		  "telephone"=>"123456789",
+		  "street"=>"test",
+		  "city"=>"test",
+		  "zip_code"=>"30-000",
+		  "country"=>"test",
+		  "university"=>"test",
+		  "email"=>"inawbiennale@gmail.com",
+		  "terms_of_service"=>true,
+		  "subject"=>"test"
+    })
+  end
 end

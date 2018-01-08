@@ -1,7 +1,11 @@
 <div class="container">
   <div class="row">
     <h1>Email konferencja</h1>
+    <%= link_to 'wyślij testowy email', admin_email_send_conference_path %><br>
+    <%= link_to 'wyślij testowy email PL', admin_email_send_conference_pl_path %><br>
+    <small>(Email zostanie wysłany na adres inawbiennale@gmail.com)</small>
   </div>
+
   <br>
   <%= form_for([:admin, @general]) do |f| %>
     <% if @general.errors.any? %>
@@ -25,27 +29,31 @@
       <br>
 
       <div>
-        <%= f.label :conference_mail_attachment, "załacznik email -  en" %><br>
-        <%= f.file_field :conference_mail_attachment %>
-      </div>
-
-      <br>
-      <h1></h1>
-      <br>
-
-      <div>
         <%= f.label :registration_conference_mail_PL, "treść maila -  pl" %><br>
         <%= f.cktext_area :registration_conference_mail_PL %>
       </div>
 
       <br>
+    </div>
 
+    <br>
+    <h1></h1>
+    <br>
+
+    <div class="row">
+      <div>
+        <%= f.label :conference_mail_attachment, "załącznik email -  en" %><br>
+        <%= f.file_field :conference_mail_attachment %>
+      </div>
+      <br>
       <div>
         <%= f.label :conference_mail_attachment_PL, "załącznik email -  pl" %><br>
         <%= f.file_field :conference_mail_attachment_PL %>
       </div>
     </div>
 
+    <br>
+    <h1></h1>
     <br>
 
     <div class="row">

@@ -5,6 +5,7 @@ class RegisterMail < ApplicationMailer
 		edition = General.first.edition_no.to_s;
 
 		@registration = registration
+		@settings = General.first
 
 		mail.attachments[edition + 'thBiennial.pdf'] = contest_attachment if contest_attachment
 		mail.attachments[edition + 'thBiennialForm.pdf'] = WickedPdf.new.pdf_from_string( render_to_string(
@@ -39,8 +40,7 @@ class RegisterMail < ApplicationMailer
 	def register_conference_success_mail(registration)
 		edition = General.first.edition_no.to_s;
 		@registration = registration
-
-		# attachment = locale == :en ? File.read(File.join(Rails.root, 'app','pdfs','konferencja.pdf')) : File.read(File.join(Rails.root, 'app','pdfs','konferencjaPL.pdf'))
+		@settings = General.first
 
 		mail.attachments[edition + 'thBiennial.pdf'] = conference_attachment if conference_attachment
 		mail.attachments[edition + 'thBienialForm.pdf'] = WickedPdf.new.pdf_from_string( render_to_string(:pdf => 'Form',:template => 'attachments/registration_conference_success.pdf.erb'))

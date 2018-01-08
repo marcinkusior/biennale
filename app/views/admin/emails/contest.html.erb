@@ -1,6 +1,9 @@
 <div class="container">
   <div class="row">
     <h1>Email konkurs</h1>
+    <%= link_to 'wyślij testowy email', admin_email_send_contest_path %><br>
+    <%= link_to 'wyślij testowy email PL', admin_email_send_contest_pl_path %><br>
+    <small>(Email zostanie wysłany na adres inawbiennale@gmail.com)</small>
   </div>
   <br>
   <%= form_for([:admin, @general]) do |f| %>
@@ -25,24 +28,44 @@
       <br>
 
       <div>
-        <%= f.label :contest_mail_attachment, "załacznik email -  en" %><br>
-        <%= f.file_field :contest_mail_attachment %>
-      </div>
-
-      <br>
-      <h1></h1>
-      <br>
-
-      <div>
         <%= f.label :registration_contest_mail_PL, "treść maila -  pl" %><br>
         <%= f.cktext_area :registration_contest_mail_PL %>
       </div>
 
       <br>
+    </div>
 
+    <br>
+    <h1></h1>
+    <br>
+
+    <div class="row">
+      <div>
+        <%= f.label :contest_mail_attachment, "załącznik email -  en" %><br>
+        <%= f.file_field :contest_mail_attachment %>
+      </div>
+      <br>
       <div>
         <%= f.label :contest_mail_attachment_PL, "załącznik email -  pl" %><br>
         <%= f.file_field :contest_mail_attachment_PL %>
+      </div>
+    </div>
+
+    <br>
+    <h1></h1>
+    <br>
+
+    <div class="row">
+      <div>
+        <%= f.label :pdf_header, "nagłówek pdf" %><br>
+        <%= f.cktext_area :pdf_header %>
+      </div>
+
+      <br>
+
+      <div>
+        <%= f.label :pdf_body, "treść pdf" %><br>
+        <%= f.cktext_area :pdf_body %>
       </div>
     </div>
 
