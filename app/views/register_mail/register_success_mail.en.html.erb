@@ -5,7 +5,12 @@
   <title>Registration Contest</title>
  </head>
  <body>
-   <p>Project Number: <%= @registration.serial %></p>
+  <p style="font-size: 12.8px; font-weight:bold">
+    Project number:
+    <span
+      style="font-size: 16px;text-transform:uppercase;color:<%= raw(General.first.secondary_color) %>"
+    ><%= @registration.serial %></span>
+   </p>
    <%= raw(General.first.registration_contest_mail) %>
  </body>
 </html>
