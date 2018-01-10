@@ -57,6 +57,24 @@
     <br>
 
     <div class="row">
+      <div>
+        <%= f.label :pdf_header, "nagłówek pdf" %><br>
+        <%= f.cktext_area :pdf_header %>
+      </div>
+
+      <br>
+
+      <div>
+        <%= f.label :pdf_conference_body, "treść pdf" %><br>
+        <%= f.cktext_area :pdf_conference_body %>
+      </div>
+    </div>
+
+    <br>
+    <h1></h1>
+    <br>
+
+    <div class="row">
       <%= f.submit 'Wprowadź zmiany' %>
     </div>
   <% end %>

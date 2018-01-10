@@ -83,6 +83,6 @@ class Admin::GeneralsController < ApplicationController
                                       :registration_conference_mail, :registration_contest_mail_PL,
                                       :registration_conference_mail_PL, :contest_mail_attachment,
                                       :contest_mail_attachment_PL, :conference_mail_attachment,
-                                      :conference_mail_attachment_PL, :pdf_header, :pdf_body)
+                                      :conference_mail_attachment_PL, :pdf_header, :pdf_body, :pdf_conference_body)
     end
 end
