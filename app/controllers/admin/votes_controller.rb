@@ -71,8 +71,8 @@ class Admin::VotesController < ApplicationController
 
     # gathering results
     total = Vote.all.length.to_f
+    @results = [];
     if General.first.contest_archive_id != nil
-      @results = [];
       @gallery_archive.contest_records.each do |record|
         @results << [record.serial, (record.votes.length / total * 100).round(1), record.votes.length] if record.votes.length > 0
       end

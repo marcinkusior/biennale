@@ -56,15 +56,15 @@ function initMap() {
   });
 
   var styles = [
-  {
-    stylers: [
-      { hue: "#00ffe6" },
-      { saturation: -100 }
-    ]
-  }
-];
+    {
+      stylers: [
+        { hue: '#00ffe6' },
+        { saturation: -100 }
+      ]
+    }
+  ];
 
-map.setOptions({styles: styles});
+  map.setOptions({styles: styles});
 
   $('#markers').children().each( function(idx, marker){
     addMarker( parseFloat($(marker).data('lat')), parseFloat( $(marker).data('lng') ), $(marker).data('desc'), $(marker).data('color') )
@@ -73,19 +73,25 @@ map.setOptions({styles: styles});
 
 initMap();
 
-var marker;
 function addMarker(lat, lng, title, color){
+  var infowindow = new google.maps.InfoWindow({
+    content: '<strong>' + title + '</strong>'
+  });
+
   var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + color.slice(1),
     new google.maps.Size(21, 34),
     new google.maps.Point(0,0),
     new google.maps.Point(10, 34));
 
 
-  marker = new google.maps.Marker({
+  var marker = new google.maps.Marker({
     position: {lat: lat, lng: lng},
     map: map,
-    title: title,
     icon: pinImage,
+  })
+
+  marker.addListener('click', function () {
+    infowindow.open(map, marker)
   })
 }
 </script>

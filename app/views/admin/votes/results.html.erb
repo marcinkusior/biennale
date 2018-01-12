@@ -1,21 +1,28 @@
 
 <div class="results-wrapper">
-	<h3></h3>
-	<%= button_to 'Usun Głosy', admin_votes_delete_all_path, :method => :get, data: { confirm: 'Are you sure?' }, :class=>"panel-button" %>
+	<br>
+	<h1></h1>
+	<br>
 
-	<div class="row">
-			<table class=" results">
-				<%  @results.each do |record|  %>
-					<tr class="result-row">
-						<td> <div class="result-serial"> <%= record[0] %> </div> </td>
-						<td class="line-wrapper">
-							<div class="result-line" style='width: <%= record[1] %>%;'></div>
-							<div class="result-value" style='left: <%= record[1] %>%; '> <p> <%= record[2] %></p> </div>
-							</td>
-						<td><div class="result-serial"> <%= record[1].to_s %>% </div></td>
-					</tr>
-				<% end %>
-			</table>
-	</div>
+	<% if @results.length == 0 %>
+		<p> Brak głosów </p>
+	<% else %>
+		<%= button_to 'Usun Głosy', admin_votes_delete_all_path, :method => :get, data: { confirm: 'Are you sure?' }, :class=>"panel-button" %>
+
+		<div class="row">
+				<table class=" results">
+					<%  @results.each do |record|  %>
+						<tr class="result-row">
+							<td> <div class="result-serial"> <%= record[0] %> </div> </td>
+							<td class="line-wrapper">
+								<div class="result-line" style='width: <%= record[1] %>%;'></div>
+								<div class="result-value" style='left: <%= record[1] %>%; '> <p> <%= record[2] %></p> </div>
+								</td>
+							<td><div class="result-serial"> <%= record[1].to_s %>% </div></td>
+						</tr>
+					<% end %>
+				</table>
+		</div>
+	<% end %>
 
 </div>
