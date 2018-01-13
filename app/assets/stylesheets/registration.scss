@@ -22,6 +22,10 @@
 		@media(min-width: 768px){ padding: 50px 120px;}
 		padding: 50px 60px;
 	}
+
+	.ghost {
+		margin: 0 0 50px;
+	}
 }
 
 .disabled{
@@ -55,7 +59,12 @@
 	}
 }
 
-.field{
-	p{ display: inline; }
-	.ghost{ margin: 25px 0 0px; display: block; vertical-align: center;}
+.field {
+  p { display: inline; }
+
+  .ghost {
+	  margin: 25px 0 0;
+		display: block;
+		vertical-align: center;
+	}
 }
