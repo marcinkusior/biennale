@@ -6,7 +6,7 @@ class RegistrationsController < ApplicationController
 
   def create
   	@registration = Registration.new(registration_params)
-
+    @registration.locale = locale
     respond_to do |format|
       if @registration.save
         format.html { redirect_to root_path, notice: 'Registration was successfully created.' }

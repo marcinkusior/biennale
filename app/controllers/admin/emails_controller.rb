@@ -16,7 +16,7 @@ class Admin::EmailsController < ApplicationController
 
   def send_contest_pl
     I18n.locale = :pl
-    RegisterMailJob.new.perform(Registration.test_registration)
+    RegisterMailJob.new.perform(Registration.test_registration("pl"))
     I18n.locale = :en
     redirect_to admin_root_path, notice: 'Testowy email został wysłany na adres inawbiennale@gmail.com'
   end

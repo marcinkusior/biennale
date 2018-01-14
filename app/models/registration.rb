@@ -16,7 +16,7 @@ class Registration < ActiveRecord::Base
 	validate :check_images_number
 
 
-  def self.test_registration
+  def self.test_registration(locale = "en")
     return Registration.new({
       "id"=>1,
       "first_name"=>"test",
@@ -31,7 +31,8 @@ class Registration < ActiveRecord::Base
       "email"=>"inawbiennale@gmail.com",
       "terms_of_service"=>true,
       "serial"=>"test",
-      "group_name"=>"test"
+      "group_name"=>"test",
+      "locale" => locale
     })
   end
 

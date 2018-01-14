@@ -64,7 +64,7 @@ class RegisterMail < ApplicationMailer
 
 	def contest_attachment
 		attachment = false
-		if (locale == :en)
+		if (@registration.locale == 'en')
 			return false unless General.first.contest_mail_attachment_url
 			attachment_url = File.join(Rails.root, 'public', General.first.contest_mail_attachment_url);
 			attachment = File.read(attachment_url) if File.exist?(attachment_url)
@@ -78,7 +78,7 @@ class RegisterMail < ApplicationMailer
 
 	def conference_attachment
 		attachment = false
-		if (locale == :en)
+		if (@registration.locale == 'en')
 			return false unless General.first.conference_mail_attachment_url
 			attachment_url = File.join(Rails.root, 'public', General.first.conference_mail_attachment_url);
 			attachment = File.read(attachment_url) if File.exist?(attachment_url)
