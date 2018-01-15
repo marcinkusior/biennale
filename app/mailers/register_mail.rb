@@ -24,7 +24,7 @@ class RegisterMail < ApplicationMailer
 
 		i= 1
 		@registration.images.each do |image|
-			mail.attachments["obrazek_#{i}"] = File.read( image.src.path )
+			mail.attachments["obrazek_#{i}.#{image.src.file.extension}"] = File.read( image.src.path )
 			i = i+1
 		end
 
